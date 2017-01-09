@@ -1,4 +1,4 @@
 jre:
   pkg.installed: 
     - pkgs:
-      - default-jre
+      - openjdk-8-jre
