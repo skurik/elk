@@ -1,5 +1,7 @@
-{% set ip_address = salt['grains.get']('ip4_interfaces:eth0')[0] %}
+# The second item specifies whether the service is managed by the System-V init scripts ('1') or not
+#
 {% set elk_services = [ ['elasticsearch', 1], ['kibana', 1], ['logstash', 0], ['filebeat', 1], ['metricbeat', 1] ] %}
+{% set ip_address = salt['grains.get']('ip4_interfaces:eth0')[0] %}
 
 es_import_pgp_key:
   cmd.run:
