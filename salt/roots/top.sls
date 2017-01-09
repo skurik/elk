@@ -1,0 +1,5 @@
+base:
+  '*':    
+    - nettools    
+    - basictools
+    - jre
