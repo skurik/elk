@@ -80,7 +80,7 @@ metricbeat.modules:
 #----------------------------- Logstash output --------------------------------
 output.logstash:
   # The Logstash hosts
-  hosts: ["localhost:5044"]
+  hosts: ["___LOGSTASH_HOST___:5044"]
   
   # Optional SSL. By default is off.
   # List of root certificates for HTTPS server verifications

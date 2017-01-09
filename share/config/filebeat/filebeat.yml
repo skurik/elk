@@ -19,8 +19,7 @@ filebeat.prospectors:
 
   # Paths that should be crawled and fetched. Glob based paths.
   paths:
-    - /var/log/iis/*.log
-    #- c:\programdata\elasticsearch\logs\*
+    - ___LOG_DIR_IIS_IQUBE___
 
   # Exclude lines. A list of regular expressions to match. It drops the lines that are
   # matching any regular expression from the list.
@@ -91,7 +90,7 @@ filebeat.prospectors:
 #----------------------------- Logstash output --------------------------------
 output.logstash:
   # The Logstash hosts
-  hosts: ["localhost:5044"]
+  hosts: ["___LOGSTASH_HOST___:5044"]
 
   # Optional SSL. By default is off.
   # List of root certificates for HTTPS server verifications
