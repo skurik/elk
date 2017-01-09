@@ -1,0 +1,4 @@
+JAVA_HOME=/usr/local/java/jre1.8.0_112
+PATH=$PATH:$HOME/bin:$JAVA_HOME/bin
+export JAVA_HOME
+export PATH
