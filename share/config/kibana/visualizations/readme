@@ -6,3 +6,6 @@ Where
 	<elasticsearch_host> is the hostname or IP address of the machine where ES is running
 	<id> is the ID of the new visualization
 	<path> is a path of one of the files in this folder
+
+IMPORTANT: The metrics visualization, as of now, consider data from all machines.
+We will of course need to create visualization per machine (or possibly plot multiple machines in the same graph)

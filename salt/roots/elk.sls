@@ -136,3 +136,72 @@ http://{{ ip_address }}:9200/_template/template_log_iis:
     - status: 200
     - match: 'acknowledged"\s*:\s*true'
     - match_type: pcre
+
+# IIS\iQube\Avg. response time (last 2 days)
+# TODO: Add filter to only consider iQube logs
+http://{{ ip_address }}:9200/.kibana/visualization/IIS_iQube_Avg_Response_Time_2d:
+  http.query:
+    - method: POST
+    - data_file: /srv/share/config/kibana/visualizations/IIS_iQube_Avg_Response_Time_2d.json
+    - status: 201
+    - match: 'result"\s*:\s*"created"'
+    - match_type: pcre
+
+# IIS\iQube\Avg. response time (last 1 month)
+# TODO: Add filter to only consider iQube logs
+http://{{ ip_address }}:9200/.kibana/visualization/IIS_iQube_Avg_Response_Time_1mo:
+  http.query:
+    - method: POST
+    - data_file: /srv/share/config/kibana/visualizations/IIS_iQube_Avg_Response_Time_1mo.json
+    - status: 201
+    - match: 'result"\s*:\s*"created"'
+    - match_type: pcre
+
+#####################################
+# iQube Webserver ###################
+#####################################
+
+# CPU\iQube webserver\User time pct. (last 2 days)
+# TODO: Add filter to only consider metrics from the iQube webserver
+http://{{ ip_address }}:9200/.kibana/visualization/CPU_iQube_Webserver_Avg_User_Time_Pct_2d:
+  http.query:
+    - method: POST
+    - data_file: /srv/share/config/kibana/visualizations/CPU_iQube_Webserver_Avg_User_Time_Pct_2d.json
+    - status: 201
+    - match: 'result"\s*:\s*"created"'
+    - match_type: pcre
+
+# CPU\iQube webserver\I/O wait time pct. (last 2 days)
+# TODO: Add filter to only consider metrics from the iQube webserver
+http://{{ ip_address }}:9200/.kibana/visualization/CPU_iQube_Webserver_Avg_IOWait_Pct_2d:
+  http.query:
+    - method: POST
+    - data_file: /srv/share/config/kibana/visualizations/CPU_iQube_Webserver_Avg_IOWait_Pct_2d.json
+    - status: 201
+    - match: 'result"\s*:\s*"created"'
+    - match_type: pcre
+
+#####################################
+# iQube DB server ###################
+#####################################
+
+# CPU\iQube DB\User time pct. (last 2 days)
+# TODO: Add filter to only consider metrics from the iQube DB server
+http://{{ ip_address }}:9200/.kibana/visualization/CPU_iQube_DB_Avg_User_Time_Pct_2d:
+  http.query:
+    - method: POST
+    - data_file: /srv/share/config/kibana/visualizations/CPU_iQube_DB_Avg_User_Time_Pct_2d.json
+    - status: 201
+    - match: 'result"\s*:\s*"created"'
+    - match_type: pcre
+
+# CPU\iQube webserver\I/O wait time pct. (last 2 days)
+# TODO: Add filter to only consider metrics from the iQube DB server
+http://{{ ip_address }}:9200/.kibana/visualization/CPU_iQube_DB_Avg_IOWait_Pct_2d:
+  http.query:
+    - method: POST
+    - data_file: /srv/share/config/kibana/visualizations/CPU_iQube_DB_Avg_IOWait_Pct_2d.json
+    - status: 201
+    - match: 'result"\s*:\s*"created"'
+    - match_type: pcre 
+    
