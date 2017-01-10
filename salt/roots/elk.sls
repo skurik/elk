@@ -128,3 +128,11 @@ run_{{ service[0] }}_on_startup:
   service.running: []  
 
 {% endfor %}
+
+http://{{ ip_address }}:9200/_template/template_log_iis:
+  http.query:
+    - method: PUT
+    - data_file: /srv/share/config/elasticsearch/log_template.json
+    - status: 200
+    - match: 'acknowledged"\s*:\s*true'
+    - match_type: pcre
