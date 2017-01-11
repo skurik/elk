@@ -12,7 +12,7 @@ Vagrant.configure("2") do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
-  config.vm.box = "ubuntu/trusty64"
+  config.vm.box = "ubuntu/xenial64"
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
@@ -61,6 +61,7 @@ Vagrant.configure("2") do |config|
   ## For masterless, mount your salt file root
   config.vm.synced_folder "salt/roots/", "/srv/salt/"
   config.vm.synced_folder "share/", "/srv/share/"
+  config.vm.synced_folder ".esdata/", "/srv/es/"
 
 	## Use all the defaults:
  	config.vm.provision :salt do |salt|

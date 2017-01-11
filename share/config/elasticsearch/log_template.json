@@ -26,6 +26,10 @@
         },
         "geoip.location": {
           "type": "geo_point"
+        },
+        "request": {
+          "type": "string",
+          "index": "not_analyzed"
         }
       }
     }

@@ -3,6 +3,7 @@
 {% set jre_package_url_file = 'jre-8u112-linux-x64.tar.gz' %}
 {% set iqube_iis_log_dir = '/var/log/iis/iqube/*.log' %}
 {% set tc_iis_log_dir = '/var/log/iis/tc/*.log' %}
+{% set es_data_dir = '/srv/es' %}
 
 # Where can beats reach logstash
 #

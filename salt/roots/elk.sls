@@ -42,6 +42,15 @@ es_listen_on_ethernet_iface:
     - repl: "network.host: {{ ip_address }}"
     - backup: False
 
+# DEBUG state (use data directory on a drive where we will not run out of space)
+#
+es_use_data_dir_on_large_drive:
+  file.replace:
+    - name: "/etc/elasticsearch/elasticsearch.yml"
+    - pattern: "^\\s*#\\s*path\\.data:\\s*.*"
+    - repl: "path.data: {{ opts.es_data_dir }}"
+    - backup: False
+
 kibana_listen_on_ethernet_iface:
   file.replace: 
     - name: "/etc/kibana/kibana.yml"
