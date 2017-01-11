@@ -8,3 +8,5 @@
 # Where can beats reach logstash
 #
 {% set logstash_host = 'localhost' %}
+
+{% set ip_address = salt['grains.get']('ipv4')[0] %}

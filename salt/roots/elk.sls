@@ -6,11 +6,9 @@
 
 # This used to work on Ubuntu 14.04 but does not work on Ubuntu 16.04 as the network interface naming logic has changed. See e.g. http://unix.stackexchange.com/questions/134483/why-my-ethernet-interface-is-called-enp0s10-instead-of-eth0
 #
-# {% set ip_address = salt['grains.get']('ip4_interfaces:eth0')[0] %}
 
 # Better yet, we should check that we are getting the non-loopback interface here (just check that it isn't '127.0.0.1'?). Run 'salt-call grains.items' to see how it looks like.
 #
-{% set ip_address = salt['grains.get']('ipv4')[0] %}
 {% set visualizations = [ 'IIS_iQube_Avg_Response_Time_2d', 'IIS_iQube_Avg_Response_Time_1mo', 'IIS_TC_Avg_Response_Time_2d', 'IIS_TC_Avg_Response_Time_1mo', 'CPU_iQube_DB_Avg_IOWait_Pct_2d', 'CPU_iQube_DB_Avg_User_Time_Pct_2d', 'CPU_iQube_Webserver_Avg_IOWait_Pct_2d', 'CPU_iQube_Webserver_Avg_User_Time_Pct_2d', 'IIS_iQube_TC_Avg_Response_Time_2d' ] %}
 
 es_import_pgp_key:
@@ -40,13 +38,13 @@ install_elk_services:
 #
 # write_ip_to_file:
 #   cmd.run:
-#     - name: 'echo {{ ip_address }} > /root/ip'
+#     - name: 'echo {{ opts.ip_address }} > /root/ip'
 
 es_listen_on_ethernet_iface:
   file.replace:
     - name: "/etc/elasticsearch/elasticsearch.yml"
     - pattern: "^\\s*#\\s*network\\.host:\\s*.*"
-    - repl: "network.host: {{ ip_address }}"
+    - repl: "network.host: {{ opts.ip_address }}"
     - backup: False
 
 # DEBUG state (use data directory on a drive where we will not run out of space)
@@ -62,14 +60,14 @@ kibana_listen_on_ethernet_iface:
   file.replace: 
     - name: "/etc/kibana/kibana.yml"
     - pattern: "^\\s*#\\s*server\\.host:\\s*.*"
-    - repl: 'server.host: "{{ ip_address }}"'
+    - repl: 'server.host: "{{ opts.ip_address }}"'
     - backup: False
 
 kibana_set_elasticsearch_url:
   file.replace:
     - name: "/etc/kibana/kibana.yml"
     - pattern: "^\\s*#\\s*elasticsearch\\.url:\\s*.*"
-    - repl: 'elasticsearch.url: "http://{{ ip_address }}:9200"'
+    - repl: 'elasticsearch.url: "http://{{ opts.ip_address }}:9200"'
     - backup: False
 
 logstash_main_config_reload_automatic:
@@ -95,7 +93,7 @@ logstash_pipeline_config_elasticsearch_host:
   file.replace:
     - name: "/etc/logstash/conf.d/logstash.conf"
     - pattern: "___ELASTICSEARCH_HOST___"
-    - repl: '{{ ip_address }}'
+    - repl: '{{ opts.ip_address }}'
     - backup: False
 
 filebeat_config_template:
@@ -159,7 +157,7 @@ run_{{ service[0] }}_on_startup:
 
 {% endfor %}
 
-# http://{{ ip_address }}:9200/_template/template_log_iis:
+# http://{{ opts.ip_address }}:9200/_template/template_log_iis:
 #   http.query:
 #     - method: PUT
 #     - data_file: /srv/share/config/elasticsearch/log_template.json
@@ -171,7 +169,7 @@ run_{{ service[0] }}_on_startup:
 # #
 # {% for vis in visualizations %}
 
-# http://{{ ip_address }}:9200/.kibana/visualization/{{ vis }}:
+# http://{{ opts.ip_address }}:9200/.kibana/visualization/{{ vis }}:
 #   http.query:
 #     - method: POST
 #     - data_file: /srv/share/config/kibana/visualizations/{{ vis }}.json
@@ -183,7 +181,7 @@ run_{{ service[0] }}_on_startup:
 
 # # IIS\iQube\Avg. response time (last 2 days)
 # # TODO: Add filter to only consider iQube logs
-# http://{{ ip_address }}:9200/.kibana/visualization/IIS_iQube_Avg_Response_Time_2d:
+# http://{{ opts.ip_address }}:9200/.kibana/visualization/IIS_iQube_Avg_Response_Time_2d:
 #   http.query:
 #     - method: POST
 #     - data_file: /srv/share/config/kibana/visualizations/IIS_iQube_Avg_Response_Time_2d.json
@@ -193,7 +191,7 @@ run_{{ service[0] }}_on_startup:
 
 # # IIS\iQube\Avg. response time (last 1 month)
 # # TODO: Add filter to only consider iQube logs
-# http://{{ ip_address }}:9200/.kibana/visualization/IIS_iQube_Avg_Response_Time_1mo:
+# http://{{ opts.ip_address }}:9200/.kibana/visualization/IIS_iQube_Avg_Response_Time_1mo:
 #   http.query:
 #     - method: POST
 #     - data_file: /srv/share/config/kibana/visualizations/IIS_iQube_Avg_Response_Time_1mo.json
@@ -207,7 +205,7 @@ run_{{ service[0] }}_on_startup:
 
 # # CPU\iQube webserver\User time pct. (last 2 days)
 # # TODO: Add filter to only consider metrics from the iQube webserver
-# http://{{ ip_address }}:9200/.kibana/visualization/CPU_iQube_Webserver_Avg_User_Time_Pct_2d:
+# http://{{ opts.ip_address }}:9200/.kibana/visualization/CPU_iQube_Webserver_Avg_User_Time_Pct_2d:
 #   http.query:
 #     - method: POST
 #     - data_file: /srv/share/config/kibana/visualizations/CPU_iQube_Webserver_Avg_User_Time_Pct_2d.json
@@ -217,7 +215,7 @@ run_{{ service[0] }}_on_startup:
 
 # # CPU\iQube webserver\I/O wait time pct. (last 2 days)
 # # TODO: Add filter to only consider metrics from the iQube webserver
-# http://{{ ip_address }}:9200/.kibana/visualization/CPU_iQube_Webserver_Avg_IOWait_Pct_2d:
+# http://{{ opts.ip_address }}:9200/.kibana/visualization/CPU_iQube_Webserver_Avg_IOWait_Pct_2d:
 #   http.query:
 #     - method: POST
 #     - data_file: /srv/share/config/kibana/visualizations/CPU_iQube_Webserver_Avg_IOWait_Pct_2d.json
@@ -232,7 +230,7 @@ run_{{ service[0] }}_on_startup:
 
 # # CPU\iQube DB\User time pct. (last 2 days)
 # # TODO: Add filter to only consider metrics from the iQube DB server
-# http://{{ ip_address }}:9200/.kibana/visualization/CPU_iQube_DB_Avg_User_Time_Pct_2d:
+# http://{{ opts.ip_address }}:9200/.kibana/visualization/CPU_iQube_DB_Avg_User_Time_Pct_2d:
 #   http.query:
 #     - method: POST
 #     - data_file: /srv/share/config/kibana/visualizations/CPU_iQube_DB_Avg_User_Time_Pct_2d.json
@@ -242,7 +240,7 @@ run_{{ service[0] }}_on_startup:
 
 # # CPU\iQube webserver\I/O wait time pct. (last 2 days)
 # # TODO: Add filter to only consider metrics from the iQube DB server
-# http://{{ ip_address }}:9200/.kibana/visualization/CPU_iQube_DB_Avg_IOWait_Pct_2d:
+# http://{{ opts.ip_address }}:9200/.kibana/visualization/CPU_iQube_DB_Avg_IOWait_Pct_2d:
 #   http.query:
 #     - method: POST
 #     - data_file: /srv/share/config/kibana/visualizations/CPU_iQube_DB_Avg_IOWait_Pct_2d.json
