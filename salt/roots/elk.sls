@@ -3,7 +3,14 @@
 # The second item specifies whether the service is managed by the System-V init scripts ('1') or not
 #
 {% set elk_services = [ ['elasticsearch', 1], ['kibana', 1], ['logstash', 0], ['filebeat', 1], ['metricbeat', 1] ] %}
-{% set ip_address = salt['grains.get']('ip4_interfaces:eth0')[0] %}
+
+# This used to work on Ubuntu 14.04 but does not work on Ubuntu 16.04 as the network interface naming logic has changed. See e.g. http://unix.stackexchange.com/questions/134483/why-my-ethernet-interface-is-called-enp0s10-instead-of-eth0
+#
+# {% set ip_address = salt['grains.get']('ip4_interfaces:eth0')[0] %}
+
+# Better yet, we should check that we are getting the non-loopback interface here (just check that it isn't '127.0.0.1'?). Run 'salt-call grains.items' to see how it looks like.
+#
+{% set ip_address = salt['grains.get']('ipv4')[0] %}
 {% set visualizations = [ 'IIS_iQube_Avg_Response_Time_2d', 'IIS_iQube_Avg_Response_Time_1mo', 'IIS_TC_Avg_Response_Time_2d', 'IIS_TC_Avg_Response_Time_1mo', 'CPU_iQube_DB_Avg_IOWait_Pct_2d', 'CPU_iQube_DB_Avg_User_Time_Pct_2d', 'CPU_iQube_Webserver_Avg_IOWait_Pct_2d', 'CPU_iQube_Webserver_Avg_User_Time_Pct_2d', 'IIS_iQube_TC_Avg_Response_Time_2d' ] %}
 
 es_import_pgp_key:
