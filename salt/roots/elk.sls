@@ -135,10 +135,12 @@ metricbeat_config_logstash_host:
     - backup: False
 
 /var/log/iis/iqube:
-  file.directory: []
+  file.directory:
+    - makedirs: True
 
 /var/log/iis/tc:
-  file.directory: []
+  file.directory:
+    - makedirs: True
 
 # Once we move to Ubuntu 16.04, this might need to change (systemd will be used instead of System V)
 #
