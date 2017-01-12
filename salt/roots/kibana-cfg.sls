@@ -14,7 +14,9 @@
     'IIS_iQube_PUT_Verification_Avg_Response_Time_2d',
     'IIS_iQube_PUT_Translation_99pctl_Response_Time_2d',
     'IIS_iQube_PUT_Verification_99pctl_Response_Time_2d',
-    'IIS_iQube_PUT_Translation_Verification_99pctl_Response_Time_2d' ] %}
+    'IIS_iQube_PUT_Translation_Verification_99pctl_Response_Time_2d',
+    'IIS_iQube_PUT_Translation_Verification_99pctl_Response_Time_1mo',
+    'IIS_iQube_PUT_Translation_Verification_99pctl_Response_Time_1h' ] %}
 
 http://{{ opts.ip_address }}:9200/_template/template_log_iis:
   http.query:
