@@ -21,6 +21,7 @@
     'IIS_TC_GET_Project_Page_Input_99pctl_Response_Time_2d' ] %}
 
 {% set dashboards = [ 'Web_Response_Times_2d' ] %}
+{% set searches = [ 'iQube_PUT_Assignment_options' ] %}
 
 http://{{ opts.ip_address }}:9200/_template/template_log_iis:
   http.query:
@@ -52,6 +53,20 @@ http://{{ opts.ip_address }}:9200/.kibana/dashboard/{{ db }}:
   http.query:
     - method: POST
     - data_file: /srv/share/config/kibana/dashboards/{{ db }}.json
+    - status: 201
+    - match: 'result"\s*:\s*"created"'
+    - match_type: pcre
+
+{% endfor %}
+
+# Create searches
+#
+{% for s in searches %}
+
+http://{{ opts.ip_address }}:9200/.kibana/search/{{ s }}:
+  http.query:
+    - method: POST
+    - data_file: /srv/share/config/kibana/searches/{{ s }}.json
     - status: 201
     - match: 'result"\s*:\s*"created"'
     - match_type: pcre
