@@ -21,7 +21,9 @@
     'IIS_TC_GET_Project_Page_Input_99pctl_Response_Time_2d' ] %}
 
 {% set dashboards = [ 'Web_Response_Times_2d' ] %}
-{% set searches = [ 'iQube_PUT_Assignment_options' ] %}
+{% set searches = [
+    'iQube_PUT_Assignment_options',
+    'iQube_Status_gte_500' ] %}
 
 http://{{ opts.ip_address }}:9200/_template/template_log_iis:
   http.query:
