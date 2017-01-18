@@ -127,23 +127,11 @@
               "show": true
             }
           ]
-        }
-      ],
-      "repeat": null,
-      "repeatIteration": null,
-      "repeatRowId": null,
-      "showTitle": false,
-      "title": "Dashboard Row",
-      "titleSize": "h6"
-    },
-    {
-      "collapse": false,
-      "height": 250,
-      "panels": [
+        },
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": null,
+          "datasource": "ES-logs",
           "fill": 1,
           "id": 2,
           "legend": {
@@ -164,11 +152,45 @@
           "points": false,
           "renderer": "flot",
           "seriesOverrides": [],
-          "span": 12,
+          "span": 6,
           "stack": false,
           "steppedLine": false,
           "targets": [
             {
+              "alias": "PUT translation: 99th percentile",
+              "bucketAggs": [
+                {
+                  "field": "@timestamp",
+                  "id": "2",
+                  "settings": {
+                    "interval": "auto",
+                    "min_doc_count": 0,
+                    "trimEdges": 0
+                  },
+                  "type": "date_histogram"
+                }
+              ],
+              "dsType": "elasticsearch",
+              "hide": false,
+              "metrics": [
+                {
+                  "field": "time_taken",
+                  "id": "1",
+                  "meta": {},
+                  "settings": {
+                    "percents": [
+                      "99"
+                    ]
+                  },
+                  "type": "percentiles"
+                }
+              ],
+              "query": "fields.service: \"iqube\" AND request:/\\/api\\/segments\\/[0-9]+\\/translation/",
+              "refId": "D",
+              "timeField": "@timestamp"
+            },
+            {
+              "alias": "PUT verification: 99th percentile",
               "bucketAggs": [
                 {
                   "field": "@timestamp",
@@ -184,65 +206,48 @@
               "dsType": "elasticsearch",
               "metrics": [
                 {
-                  "field": "select field",
+                  "field": "time_taken",
                   "id": "1",
+                  "meta": {},
+                  "settings": {
+                    "percents": [
+                      "99"
+                    ]
+                  },
+                  "type": "percentiles"
+                }
+              ],
+              "query": "fields.service: \"iqube\" AND request:/\\/api\\/segments\\/[0-9]+\\/verification/",
+              "refId": "E",
+              "timeField": "@timestamp"
+            },
+            {
+              "alias": "PUT translation: count",
+              "bucketAggs": [
+                {
+                  "field": "@timestamp",
+                  "id": "2",
+                  "settings": {
+                    "interval": "auto",
+                    "min_doc_count": 0,
+                    "trimEdges": 0
+                  },
+                  "type": "date_histogram"
+                }
+              ],
+              "dsType": "elasticsearch",
+              "hide": false,
+              "metrics": [
+                {
+                  "field": "time_taken",
+                  "id": "1",
+                  "meta": {},
+                  "settings": {},
                   "type": "count"
                 }
               ],
-              "query": "fields.service:\"iqube.*\" AND method:\"get\"",
+              "query": "fields.service: \"iqube\" AND request:/\\/api\\/segments\\/[0-9]+\\/translation/",
               "refId": "A",
-              "timeField": "@timestamp"
-            },
-            {
-              "bucketAggs": [
-                {
-                  "fake": true,
-                  "field": "@timestamp",
-                  "id": "3",
-                  "settings": {
-                    "interval": "auto",
-                    "min_doc_count": 0,
-                    "trimEdges": 0
-                  },
-                  "type": "date_histogram"
-                }
-              ],
-              "dsType": "elasticsearch",
-              "metrics": [
-                {
-                  "field": "select field",
-                  "id": "1",
-                  "type": "count"
-                }
-              ],
-              "query": "fields.service:\"iqube.*\" AND method:\"put\"",
-              "refId": "B",
-              "timeField": "@timestamp"
-            },
-            {
-              "alias": "Segments",
-              "bucketAggs": [
-                {
-                  "field": "@timestamp",
-                  "id": "2",
-                  "settings": {
-                    "interval": "auto",
-                    "min_doc_count": 0,
-                    "trimEdges": 0
-                  },
-                  "type": "date_histogram"
-                }
-              ],
-              "dsType": "elasticsearch",
-              "metrics": [
-                {
-                  "field": "select field",
-                  "id": "1",
-                  "type": "count"
-                }
-              ],
-              "query": "fields.service:\"iqube\" AND method:/.*t/ AND request:/.*segments\\/[0-9]+.*/",
-              "refId": "C",
               "timeField": "@timestamp"
             }
           ],
@@ -264,7 +269,7 @@
           },
           "yaxes": [
             {
-              "format": "short",
+              "format": "ms",
               "label": null,
               "logBase": 1,
               "max": null,
@@ -299,6 +304,17 @@
       "showTitle": false,
       "title": "Dashboard Row",
       "titleSize": "h6"
+    },
+    {
+      "collapse": false,
+      "height": 250,
+      "panels": [],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": false,
+      "title": "Dashboard Row",
+      "titleSize": "h6"
     }
   ],
   "schemaVersion": 14,
@@ -308,8 +324,8 @@
     "list": []
   },
   "time": {
-    "from": "2017-01-11T08:54:36.118Z",
-    "to": "2017-01-17T08:24:43.730Z"
+    "from": "2017-01-09T07:29:03.781Z",
+    "to": "2017-01-18T08:24:58.245Z"
   },
   "timepicker": {
     "refresh_intervals": [
@@ -338,5 +354,5 @@
   },
   "timezone": "browser",
   "title": "Test",
-  "version": 4
+  "version": 11
 }
