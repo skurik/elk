@@ -18,7 +18,8 @@
     'IIS_iQube_PUT_Translation_Verification_99pctl_Response_Time_1mo',
     'IIS_iQube_PUT_Translation_Verification_99pctl_Response_Time_1h',
     'IIS_TC_GET_Project_99pctl_Response_Time_2d',
-    'IIS_TC_GET_Project_Page_Input_99pctl_Response_Time_2d' ] %}
+    'IIS_TC_GET_Project_Page_Input_99pctl_Response_Time_2d',
+    'IIS_iQube_GET_Project_99pctl_Response_Time_2d' ] %}
 
 {% set dashboards = [ 'Web_Response_Times_2d' ] %}
 {% set searches = [
