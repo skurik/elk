@@ -20,8 +20,11 @@
     'IIS_TC_GET_Project_99pctl_Response_Time_2d',
     'IIS_TC_GET_Project_Page_Input_99pctl_Response_Time_2d',
     'IIS_iQube_GET_Project_99pctl_Response_Time_2d',
+    'IIS_iQube_PUT_Translation_And_Verification_Request_Count_1h',
     'IIS_iQube_PUT_Translation_And_Verification_Request_Count_2d',
     'IIS_iQube_PUT_Translation_And_Verification_Request_Count_1mo',
+    'IIS_iQube_PUT_Translation_And_Verification_And_GET_Segment_Request_Count_1h',
+    'IIS_iQube_PUT_Translation_And_Verification_And_GET_Segment_Request_Count_2d',
     'IIS_iQube_PUT_Translation_And_Verification_And_GET_Segment_Request_Count_1mo' ] %}
 
 {% set dashboards = [ 'Web_Response_Times_2d' ] %}
@@ -48,7 +51,7 @@ http://{{ opts.ip_address }}:9200/_template/template_log_iis:
 #
 # For some reason, the http.query module probably does not like spaces in the JSON file
 #
-# UPDATE: If we remove all newlines from the 'visState' element content, http.query is happy
+# UPDATE: If we remove all tabs and newlines from the 'visState' element content, http.query is happy
 #
 {% for vis in visualizations %}
 
