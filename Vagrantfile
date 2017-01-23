@@ -5,6 +5,9 @@
 # configures the configuration version (we support older styles for
 # backwards compatibility). Please don't change it unless you know what
 # you're doing.
+
+HOME_DISK = "/var/home.vdi"
+
 Vagrant.configure("2") do |config|
   # The most common configuration options are documented and commented below.
   # For a complete reference, please see the online documentation at
@@ -56,6 +59,23 @@ Vagrant.configure("2") do |config|
     # Customize the amount of memory on the VM:
   	vb.memory = "8192"
     vb.cpus = "4"
+
+
+    # if ARGV[0] == "up" && ! File.exist?(HOME_DISK)
+    #   vb.customize ['createhd',
+    #                 '--filename', HOME_DISK,
+    #                 '--format', 'VDI',
+    #                 '--size', 50000]
+
+    #   # If 'vagrant up' gives an error here complaining that 'SATAController' could not be found,
+    #   # try changing it to 'SATA Controller' or 'SATA' (see https://github.com/kusnier/vagrant-persistent-storage/issues/33)
+    #   vb.customize ['storageattach', :id,
+    #                 '--storagectl', 'SATAController',
+    #                 '--port', 0,
+    #                 '--device', 0,
+    #                 '--type', 'hdd',
+    #                 '--medium', HOME_DISK]
+    # end
   end
 
   ## For masterless, mount your salt file root

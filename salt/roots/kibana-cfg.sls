@@ -25,6 +25,7 @@
 {% set dashboards = [ 'Web_Response_Times_2d' ] %}
 {% set searches = [
     'iQube_PUT_Assignment_options',
+    'iQube_PUT_Segment_Confirmation',
     'iQube_Status_gte_500',
     'iQube_GET_Project' ] %}
 
