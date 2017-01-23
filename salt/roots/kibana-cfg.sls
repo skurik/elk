@@ -27,7 +27,9 @@
     'IIS_iQube_PUT_Translation_And_Verification_And_GET_Segment_Request_Count_2d',
     'IIS_iQube_PUT_Translation_And_Verification_And_GET_Segment_Request_Count_1mo' ] %}
 
-{% set dashboards = [ 'Web_Response_Times_2d' ] %}
+{% set dashboards = [
+    'Web_Response_Times_2d',
+    'Web_Response_Times_1mo' ] %}
 {% set searches = [
     'iQube_PUT_Assignment_options',
     'iQube_PUT_Segment_Confirmation',
