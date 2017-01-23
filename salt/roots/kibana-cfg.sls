@@ -8,6 +8,8 @@
     'CPU_iQube_DB_Avg_User_Time_Pct_2d',
     'CPU_iQube_Webserver_Avg_IOWait_Pct_2d',
     'CPU_iQube_Webserver_Avg_User_Time_Pct_2d',
+    'IIS_TC_Avg_Response_Time_1h',
+    'IIS_iQube_TC_Avg_Response_Time_1h',
     'IIS_iQube_TC_Avg_Response_Time_2d',
     'IIS_iQube_TC_Avg_Response_Time_1mo',
     'IIS_iQube_PUT_Translation_Avg_Response_Time_2d',
@@ -27,9 +29,13 @@
     'IIS_iQube_PUT_Translation_And_Verification_Request_Count_1mo',
     'IIS_iQube_PUT_Translation_And_Verification_And_GET_Segment_Request_Count_1h',
     'IIS_iQube_PUT_Translation_And_Verification_And_GET_Segment_Request_Count_2d',
-    'IIS_iQube_PUT_Translation_And_Verification_And_GET_Segment_Request_Count_1mo' ] %}
+    'IIS_iQube_PUT_Translation_And_Verification_And_GET_Segment_Request_Count_1mo',
+    'IIS_iQube_Failed_Request_Count_1h',
+    'IIS_iQube_Failed_Request_Count_2d',
+    'IIS_iQube_Failed_Request_Count_1mo' ] %}
 
 {% set dashboards = [
+    'Web_Response_Times_1h',
     'Web_Response_Times_2d',
     'Web_Response_Times_1mo' ] %}
 {% set searches = [
