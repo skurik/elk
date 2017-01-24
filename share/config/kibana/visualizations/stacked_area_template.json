@@ -9,7 +9,7 @@
       {\"input\":{\"query\":{\"bool\":{\"must\":{\"regexp\":{\"request\":\"/api/segments/[0-9]+/verification\"}},\"filter\":{\"bool\":{\"must\":[{\"term\":{\"fields.service\":\"iqube\"}},{\"term\":{\"method\":\"put\"}}]}}}}},\"label\":\"PUT verification\"},
       {\"input\":{\"query\":{\"bool\":{\"must\":{\"regexp\":{\"request\":\"/api/segments/[0-9]+\"}},\"filter\":{\"bool\":{\"must\":[{\"term\":{\"fields.service\":\"iqube\"}},{\"term\":{\"method\":\"get\"}}]}}}}},\"label\":\"GET segment\"}
     ]}}],\"listeners\":{}}",
-    "uiStateJSON": "{}",
+    "uiStateJSON":"{\"vis\":{\"legendOpen\":false}}",
     "description": "",
     "version": 1,
     "kibanaSavedObjectMeta": {
