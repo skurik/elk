@@ -56,6 +56,11 @@ es_use_data_dir_on_large_drive:
     - repl: "path.data: {{ opts.es_data_dir }}"
     - backup: False
 
+es_set_bulk_threadpool_queue_size:
+  file.append:
+    - name: '/etc/elasticsearch/elasticsearch.yml'
+    - text: 'thread_pool.bulk.queue_size: 1000'
+
 kibana_listen_on_ethernet_iface:
   file.replace: 
     - name: "/etc/kibana/kibana.yml"
@@ -133,6 +138,16 @@ metricbeat_config_logstash_host:
     - pattern: "___LOGSTASH_HOST___"
     - repl: '{{ opts.logstash_host }}'
     - backup: False
+
+# DEBUG. On a production system, we might want to use something like /storage/logs instead
+
+# /storage/logs/iis/iqube:
+#   file.directory:
+#     - makedirs: True
+
+# /storage/logs/iis/tc:
+#   file.directory:
+#     - makedirs: True
 
 /var/log/iis/iqube:
   file.directory:
