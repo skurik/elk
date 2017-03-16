@@ -16,7 +16,7 @@ metricbeat.modules:
   enabled: true
   period: 300s
   filters:
-    - drop_event.when.regexp.mount_point: '^/(sys|cgroup|proc|dev|etc|host)($|/)'
+    - drop_event.when.regexp.mount_point: '^/(sys|cgroup|proc|dev|etc|host|run|pgarchive)($|/)'
   fields:    
     index: metrics
     document_type: system
