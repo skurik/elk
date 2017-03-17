@@ -44,8 +44,23 @@ es_listen_on_ethernet_iface:
   file.replace:
     - name: "/etc/elasticsearch/elasticsearch.yml"
     - pattern: "^\\s*#\\s*network\\.host:\\s*.*"
-    - repl: "network.host: {{ opts.ip_address }}"
+    - repl: "# Use bind_host and publish_host instead. network.host: {{ opts.ip_address }}"
     - backup: False
+
+es_listen_on_all_ifaces:
+  file.append:
+    - name: '/etc/elasticsearch/elasticsearch.yml'
+    - text: 'network.bind_host: 0.0.0.0'
+
+es_publish_ethernet_iface:
+  file.append:
+    - name: '/etc/elasticsearch/elasticsearch.yml'
+    - text: 'network.publish_host: {{ opts.ip_address }}'
+
+es_set_bulk_threadpool_queue_size:
+  file.append:
+    - name: '/etc/elasticsearch/elasticsearch.yml'
+    - text: 'thread_pool.bulk.queue_size: 1000'
 
 # DEBUG state (use data directory on a drive where we will not run out of space)
 #
@@ -55,11 +70,6 @@ es_use_data_dir_on_large_drive:
     - pattern: "^\\s*#\\s*path\\.data:\\s*.*"
     - repl: "path.data: {{ opts.es_data_dir }}"
     - backup: False
-
-es_set_bulk_threadpool_queue_size:
-  file.append:
-    - name: '/etc/elasticsearch/elasticsearch.yml'
-    - text: 'thread_pool.bulk.queue_size: 1000'
 
 kibana_listen_on_ethernet_iface:
   file.replace: 
