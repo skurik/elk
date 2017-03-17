@@ -3755,5 +3755,5 @@
     "index.mapping.total_fields.limit": 10000,
     "index.refresh_interval": "5s"
   },
-  "template": "metrics-*"
+  "template": "metricbeat-*"
 }

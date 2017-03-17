@@ -1,61 +1,47 @@
-###################### Metricbeat Configuration Example #######################
+###################### Filebeat Configuration Example #########################
 
 # This file is an example configuration file highlighting only the most common
-# options. The metricbeat.full.yml file from the same directory contains all the
+# options. The filebeat.full.yml file from the same directory contains all the
 # supported options with more comments. You can use it as a reference.
 #
 # You can find the full configuration reference here:
-# https://www.elastic.co/guide/en/beats/metricbeat/index.html
+# https://www.elastic.co/guide/en/beats/filebeat/index.html
 
-#==========================  Modules configuration ============================
-metricbeat.modules:
+#=========================== Filebeat prospectors =============================
 
-#------------------------------- System Module -------------------------------
-- module: system
-  metricsets: [ "filesystem" ]
-  enabled: true
-  period: 300s
-  filters:
-    - drop_event.when.regexp.mount_point: '^E'
-  fields:    
-    index: metricbeat
-    document_type: system
+filebeat.prospectors:
 
-# - module: system
-#   metricsets:
-#     # CPU stats
-#     - cpu
+# Each - is a prospector. Most options can be set at the prospector level, so
+# you can use different prospectors for various configurations.
+# Below are the prospector specific configurations.
 
-#     # System Load stats
-#     - load
+- input_type: log
+  ignore_older: 13h
+  paths:
+    - c:\inetpub\logs\LogFiles\W3SVC2\*.log
 
-#     # Per CPU core stats
-#     #- core
+  exclude_lines: ['\.css', '\.jpg', '\.js', '\.png', '\.svg', '\.ttf', '\.woff', '^#']
+  include_lines: ['.*']
+  fields:
+    index: log
+    document_type: iis
+    service: tc 
 
-#     # IO stats
-#     - diskio
+  ### Multiline options
 
-#     # Per filesystem stats
-#     - filesystem
+  # Mutiline can be used for log messages spanning multiple lines. This is common
+  # for Java Stack Traces or C-Line Continuation
 
-#     # File system summary stats
-#     - fsstat
+  # The regexp Pattern that has to be matched. The example pattern matches all lines starting with [
+  #multiline.pattern: ^\[
 
-#     # Memory stats
-#     - memory
+  # Defines if the pattern set under pattern should be negated or not. Default is false.
+  #multiline.negate: false
 
-#     # Network stats
-#     - network
-
-#     # Per process stats
-#     # - process
-#   enabled: true
-#   period: 5s
-#   processes: ['.*']
-
-#   fields:
-#     index: metrics
-#     document_type: system
+  # Match can be set to "after" or "before". It is used to define if lines should be append to a pattern
+  # that was (not) matched before or after or as long as a pattern is not matched based on negate.
+  # Note: After is the equivalent to previous and before is the equivalent to to next in Logstash
+  #multiline.match: after
 
 #================================ General =====================================
 
@@ -91,7 +77,7 @@ metricbeat.modules:
 output.logstash:
   # The Logstash hosts
   hosts: ["192.168.1.16:5044"]
-  
+
   # Optional SSL. By default is off.
   # List of root certificates for HTTPS server verifications
   #ssl.certificate_authorities: ["/etc/pki/root/ca.pem"]
