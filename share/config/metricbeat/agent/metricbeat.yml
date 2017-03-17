@@ -14,29 +14,46 @@ metricbeat.modules:
 - module: system
   metricsets: [ "filesystem" ]
   enabled: true
-  period: 300s
-  filters:
-    - drop_event.when.regexp.mount_point: '^E'
+  period: 600s
   fields:    
     index: metricbeat
     document_type: system
 
-- module: system
-  metricsets:    
-    - cpu    
-    - diskio    
-    - fsstat
-    - memory
-    - network
-    - process
+# - module: system
+#   metricsets:
+#     # CPU stats
+#     - cpu
 
-  enabled: true
-  period: 10s
-  processes: ['w3wp.exe']
+#     # System Load stats
+#     - load
 
-  fields:
-    index: metricbeat
-    document_type: system
+#     # Per CPU core stats
+#     #- core
+
+#     # IO stats
+#     - diskio
+
+#     # Per filesystem stats
+#     - filesystem
+
+#     # File system summary stats
+#     - fsstat
+
+#     # Memory stats
+#     - memory
+
+#     # Network stats
+#     - network
+
+#     # Per process stats
+#     # - process
+#   enabled: true
+#   period: 5s
+#   processes: ['.*']
+
+#   fields:
+#     index: metrics
+#     document_type: system
 
 #================================ General =====================================
 
