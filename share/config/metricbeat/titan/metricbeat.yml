@@ -21,41 +21,23 @@ metricbeat.modules:
     index: metricbeat
     document_type: system
 
-# - module: system
-#   metricsets:
-#     # CPU stats
-#     - cpu
+- module: system
+  metricsets:    
+    - cpu
+    - load
+    - diskio
+    - fsstat
+    - memory
+    - network
+    - process
 
-#     # System Load stats
-#     - load
+  enabled: true
+  period: 10s
+  processes: ['.*']
 
-#     # Per CPU core stats
-#     #- core
-
-#     # IO stats
-#     - diskio
-
-#     # Per filesystem stats
-#     - filesystem
-
-#     # File system summary stats
-#     - fsstat
-
-#     # Memory stats
-#     - memory
-
-#     # Network stats
-#     - network
-
-#     # Per process stats
-#     # - process
-#   enabled: true
-#   period: 5s
-#   processes: ['.*']
-
-#   fields:
-#     index: metrics
-#     document_type: system
+  fields:
+    index: metricbeat
+    document_type: system
 
 #================================ General =====================================
 
