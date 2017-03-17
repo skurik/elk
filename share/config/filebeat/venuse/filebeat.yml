@@ -23,11 +23,12 @@ filebeat.prospectors:
 
   # It seems the IIS log files have their 'Last modified' timespan updated just twice: when they are first created and then when they are closed.
   # Therefore, set this option so that the prospector only monitors the today's file (and then the new ones, of course)
-  ignore_older: 10h
+  ignore_older: 24h
+  close_inactive: 2h
 
   # Exclude lines. A list of regular expressions to match. It drops the lines that are
   # matching any regular expression from the list.
-  exclude_lines: ['up\.html', 'uptimerobot', '^#']
+  exclude_lines: [ '/api/statistics/client-activity/', '/api/statistics/word-count/', '/api/statistics/http/', '/api/notifications/unobserved', '/api/monitoring/pre-translation/outstanding', '/api/monitoring/document-processing/outstanding', '/api/monitoring/translated-document-package-operations/outstanding', 'api/monitoring/sphinx/outstanding-reindex-operations', '/signalr/ping', '/signalr/connect', '/signalr/reconnect', 'up\.html', 'uptimerobot', '^#']
 
   # Include lines. A list of regular expressions to match. It exports the lines that are
   # matching any regular expression from the list.

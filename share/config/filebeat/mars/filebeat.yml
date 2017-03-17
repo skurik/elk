@@ -20,7 +20,7 @@ filebeat.prospectors:
   paths:
     - c:\inetpub\logs\LogFiles\W3SVC2\*.log
 
-  exclude_lines: ['\.css', '\.jpg', '\.js', '\.png', '\.svg', '\.ttf', '\.woff', '^#']
+  exclude_lines: ['\.css', '\.jpg', '\.js', '\.png', '\.svg', '\.ttf', '\.woff', '/signalr/ping', '/signalr/connect', '/signalr/reconnect', '^#']
   include_lines: ['.*']
   fields:
     index: log
