@@ -28,7 +28,7 @@ filebeat.prospectors:
 
   # Exclude lines. A list of regular expressions to match. It drops the lines that are
   # matching any regular expression from the list.
-  exclude_lines: [ '/api/statistics/client-activity/', '/api/statistics/word-count/', '/api/statistics/http/', '/api/notifications/unobserved', '/api/monitoring/pre-translation/outstanding', '/api/monitoring/document-processing/outstanding', '/api/monitoring/translated-document-package-operations/outstanding', 'api/monitoring/sphinx/outstanding-reindex-operations', '/signalr/ping', '/signalr/connect', '/signalr/reconnect', 'up\.html', 'uptimerobot', '^#']
+  exclude_lines: [ '/api/statistics/client-activity/', '/api/statistics/word-count/', '/api/statistics/http/', '/api/notifications/unobserved', '/api/monitoring/pre-translation/outstanding', '/api/monitoring/document-processing/outstanding', '/api/monitoring/translated-document-package-operations/outstanding', 'api/monitoring/sphinx/outstanding-reindex-operations', '/signalr/ping', '/signalr/connect', '/signalr/reconnect', 'mini-profiler-resources', 'up\.html', 'uptimerobot', '^#']
 
   # Include lines. A list of regular expressions to match. It exports the lines that are
   # matching any regular expression from the list.
