@@ -62,6 +62,20 @@ es_set_bulk_threadpool_queue_size:
     - name: '/etc/elasticsearch/elasticsearch.yml'
     - text: 'thread_pool.bulk.queue_size: 1000'
 
+es_set_initial_heap_size:
+  file.replace:
+    - name: "/etc/elasticsearch/jvm.options"
+    - pattern: "^\\-Xms\\d+[a-zA-Z]+$"
+    - repl: "-Xms8g"
+    - backup: False
+
+es_set_max_heap_size:
+  file.replace:
+    - name: "/etc/elasticsearch/jvm.options"
+    - pattern: "^\\-Xmx\\d+[a-zA-Z]+$"
+    - repl: "-Xmx8g"
+    - backup: False
+
 # DEBUG state (use data directory on a drive where we will not run out of space)
 #
 es_use_data_dir_on_large_drive:
