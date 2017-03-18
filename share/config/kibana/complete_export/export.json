@@ -244,13 +244,13 @@
       "description": "",
       "hits": 0,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}}}]}"
+        "searchSourceJSON": "{\n  \"filter\": [\n    {\n      \"query\": {\n        \"query_string\": {\n          \"analyze_wildcard\": true,\n          \"query\": \"*\"\n        }\n      }\n    }\n  ]\n}"
       },
-      "optionsJSON": "{\"darkTheme\":false}",
-      "panelsJSON": "[{\"col\":1,\"id\":\"Network-Bytes\",\"panelIndex\":2,\"row\":6,\"size_x\":8,\"size_y\":2,\"type\":\"visualization\"},{\"col\":9,\"id\":\"Network-Packetloss\",\"panelIndex\":3,\"row\":6,\"size_x\":4,\"size_y\":2,\"type\":\"visualization\"},{\"col\":1,\"id\":\"System-Navigation\",\"panelIndex\":9,\"row\":1,\"size_x\":3,\"size_y\":3,\"type\":\"visualization\"},{\"col\":1,\"id\":\"Total-Memory\",\"panelIndex\":11,\"row\":4,\"size_x\":2,\"size_y\":2,\"type\":\"visualization\"},{\"col\":3,\"id\":\"Available-Memory\",\"panelIndex\":12,\"row\":4,\"size_x\":2,\"size_y\":2,\"type\":\"visualization\"},{\"col\":1,\"id\":\"System-overview-by-host\",\"panelIndex\":14,\"row\":8,\"size_x\":12,\"size_y\":6,\"type\":\"visualization\"},{\"col\":5,\"id\":\"System-load\",\"panelIndex\":15,\"row\":1,\"size_x\":8,\"size_y\":3,\"type\":\"visualization\"},{\"col\":5,\"id\":\"CPU-Usage\",\"panelIndex\":16,\"row\":4,\"size_x\":8,\"size_y\":2,\"type\":\"visualization\"}]",
+      "optionsJSON": "{\n  \"darkTheme\": false\n}",
+      "panelsJSON": "[\n  {\n    \"col\": 1,\n    \"id\": \"Network-Bytes\",\n    \"panelIndex\": 2,\n    \"row\": 6,\n    \"size_x\": 8,\n    \"size_y\": 2,\n    \"type\": \"visualization\"\n  },\n  {\n    \"col\": 9,\n    \"id\": \"Network-Packetloss\",\n    \"panelIndex\": 3,\n    \"row\": 6,\n    \"size_x\": 4,\n    \"size_y\": 2,\n    \"type\": \"visualization\"\n  },\n  {\n    \"col\": 1,\n    \"id\": \"System-Navigation\",\n    \"panelIndex\": 9,\n    \"row\": 1,\n    \"size_x\": 3,\n    \"size_y\": 3,\n    \"type\": \"visualization\"\n  },\n  {\n    \"col\": 1,\n    \"id\": \"Total-Memory\",\n    \"panelIndex\": 11,\n    \"row\": 4,\n    \"size_x\": 2,\n    \"size_y\": 2,\n    \"type\": \"visualization\"\n  },\n  {\n    \"col\": 3,\n    \"id\": \"Available-Memory\",\n    \"panelIndex\": 12,\n    \"row\": 4,\n    \"size_x\": 2,\n    \"size_y\": 2,\n    \"type\": \"visualization\"\n  },\n  {\n    \"col\": 1,\n    \"id\": \"System-overview-by-host\",\n    \"panelIndex\": 14,\n    \"row\": 8,\n    \"size_x\": 12,\n    \"size_y\": 6,\n    \"type\": \"visualization\"\n  },\n  {\n    \"col\": 5,\n    \"id\": \"CPU-Usage\",\n    \"panelIndex\": 16,\n    \"row\": 4,\n    \"size_x\": 8,\n    \"size_y\": 2,\n    \"type\": \"visualization\"\n  }\n]",
       "timeRestore": false,
       "title": "Metricbeat system overview",
-      "uiStateJSON": "{\"P-14\":{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}}}",
+      "uiStateJSON": "{\n  \"P-14\": {\n    \"vis\": {\n      \"params\": {\n        \"sort\": {\n          \"columnIndex\": null,\n          \"direction\": null\n        }\n      }\n    }\n  }\n}",
       "version": 1
     }
   },
@@ -258,17 +258,17 @@
     "_id": "Metricbeat-filesystem-per-Host",
     "_type": "dashboard",
     "_source": {
-      "description": "",
-      "hits": 0,
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\n  \"filter\": [\n    {\n      \"query\": {\n        \"query_string\": {\n          \"analyze_wildcard\": true,\n          \"query\": \"*\"\n        }\n      }\n    }\n  ]\n}"
-      },
-      "optionsJSON": "{\n  \"darkTheme\": false\n}",
-      "panelsJSON": "[\n  {\n    \"col\": 1,\n    \"id\": \"Top-disks-by-memory-usage\",\n    \"panelIndex\": 1,\n    \"row\": 6,\n    \"size_x\": 12,\n    \"size_y\": 5,\n    \"type\": \"visualization\"\n  },\n  {\n    \"col\": 7,\n    \"id\": \"Disk-utilization-over-time\",\n    \"panelIndex\": 2,\n    \"row\": 1,\n    \"size_x\": 6,\n    \"size_y\": 5,\n    \"type\": \"visualization\"\n  },\n  {\n    \"col\": 1,\n    \"id\": \"System-Navigation\",\n    \"panelIndex\": 3,\n    \"row\": 1,\n    \"size_x\": 3,\n    \"size_y\": 3,\n    \"type\": \"visualization\"\n  },\n  {\n    \"col\": 4,\n    \"id\": \"Disk-space-distribution\",\n    \"panelIndex\": 5,\n    \"row\": 1,\n    \"size_x\": 3,\n    \"size_y\": 5,\n    \"type\": \"visualization\"\n  }\n]",
-      "timeRestore": false,
       "title": "Metricbeat filesystem per Host",
-      "uiStateJSON": "{\n  \"P-1\": {\n    \"vis\": {\n      \"params\": {\n        \"sort\": {\n          \"columnIndex\": 5,\n          \"direction\": \"desc\"\n        }\n      }\n    }\n  }\n}",
-      "version": 1
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"col\":1,\"id\":\"Top-disks-by-memory-usage\",\"panelIndex\":1,\"row\":6,\"size_x\":12,\"size_y\":5,\"type\":\"visualization\"},{\"col\":4,\"id\":\"Disk-utilization-over-time\",\"panelIndex\":2,\"row\":1,\"size_x\":9,\"size_y\":5,\"type\":\"visualization\"},{\"col\":1,\"id\":\"System-Navigation\",\"panelIndex\":3,\"row\":1,\"size_x\":3,\"size_y\":3,\"type\":\"visualization\"}]",
+      "optionsJSON": "{\"darkTheme\":false}",
+      "uiStateJSON": "{\"P-1\":{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":5,\"direction\":\"desc\"}}}},\"P-2\":{\"vis\":{\"legendOpen\":false}}}",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}}}]}"
+      }
     }
   },
   {
@@ -1628,21 +1628,6 @@
     }
   },
   {
-    "_id": "Top-hosts-by-disk-size",
-    "_type": "visualization",
-    "_source": {
-      "description": "",
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"filter\":[]}"
-      },
-      "savedSearchId": "Fsstats",
-      "title": "Top hosts by disk size",
-      "uiStateJSON": "{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}}",
-      "version": 1,
-      "visState": "{\"title\":\"Top hosts by disk size\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false,\"sort\":{\"columnIndex\":null,\"direction\":null},\"showTotal\":false,\"totalFunc\":\"sum\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"system.fsstat.total_size.total\",\"customLabel\":\"Total size\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"system.fsstat.total_size.used\",\"customLabel\":\"Used size\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"system.fsstat.total_files\",\"customLabel\":\"Total files\"}},{\"id\":\"4\",\"enabled\":true,\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"system.fsstat.count\",\"customLabel\":\"Max number of filesystems\"}},{\"id\":\"5\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"beat.name\",\"size\":50,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Host\"}}],\"listeners\":{}}"
-    }
-  },
-  {
     "_id": "Disk-space-overview",
     "_type": "visualization",
     "_source": {
@@ -1763,66 +1748,6 @@
     }
   },
   {
-    "_id": "In-vs-Out-Network-Bytes",
-    "_type": "visualization",
-    "_source": {
-      "description": "",
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"filter\":[]}"
-      },
-      "savedSearchId": "Network-data",
-      "title": "In vs Out Network Bytes",
-      "uiStateJSON": "{}",
-      "version": 1,
-      "visState": "{\"title\":\"In vs Out Network Bytes\",\"type\":\"line\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"showCircles\":true,\"smoothLines\":false,\"interpolate\":\"linear\",\"scale\":\"linear\",\"drawLinesBetweenPoints\":true,\"radiusRatio\":9,\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"system.network.in.bytes\",\"customLabel\":\"In Bytes\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"system.network.out.bytes\",\"customLabel\":\"Out Bytes\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}}],\"listeners\":{}}"
-    }
-  },
-  {
-    "_id": "Top-10-interfaces",
-    "_type": "visualization",
-    "_source": {
-      "description": "",
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"filter\":[]}"
-      },
-      "savedSearchId": "Network-data",
-      "title": "Top 10 interfaces",
-      "uiStateJSON": "{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}}",
-      "version": 1,
-      "visState": "{\"title\":\"Top 10 interfaces\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false,\"sort\":{\"columnIndex\":null,\"direction\":null},\"showTotal\":false,\"totalFunc\":\"sum\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"system.network.in.bytes\",\"customLabel\":\"In Bytes\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"system.network.name\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Interface\"}},{\"id\":\"5\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"system.network.out.bytes\",\"customLabel\":\"Out Bytes\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"system.network.in.errors\",\"customLabel\":\"In Errors\"}},{\"id\":\"4\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"system.network.out.errors\",\"customLabel\":\"Out Errors\"}},{\"id\":\"6\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"system.network.in.dropped\",\"customLabel\":\"In Packet loss\"}},{\"id\":\"7\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"system.network.out.dropped\",\"customLabel\":\"Out Packet loss\"}}],\"listeners\":{}}"
-    }
-  },
-  {
-    "_id": "Packet-loss-on-interfaces",
-    "_type": "visualization",
-    "_source": {
-      "description": "",
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"filter\":[]}"
-      },
-      "savedSearchId": "Network-data",
-      "title": "Packet loss on interfaces",
-      "uiStateJSON": "{}",
-      "version": 1,
-      "visState": "{\"title\":\"Packet loss on interfaces\",\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"system.network.in.dropped\",\"customLabel\":\"In packet loss\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"system.network.name\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Interface\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"system.network.out.dropped\",\"customLabel\":\"Out packet loss\"}}],\"listeners\":{}}"
-    }
-  },
-  {
-    "_id": "Servers-overview",
-    "_type": "visualization",
-    "_source": {
-      "description": "",
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"filter\":[]}"
-      },
-      "savedSearchId": "System-stats",
-      "title": "Servers overview",
-      "uiStateJSON": "{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}}",
-      "version": 1,
-      "visState": "{\"title\":\"Servers overview\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false,\"sort\":{\"columnIndex\":null,\"direction\":null},\"showTotal\":false,\"totalFunc\":\"sum\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"system.cpu.user.pct\",\"customLabel\":\"CPU user space\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"system.cpu.system.pct\",\"customLabel\":\"CPU kernel space\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"system.memory.total\",\"customLabel\":\"Total memory\"}},{\"id\":\"4\",\"enabled\":true,\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"system.memory.used.pct\",\"customLabel\":\"Used Memory (%)\"}},{\"id\":\"5\",\"enabled\":true,\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"system.memory.used.bytes\",\"customLabel\":\"Used Memory\"}},{\"id\":\"6\",\"enabled\":true,\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"system.memory.actual.used.pct\",\"customLabel\":\"Available memory\"}},{\"id\":\"7\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"beat.name\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}"
-    }
-  },
-  {
     "_id": "Number-of-processes",
     "_type": "visualization",
     "_source": {
@@ -1880,36 +1805,6 @@
       "uiStateJSON": "{}",
       "version": 1,
       "visState": "{\"title\":\"CPU usage per process\",\"type\":\"area\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"smoothLines\":false,\"scale\":\"linear\",\"interpolate\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{},\"legendPosition\":\"right\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"system.process.cpu.total.pct\",\"customLabel\":\"CPU usage\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"system.process.name\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"\"}},{\"id\":\"4\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"split\",\"params\":{\"field\":\"beat.name\",\"size\":2,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Host\",\"row\":true}}],\"listeners\":{}}"
-    }
-  },
-  {
-    "_id": "Memory-usage-per-process",
-    "_type": "visualization",
-    "_source": {
-      "description": "",
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"filter\":[]}"
-      },
-      "savedSearchId": "Process-stats",
-      "title": "Memory usage per process",
-      "uiStateJSON": "{}",
-      "version": 1,
-      "visState": "{\"title\":\"Memory usage per process\",\"type\":\"area\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"smoothLines\":false,\"scale\":\"linear\",\"interpolate\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{},\"legendPosition\":\"right\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"system.process.memory.rss.pct\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"system.process.name\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"4\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"split\",\"params\":{\"field\":\"beat.name\",\"size\":2,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Host\",\"row\":true}}],\"listeners\":{}}"
-    }
-  },
-  {
-    "_id": "Top-processes-by-memory-usage",
-    "_type": "visualization",
-    "_source": {
-      "description": "",
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"filter\":[]}"
-      },
-      "savedSearchId": "Process-stats",
-      "title": "Top processes by memory usage",
-      "uiStateJSON": "{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}}",
-      "version": 1,
-      "visState": "{\"title\":\"Top processes by memory usage\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false,\"sort\":{\"columnIndex\":null,\"direction\":null},\"showTotal\":false,\"totalFunc\":\"sum\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"system.process.memory.rss.bytes\",\"customLabel\":\"Memory\"}},{\"id\":\"5\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"system.process.memory.share\",\"customLabel\":\"Shared Memory\"}},{\"id\":\"6\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"system.process.memory.rss.pct\",\"customLabel\":\"Resident Memory\"}},{\"id\":\"7\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"system.process.cpu.total.pct\",\"customLabel\":\"CPU (%)\"}},{\"id\":\"8\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"split\",\"params\":{\"field\":\"beat.name\",\"size\":2,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Host\",\"row\":true}},{\"id\":\"4\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"system.process.name\",\"size\":50,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}"
     }
   },
   {
@@ -1984,21 +1879,6 @@
       "uiStateJSON": "{}",
       "version": 1,
       "visState": "{\"title\":\"System Navigation\",\"type\":\"markdown\",\"params\":{\"markdown\":\"- [Overview](#/dashboard/Metricbeat-system-overview)\\n\\n- [Load/CPU](#/dashboard/Metricbeat-cpu)\\n\\n- [Memory](#/dashboard/Metricbeat-memory)\\n\\n- [Processes](#/dashboard/Metricbeat-processes)\\n\\n- [Network](#/dashboard/Metricbeat-network)\\n\\n- [Filesystem](#/dashboard/Metricbeat-filesystem)\\n\\n- [Filesystem per Host](#/dashboard/Metricbeat-filesystem-per-Host)\\n\\n- [CPU/Memory per container](#/dashboard/CPU-slash-Memory-per-container)\"},\"aggs\":[],\"listeners\":{}}"
-    }
-  },
-  {
-    "_id": "Total-Memory",
-    "_type": "visualization",
-    "_source": {
-      "description": "",
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"filter\":[]}"
-      },
-      "savedSearchId": "Memory-stats",
-      "title": "Total Memory",
-      "uiStateJSON": "{}",
-      "version": 1,
-      "visState": "{\"title\":\"Total Memory\",\"type\":\"metric\",\"params\":{\"handleNoResults\":true,\"fontSize\":\"30\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"system.memory.total\",\"customLabel\":\"Total Memory\"}}],\"listeners\":{}}"
     }
   },
   {
@@ -2107,6 +1987,36 @@
     }
   },
   {
+    "_id": "Top-processes-by-memory-usage",
+    "_type": "visualization",
+    "_source": {
+      "title": "Top processes by memory usage",
+      "visState": "{\"title\":\"Top processes by memory usage\",\"type\":\"table\",\"params\":{\"perPage\":4,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false,\"sort\":{\"columnIndex\":null,\"direction\":null},\"showTotal\":false,\"totalFunc\":\"sum\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"system.process.memory.rss.bytes\",\"customLabel\":\"Memory\"}},{\"id\":\"5\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"system.process.memory.share\",\"customLabel\":\"Shared Memory\"}},{\"id\":\"6\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"system.process.memory.rss.pct\",\"customLabel\":\"Resident Memory\"}},{\"id\":\"7\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"system.process.cpu.total.pct\",\"customLabel\":\"CPU (%)\"}},{\"id\":\"8\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"split\",\"params\":{\"field\":\"beat.name\",\"size\":6,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Host\",\"row\":true}},{\"id\":\"4\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"system.process.cmdline\",\"size\":50,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Command line\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}}",
+      "description": "",
+      "savedSearchId": "Process-stats",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Servers-overview",
+    "_type": "visualization",
+    "_source": {
+      "title": "Servers overview",
+      "visState": "{\"title\":\"Servers overview\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false,\"sort\":{\"columnIndex\":null,\"direction\":null},\"showTotal\":false,\"totalFunc\":\"sum\"},\"aggs\":[{\"id\":\"3\",\"enabled\":true,\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"system.memory.total\",\"customLabel\":\"Total memory\"}},{\"id\":\"5\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"system.memory.actual.used.bytes\",\"customLabel\":\"Used memory\"}},{\"id\":\"4\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"system.memory.actual.used.pct\",\"customLabel\":\"Memory usage\"}},{\"id\":\"1\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"system.cpu.user.pct\",\"customLabel\":\"CPU user space\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"system.cpu.system.pct\",\"customLabel\":\"CPU kernel space\"}},{\"id\":\"7\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"beat.name\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}}",
+      "description": "",
+      "savedSearchId": "System-stats",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
     "_id": "Disk-utilization-over-time",
     "_type": "visualization",
     "_source": {
@@ -2115,6 +2025,96 @@
       "uiStateJSON": "{}",
       "description": "",
       "savedSearchId": "Filesystem-stats",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Memory-usage-per-process",
+    "_type": "visualization",
+    "_source": {
+      "title": "Memory usage per process",
+      "visState": "{\"title\":\"Memory usage per process\",\"type\":\"area\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"smoothLines\":false,\"scale\":\"linear\",\"interpolate\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{},\"legendPosition\":\"right\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"system.process.memory.rss.pct\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"system.process.name\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"4\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"split\",\"params\":{\"field\":\"beat.name\",\"size\":2,\"order\":\"asc\",\"orderBy\":\"_term\",\"customLabel\":\"Host\",\"row\":true}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "Process-stats",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "In-vs-Out-Network-Bytes",
+    "_type": "visualization",
+    "_source": {
+      "title": "In vs Out Network Bytes",
+      "visState": "{\n  \"title\": \"In vs Out Network Bytes\",\n  \"type\": \"line\",\n  \"params\": {\n    \"shareYAxis\": true,\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"showCircles\": true,\n    \"smoothLines\": false,\n    \"interpolate\": \"linear\",\n    \"scale\": \"linear\",\n    \"drawLinesBetweenPoints\": true,\n    \"radiusRatio\": 9,\n    \"times\": [],\n    \"addTimeMarker\": false,\n    \"defaultYExtents\": false,\n    \"setYExtents\": false,\n    \"yAxis\": {},\n    \"legendPosition\": \"right\"\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"enabled\": true,\n      \"type\": \"avg\",\n      \"schema\": \"metric\",\n      \"params\": {\n        \"field\": \"system.network.in.bytes\",\n        \"customLabel\": \"In Bytes\"\n      }\n    },\n    {\n      \"id\": \"2\",\n      \"enabled\": true,\n      \"type\": \"avg\",\n      \"schema\": \"metric\",\n      \"params\": {\n        \"field\": \"system.network.out.bytes\",\n        \"customLabel\": \"Out Bytes\"\n      }\n    },\n    {\n      \"id\": \"3\",\n      \"enabled\": true,\n      \"type\": \"date_histogram\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"@timestamp\",\n        \"interval\": \"auto\",\n        \"customInterval\": \"2h\",\n        \"min_doc_count\": 1,\n        \"extended_bounds\": {}\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "Network-data",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "Packet-loss-on-interfaces",
+    "_type": "visualization",
+    "_source": {
+      "title": "Packet loss on interfaces",
+      "visState": "{\"title\":\"Packet loss on interfaces\",\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{},\"legendPosition\":\"right\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"system.network.in.dropped\",\"customLabel\":\"In packet loss\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"system.network.name\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Interface\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"system.network.out.dropped\",\"customLabel\":\"Out packet loss\"}},{\"id\":\"4\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"beat.hostname\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "Network-data",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Top-10-interfaces",
+    "_type": "visualization",
+    "_source": {
+      "title": "Top 10 interfaces",
+      "visState": "{\"title\":\"Top 10 interfaces\",\"type\":\"table\",\"params\":{\"perPage\":15,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false,\"sort\":{\"columnIndex\":null,\"direction\":null},\"showTotal\":false,\"totalFunc\":\"sum\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"system.network.in.bytes\",\"customLabel\":\"In Bytes\"}},{\"id\":\"5\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"system.network.out.bytes\",\"customLabel\":\"Out Bytes\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"system.network.in.errors\",\"customLabel\":\"In Errors\"}},{\"id\":\"4\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"system.network.out.errors\",\"customLabel\":\"Out Errors\"}},{\"id\":\"6\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"system.network.in.dropped\",\"customLabel\":\"In Packet loss\"}},{\"id\":\"7\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"system.network.out.dropped\",\"customLabel\":\"Out Packet loss\"}},{\"id\":\"8\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"beat.hostname\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Host\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"system.network.name\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Interface\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}}",
+      "description": "",
+      "savedSearchId": "Network-data",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Total-Memory",
+    "_type": "visualization",
+    "_source": {
+      "title": "Total Memory",
+      "visState": "{\"title\":\"Total Memory\",\"type\":\"metric\",\"params\":{\"handleNoResults\":true,\"fontSize\":\"30\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"system.memory.total\",\"customLabel\":\"Average total memory\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "Memory-stats",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Top-hosts-by-disk-size",
+    "_type": "visualization",
+    "_source": {
+      "title": "Top hosts by disk size",
+      "visState": "{\"title\":\"Top hosts by disk size\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showMeticsAtAllLevels\":false,\"showPartialRows\":false,\"showTotal\":false,\"sort\":{\"columnIndex\":null,\"direction\":null},\"totalFunc\":\"sum\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"system.fsstat.total_size.total\",\"customLabel\":\"Total disk size (incl. shares)\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"system.fsstat.total_size.used\",\"customLabel\":\"Used size\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"system.fsstat.total_files\",\"customLabel\":\"Total files\"}},{\"id\":\"4\",\"enabled\":true,\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"system.fsstat.count\",\"customLabel\":\"Max number of filesystems\"}},{\"id\":\"5\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"beat.name\",\"size\":50,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Host\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}}",
+      "description": "",
+      "savedSearchId": "Fsstats",
       "version": 1,
       "kibanaSavedObjectMeta": {
         "searchSourceJSON": "{\"filter\":[]}"
