@@ -20,7 +20,7 @@ filebeat.prospectors:
   paths:
     - c:\inetpub\logs\LogFiles\W3SVC2\*.log
 
-  exclude_lines: [ '/api/tcmanager/notification', '\.css', '\.jpg', '\.js', '\.png', '\.svg', '\.ttf', '\.woff', '/signalr/ping', '/signalr/connect', '/signalr/reconnect', 'mini-profiler-resources', '^#']
+  exclude_lines: [ '/api/tcmanager/notification', '\.css', '\.jpg', '\.js', '\.png', '\.svg', '\.ttf', '\.woff', '/signalr/hubs', '/signalr/ping', '/signalr/connect', '/signalr/reconnect', 'mini-profiler-resources', 'monitis', '^#']
   include_lines: ['.*']
   fields:
     index: log
