@@ -7,6 +7,15 @@
   "mappings": {
     "iis": {
       "properties": {
+        "project_group_id": {
+          "type": "long"
+        },
+        "project_id": {
+          "type": "long"
+        },       
+        "segment_id": {
+          "type": "long"
+        },
         "time_taken" : {
           "type" : "long"
         },
@@ -34,6 +43,61 @@
         "request": {
           "type": "string",
           "index": "not_analyzed"
+        }
+      }
+    },
+    "iqube": {
+      "properties": {
+        "action": {
+          "type": "string",
+          "index": "not_analyzed" 
+        },
+        "controller": {
+          "type": "string",
+          "index": "not_analyzed" 
+        },
+        "log_level": {
+          "type": "string",
+          "index": "not_analyzed" 
+        },
+        "action_phase": {
+          "type": "string",
+          "index": "not_analyzed" 
+        },
+        "status_text": {
+          "type": "string",
+          "index": "not_analyzed" 
+        },
+        "body": {
+          "type": "string",
+          "index": "not_analyzed" 
+        },
+        "filename": {
+          "type": "string",
+          "index": "not_analyzed" 
+        },
+        "log": {
+          "type": "string",
+          "index": "not_analyzed" 
+        },
+        "assignment_prefixed_id": {
+          "type": "string",
+          "index": "not_analyzed" 
+        },
+        "project_group_id": {
+          "type": "long"
+        },
+        "project_id": {
+          "type": "long"
+        },       
+        "segment_id": {
+          "type": "long"
+        },
+        "assignment_id": {
+          "type": "long"
+        },
+        "status": {
+          "type": "long"
         }
       }
     }

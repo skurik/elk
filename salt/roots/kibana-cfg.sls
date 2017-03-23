@@ -44,7 +44,7 @@
     'iQube_Status_gte_500',
     'iQube_GET_Project' ] %}
 
-http://{{ opts.ip_address }}:9200/_template/template_log_iis:
+http://{{ opts.ip_address }}:9200/_template/template_log:
   http.query:
     - method: PUT
     - data_file: /srv/share/config/elasticsearch/log_template.json
