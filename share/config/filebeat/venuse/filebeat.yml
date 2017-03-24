@@ -16,6 +16,30 @@ filebeat.prospectors:
 # Below are the prospector specific configurations.
 
 - input_type: log
+  paths:
+    - d:\TMAppServer\Logs\TMServer*.*
+
+  ignore_older: 10m
+
+  exclude_lines: [
+    'AssemblyLoadHandler - Assembly loaded',
+    'HttpClientService - Sending request: POST.*iis/_search',
+    'DEBUG TMAppServer.Controllers.Api.Statistics.Http.HttpStatisticsCollectionApiController'
+  ]
+
+  include_lines: ['.*']
+
+  multiline.pattern: '^\d+ [a-zA-Z]+ \d{4} \d{2}:\d{2}:\d{2},\d+'
+  multiline.negate: true
+  multiline.match: after
+
+  fields:
+    index: log
+    document_type: iqube
+    service: iqube
+
+
+- input_type: log
 
   # Paths that should be crawled and fetched. Glob based paths.
   paths:
