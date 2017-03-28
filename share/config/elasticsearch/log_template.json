@@ -7,6 +7,7 @@
   "mappings": {
     "iis": {
       "properties": {
+<<<<<<< HEAD
         "segment_id" : {
           "type" : "long"
         },
@@ -15,6 +16,16 @@
         },
         "project_group_id" : {
           "type" : "long"
+=======
+        "project_group_id": {
+          "type": "long"
+        },
+        "project_id": {
+          "type": "long"
+        },       
+        "segment_id": {
+          "type": "long"
+>>>>>>> f1cf4153e603d10503ee9ac3999224f53780e961
         },
         "time_taken" : {
           "type" : "long"
@@ -39,10 +50,221 @@
         },
         "geoip.location": {
           "type": "geo_point"
+        },        
+        "client_ip": {
+          "type": "ip"
+        },
+        "event_time": {
+          "type": "keyword",
+          "ignore_above": 128
+        },
+        "host": {
+          "type": "keyword",
+          "ignore_above": 256
+        },
+        "host_ip": {
+          "type": "ip"
+        },
+        "message": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 8192
+            }
+          }
+        },
+        "method": {
+          "type": "keyword",
+          "ignore_above": 32
+        },
+        "offset": {
+          "type": "long"
+        },
+        "query_param": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 8192
+            }
+          }
+        },
+        "referer": {
+          "type": "keyword",
+          "ignore_above": 512
         },
         "request": {
-          "type": "string",
-          "index": "not_analyzed"
+          "type": "keyword",
+          "ignore_above": 512
+        },        
+        "source": {          
+          "type": "keyword",
+          "ignore_above": 8192            
+        },
+        "tags": {
+          "type": "keyword",
+          "ignore_above": 512
+        },        
+        "type": {
+          "type": "keyword",
+          "ignore_above": 512
+        },
+        "user_agent": {
+          "type": "keyword",
+          "ignore_above": 512
+        },
+        "username": {
+          "type": "keyword",
+          "ignore_above": 512
+        },        
+        "input_type": {
+          "type": "keyword",
+          "ignore_above": 256
+        },        
+        "fields": {
+          "properties": {
+            "document_type": {
+              "type": "keyword",
+              "ignore_above": 256
+            },
+            "index": {
+              "type": "keyword",
+              "ignore_above": 256
+            },
+            "service": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "geoip": {
+          "properties": {
+            "city_name": {
+              "type": "keyword",
+              "ignore_above": 256                
+            },
+            "continent_code": {
+              "type": "keyword",
+              "ignore_above": 256
+            },
+            "country_code2": {
+              "type": "keyword",
+              "ignore_above": 256
+            },
+            "country_code3": {
+              "type": "keyword",
+              "ignore_above": 256
+            },
+            "country_name": {
+              "type": "keyword",
+              "ignore_above": 256
+            },
+            "dma_code": {
+              "type": "long"
+            },
+            "ip": {
+              "type": "ip"              
+            },
+            "latitude": {
+              "type": "float"
+            },
+            "location": {
+              "type": "geo_point"
+            },
+            "longitude": {
+              "type": "float"
+            },
+            "postal_code": {
+              "type": "keyword",
+              "ignore_above": 256
+            },
+            "region_code": {
+              "type": "keyword",
+              "ignore_above": 256
+            },
+            "region_name": {
+              "type": "keyword",
+              "ignore_above": 256
+            },
+            "timezone": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        }
+      }
+    },
+    "iqube": {
+      "properties": {
+        "action": {
+          "type": "keyword",
+          "ignore_above": 128
+        },
+        "controller": {
+          "type": "keyword",
+          "ignore_above": 128
+        },
+        "log_level": {
+          "type": "keyword",
+          "ignore_above": 16
+        },
+        "action_phase": {
+          "type": "keyword",
+          "ignore_above": 32
+        },
+        "access_role": {
+          "type": "keyword",
+          "ignore_above": 32
+        },
+        "body": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 8192
+            }
+          }
+        },
+        "filename": {
+          "type": "keyword",
+          "ignore_above": 4096
+        },
+        "log": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 8192
+            }
+          }
+        },
+        "assignment_prefixed_id": {
+          "type": "keyword",
+          "ignore_above": 32
+        },
+        "status_text": {
+          "type": "keyword",
+          "ignore_above": 32
+        },
+        "header_location": {
+          "type": "keyword",
+          "ignore_above": 4096
+        },
+        "project_group_id": {
+          "type": "long"
+        },
+        "project_id": {
+          "type": "long"
+        },       
+        "segment_id": {
+          "type": "long"
+        },
+        "assignment_id": {
+          "type": "long"
+        },
+        "status": {
+          "type": "long"
         }
       }
     }
