@@ -7,6 +7,15 @@
   "mappings": {
     "iis": {
       "properties": {
+        "segment_id" : {
+          "type" : "long"
+        },
+        "project_id" : {
+          "type" : "long"
+        },
+        "project_group_id" : {
+          "type" : "long"
+        },
         "time_taken" : {
           "type" : "long"
         },
