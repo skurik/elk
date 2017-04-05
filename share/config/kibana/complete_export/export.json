@@ -278,13 +278,13 @@
       "title": "iQube overview",
       "hits": 0,
       "description": "",
-      "panelsJSON": "[\n  {\n    \"id\": \"System-Navigation\",\n    \"type\": \"visualization\",\n    \"panelIndex\": 1,\n    \"size_x\": 3,\n    \"size_y\": 4,\n    \"col\": 1,\n    \"row\": 1\n  },\n  {\n    \"size_x\": 6,\n    \"size_y\": 4,\n    \"panelIndex\": 2,\n    \"type\": \"visualization\",\n    \"id\": \"31ce92e0-1381-11e7-8956-6fc2ab9aea46\",\n    \"col\": 1,\n    \"row\": 5\n  },\n  {\n    \"size_x\": 6,\n    \"size_y\": 4,\n    \"panelIndex\": 3,\n    \"type\": \"visualization\",\n    \"id\": \"6f93b6f0-1381-11e7-8956-6fc2ab9aea46\",\n    \"col\": 7,\n    \"row\": 5\n  }\n]",
-      "optionsJSON": "{\n  \"darkTheme\": false\n}",
+      "panelsJSON": "[{\"id\":\"System-Navigation\",\"type\":\"visualization\",\"panelIndex\":1,\"size_x\":3,\"size_y\":4,\"col\":1,\"row\":1},{\"size_x\":6,\"size_y\":4,\"panelIndex\":2,\"type\":\"visualization\",\"id\":\"31ce92e0-1381-11e7-8956-6fc2ab9aea46\",\"col\":1,\"row\":5},{\"size_x\":6,\"size_y\":4,\"panelIndex\":3,\"type\":\"visualization\",\"id\":\"6f93b6f0-1381-11e7-8956-6fc2ab9aea46\",\"col\":7,\"row\":5},{\"size_x\":6,\"size_y\":4,\"panelIndex\":4,\"type\":\"visualization\",\"id\":\"dbf9f100-1909-11e7-9744-37e0818b4864\",\"col\":7,\"row\":1}]",
+      "optionsJSON": "{\"darkTheme\":false}",
       "uiStateJSON": "{}",
       "version": 1,
       "timeRestore": false,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\n  \"filter\": [\n    {\n      \"query\": {\n        \"query_string\": {\n          \"query\": \"*\",\n          \"analyze_wildcard\": true\n        }\n      }\n    }\n  ]\n}"
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}}}]}"
       }
     }
   },
@@ -565,26 +565,6 @@
       "version": 1,
       "kibanaSavedObjectMeta": {
         "searchSourceJSON": "{\"index\":\"metrics-*\",\"query\":{\"query_string\":{\"query\":\"beat.name: \\\"venuse\\\" AND system.filesystem.device_name: \\\"C:\\\\\\\\\\\"\",\"analyze_wildcard\":true}},\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647}}"
-      }
-    }
-  },
-  {
-    "_id": "0137a020-1045-11e7-94ea-b1bd932b6e7d",
-    "_type": "search",
-    "_source": {
-      "title": "iQube_App_Logs",
-      "description": "",
-      "hits": 0,
-      "columns": [
-        "_source"
-      ],
-      "sort": [
-        "@timestamp",
-        "desc"
-      ],
-      "version": 1,
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"fields.service\":\"iqube\"}},{\"term\":{\"fields.document_type\":\"iqube\"}}]}}}}}"
       }
     }
   },
@@ -1013,6 +993,399 @@
       "version": 1,
       "kibanaSavedObjectMeta": {
         "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"must\":[{\"regexp\":{\"request\":\"/api/segments/[0-9]+\"}},{\"term\":{\"fields.service\":\"iqube\"}},{\"term\":{\"fields.document_type\":\"iis\"}},{\"term\":{\"method\":\"GET\"}}]}}}}}"
+      }
+    }
+  },
+  {
+    "_id": "_iqube_2017_03_30_09_50_12_076",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "method",
+        "request",
+        "status",
+        "time_taken",
+        "user_agent"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"segment_id\":[81870341,81870351,81870359,81870372,81870379,81870384,81870414,81870429,81870437,81870442,81870446,81870463,81870475,81870479]}},{\"regexp\":{\"request\":\"/api/segments/[0-9]+/translation\"}},{\"term\":{\"method\":\"PUT\"}},{\"term\":{\"fields.service\":\"iqube\"}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Query-based_search_for_14_matching_segments",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_03_30_13_31_41_551",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "method",
+        "request",
+        "status",
+        "time_taken",
+        "user_agent"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"fields.service\":\"iqube\"}},{\"regexp\":{\"method\":\"(PUT|POST|DELETE)\"}}],\"should\":[{\"term\":{\"project_id\":102733}},{\"term\":{\"project_group_id\":28877}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_102733",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_03_29_10_58_44_228",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "method",
+        "request",
+        "status",
+        "time_taken",
+        "user_agent"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"fields.service\":\"iqube\"}}],\"should\":[{\"term\":{\"project_id\":31911332}},{\"term\":{\"project_group_id\":2004576}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_31911332",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_03_29_10_58_50_689",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "method",
+        "request",
+        "status",
+        "time_taken",
+        "user_agent"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"fields.service\":\"iqube\"}}],\"should\":[{\"term\":{\"project_id\":31911332}},{\"term\":{\"project_group_id\":2004576}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_31911332",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_03_31_16_18_46_016",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "method",
+        "request",
+        "status",
+        "time_taken",
+        "user_agent"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"segment_id\":[81634552,81634555,81634556,81634561,81634562,81634563,81634566,81635562,81635563,81635564,81635565,81635566,81635567,81635568,81635569,81635570,81635571,81635572,81635573,81635574,81635575,81635576,81635577,81635578,81635579,81635580,81635581,81635582,81635583,81635585,81635586,81635587,81635618,81635619,81635620,81635621,81635622,81635623,81635624,81635625,81635630,81635632,81635633,81635634,81635635,81635636,81635637,81635638,81635639,81635640,81635641,81635642,81635643,81635644,81635645,81635646,81635647,81635648,81635659,81635660,81635661,81635662,81635712,81635713,81635714,81635715,81635742,81635743,81635744,81635745,81635746,81635747,81635748,81635749,81635809,81635810,81635811,81635842,81635843,81635844,81635847,81635848,81635849,81635850,81635851,81635852,81635853,81635854,81635855,81635856,81635857,81635858,81635859,81635860,81635861,81635862,81635863,81635864,81635865,81635866,81635867,81635868,81635869,81635870,81635871,81635872,81635873,81635874,81635875,81635876,81635877,81635878,81635879,81635884,81635885,81635889,81635890,81635892,81635893,81635895,81635896,81635897,81635899,81635900,81635902,81636997,81637224,81638220,81638230,81640087,81640088,81640089,81640095,81640158,81640230,81640274,81640276,81640385,81640387,81640625,81640679,81641533,81641585,81641587,81641645,81641882,81642376,81643287,81643289,81643659]}},{\"regexp\":{\"request\":\"/api/segments/[0-9]+/translation\"}},{\"term\":{\"method\":\"PUT\"}},{\"term\":{\"fields.service\":\"iqube\"}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Query-based_search_for_150_matching_segments",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_03_30_14_56_27_098",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "method",
+        "request",
+        "status",
+        "time_taken",
+        "user_agent"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"segment_id\":[79155925,79156194,79156196,79156220]}},{\"regexp\":{\"request\":\"/api/segments/[0-9]+/translation\"}},{\"term\":{\"method\":\"PUT\"}},{\"term\":{\"fields.service\":\"iqube\"}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Query-based_search_for_4_matching_segments",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_03_30_13_35_34_022",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "method",
+        "request",
+        "status",
+        "time_taken",
+        "user_agent"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"fields.service\":\"iqube\"}},{\"regexp\":{\"method\":\"(PUT|POST|DELETE)\"}}],\"should\":[{\"term\":{\"project_id\":102733}},{\"term\":{\"project_group_id\":28877}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_102733",
+      "version": 1
+    }
+  },
+  {
+    "_id": "0137a020-1045-11e7-94ea-b1bd932b6e7d",
+    "_type": "search",
+    "_source": {
+      "title": "iQube_App_Find_And_Replace",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_source"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"fields.service\":\"iqube\"}},{\"term\":{\"fields.document_type\":\"iqube\"}},{\"term\":{\"controller\":\"FindReplaceOperationExecutionApiController\"}},{\"term\":{\"action\":\"Post\"}},{\"term\":{\"action_phase\":\"Executing\"}}]}}}}}"
+      }
+    }
+  },
+  {
+    "_id": "14d53f30-1841-11e7-8a58-3101e44b83c5",
+    "_type": "search",
+    "_source": {
+      "title": "iQube_App_Translation_With_Tracing",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "log",
+        "action"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"should\":[{\"bool\":{\"must\":[{\"term\":{\"log\":\"81837120\"}},{\"term\":{\"log\":\"translation\"}}]}},{\"bool\":{\"must\":[{\"term\":{\"fields.service\":\"iqube\"}},{\"term\":{\"fields.document_type\":\"iqube\"}},{\"term\":{\"segment_id\":81837120}}]}}]}}}}}"
+      }
+    }
+  },
+  {
+    "_id": "_iqube_2017_04_03_15_01_36_391",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "method",
+        "request",
+        "status",
+        "time_taken",
+        "user_agent"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"fields.service\":\"iqube\"}}],\"should\":[{\"term\":{\"project_id\":102760}},{\"term\":{\"project_group_id\":28891}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_102760",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_04_03_15_01_45_260",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "method",
+        "request",
+        "status",
+        "time_taken",
+        "user_agent"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"fields.service\":\"iqube\"}}],\"should\":[{\"term\":{\"project_id\":102760}},{\"term\":{\"project_group_id\":28891}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_102760",
+      "version": 1
+    }
+  },
+  {
+    "_id": "3456dfc0-1784-11e7-aeb2-03f3086c8268",
+    "_type": "search",
+    "_source": {
+      "title": "iQube_App_Logs",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_source"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"fields.service\":\"iqube\"}},{\"term\":{\"fields.document_type\":\"iqube\"}}]}}}}}"
+      }
+    }
+  },
+  {
+    "_id": "_iqube_2017_04_03_15_01_50_775",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "method",
+        "request",
+        "status",
+        "time_taken",
+        "user_agent"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"fields.service\":\"iqube\"}},{\"regexp\":{\"method\":\"(PUT|POST|DELETE)\"}}],\"should\":[{\"term\":{\"project_id\":102760}},{\"term\":{\"project_group_id\":28891}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_102760",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_04_03_15_13_34_220",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "method",
+        "request",
+        "status",
+        "time_taken",
+        "user_agent"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"fields.service\":\"iqube\"}}],\"should\":[{\"term\":{\"project_id\":102760}},{\"term\":{\"project_group_id\":28891}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_102760",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_04_03_15_13_47_692",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "method",
+        "request",
+        "status",
+        "time_taken",
+        "user_agent"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"fields.service\":\"iqube\"}}],\"should\":[{\"term\":{\"project_id\":102760}},{\"term\":{\"project_group_id\":28891}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_102760",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_04_03_15_17_01_091",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "method",
+        "request",
+        "status",
+        "time_taken",
+        "user_agent"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"segment_id\":[81879968,81879969,81879970,81879976,81879977,81879978,81879988,81880033,81880039,81880063,81880064,81880066,81880067,81880156,81880157,81880162,81880168,81880169,81880172,81880195,81880196,81880197,81880198,81880199,81880201,81880202,81880203,81880204,81880205,81880206,81880207,81880208,81880209,81880210,81880211,81880212,81880269,81880271,81880272,81880273,81880307,81880310,81880311,81880312,81880318,81880319,81880320,81880330,81880612,81880641,81880678,81880679,81880682,81880684,81880688,81880710,81880727,81880729,81880754,81880788,81880790,81880792,81880793,81880794,81880795,81880866,81880888,81880905,81880930,81880933,81880971]}},{\"regexp\":{\"request\":\"/api/segments/[0-9]+/translation\"}},{\"term\":{\"method\":\"PUT\"}},{\"term\":{\"fields.service\":\"iqube\"}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Query-based_search_for_71_matching_segments",
+      "version": 1
+    }
+  },
+  {
+    "_id": "99249100-1909-11e7-9744-37e0818b4864",
+    "_type": "search",
+    "_source": {
+      "title": "iQube_IIS_Monitis",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "user_agent"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"fields.service\":\"iqube\"}},{\"term\":{\"fields.document_type\":\"iis\"}},{\"regexp\":{\"user_agent\":\".*monitis.*\"}}]}}}}}"
       }
     }
   },
@@ -2497,7 +2870,7 @@
     "_type": "visualization",
     "_source": {
       "title": "iQube_Get_Package_Response_Time",
-      "visState": "{\"title\":\"iQube_Get_Package_Response_Time\",\"type\":\"line\",\"params\":{\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"showCircles\":true,\"interpolate\":\"cardinal\",\"scale\":\"linear\",\"drawLinesBetweenPoints\":true,\"radiusRatio\":9,\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"percentiles\",\"schema\":\"metric\",\"params\":{\"field\":\"time_taken\",\"percents\":[99]}},{\"id\":\"2\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}}],\"listeners\":{}}",
+      "visState": "{\"title\":\"iQube_Get_Package_Response_Time\",\"type\":\"line\",\"params\":{\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"showCircles\":true,\"interpolate\":\"cardinal\",\"scale\":\"linear\",\"drawLinesBetweenPoints\":true,\"radiusRatio\":9,\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"percentiles\",\"schema\":\"metric\",\"params\":{\"field\":\"time_taken\",\"percents\":[99]}},{\"id\":\"2\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"enabled\":true,\"type\":\"median\",\"schema\":\"metric\",\"params\":{\"field\":\"time_taken\",\"percents\":[50]}}],\"listeners\":{}}",
       "uiStateJSON": "{}",
       "description": "",
       "savedSearchId": "0dbeddd0-12c1-11e7-86b1-f130f14dfa16",
@@ -2512,7 +2885,7 @@
     "_type": "visualization",
     "_source": {
       "title": "iQube_Translation_Response_Time",
-      "visState": "{\"title\":\"iQube_Translation_Response_Time\",\"type\":\"line\",\"params\":{\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"showCircles\":true,\"interpolate\":\"cardinal\",\"scale\":\"linear\",\"drawLinesBetweenPoints\":true,\"radiusRatio\":9,\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"percentiles\",\"schema\":\"metric\",\"params\":{\"field\":\"time_taken\",\"percents\":[99]}},{\"id\":\"2\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}}],\"listeners\":{}}",
+      "visState": "{\"title\":\"iQube_Translation_Response_Time\",\"type\":\"line\",\"params\":{\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"showCircles\":true,\"interpolate\":\"cardinal\",\"scale\":\"linear\",\"drawLinesBetweenPoints\":true,\"radiusRatio\":9,\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"percentiles\",\"schema\":\"metric\",\"params\":{\"field\":\"time_taken\",\"percents\":[99]}},{\"id\":\"2\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"enabled\":true,\"type\":\"median\",\"schema\":\"metric\",\"params\":{\"field\":\"time_taken\",\"percents\":[50]}}],\"listeners\":{}}",
       "uiStateJSON": "{}",
       "description": "",
       "savedSearchId": "37a769d0-0c8d-11e7-934e-afc72ed9f062",
@@ -2533,6 +2906,21 @@
       "version": 1,
       "kibanaSavedObjectMeta": {
         "searchSourceJSON": "{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "dbf9f100-1909-11e7-9744-37e0818b4864",
+    "_type": "visualization",
+    "_source": {
+      "title": "iQube_Monitis_Per_Country",
+      "visState": "{\"title\":\"iQube_Monitis_Per_Country\",\"type\":\"line\",\"params\":{\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"showCircles\":true,\"interpolate\":\"linear\",\"scale\":\"linear\",\"drawLinesBetweenPoints\":true,\"radiusRatio\":9,\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"percentiles\",\"schema\":\"metric\",\"params\":{\"field\":\"time_taken\",\"percents\":[99]}},{\"id\":\"2\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"geoip.country_name\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1.99\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "99249100-1909-11e7-9744-37e0818b4864",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
       }
     }
   }
