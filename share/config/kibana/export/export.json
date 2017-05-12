@@ -1755,28 +1755,6 @@
     }
   },
   {
-    "_id": "1251d470-2b20-11e7-af35-cd4330036b34",
-    "_type": "search",
-    "_source": {
-      "title": "iQube_App_Put_Assignment_Options",
-      "description": "",
-      "hits": 0,
-      "columns": [
-        "action",
-        "action_phase",
-        "controller"
-      ],
-      "sort": [
-        "@timestamp",
-        "desc"
-      ],
-      "version": 1,
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"fields.service\":\"iqube\"}},{\"term\":{\"fields.document_type\":\"iqube\"}},{\"term\":{\"assignment_prefixed_id\":\"VER308205\"}},{\"term\":{\"action\":\"Put\"}},{\"term\":{\"controller\":\"AssignmentsController\"}}]}}}}}"
-      }
-    }
-  },
-  {
     "_id": "_iqube_2017_05_02_15_16_17_084",
     "_type": "search",
     "_source": {
@@ -1798,6 +1776,73 @@
       ],
       "title": "Query-based_search_for_38_matching_segments",
       "version": 1
+    }
+  },
+  {
+    "_id": "51a62740-31b3-11e7-af6f-79979e5ed220",
+    "_type": "search",
+    "_source": {
+      "title": "iQube_IIS_Cache_Daily_Volume_Stats_For_All_Languages",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "time_taken",
+        "query_param"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"must\":[{\"regexp\":{\"request\":\"/api/statistics/daily-volume/entries/all\"}},{\"term\":{\"fields.service\":\"iqube\"}},{\"term\":{\"fields.document_type\":\"iis\"}},{\"term\":{\"method\":\"POST\"}}]}}}}}"
+      }
+    }
+  },
+  {
+    "_id": "_iqube_2017_05_12_10_39_08_860",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "method",
+        "request",
+        "status",
+        "time_taken",
+        "user_agent"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"fields.service\":\"iqube\"}},{\"regexp\":{\"method\":\"(PUT|POST|DELETE)\"}}],\"should\":[{\"term\":{\"project_id\":104380}},{\"term\":{\"project_group_id\":29191}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_104380",
+      "version": 1
+    }
+  },
+  {
+    "_id": "1251d470-2b20-11e7-af35-cd4330036b34",
+    "_type": "search",
+    "_source": {
+      "title": "iQube_App_Put_Assignment_Options",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "action",
+        "action_phase",
+        "controller"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"fields.service\":\"iqube\"}},{\"term\":{\"fields.document_type\":\"iqube\"}},{\"term\":{\"assignment_prefixed_id\":\"VER308205\"}},{\"term\":{\"action\":\"Put\"}},{\"term\":{\"controller\":\"AssignmentsController\"}}]}}}}}"
+      }
     }
   },
   {
@@ -1873,15 +1918,64 @@
     }
   },
   {
-    "_id": "51a62740-31b3-11e7-af6f-79979e5ed220",
+    "_id": "_iqube_2017_05_09_16_21_01_920",
     "_type": "search",
     "_source": {
-      "title": "iQube_IIS_Cache_Daily_Volume_Stats_For_All_Languages",
+      "columns": [
+        "method",
+        "request",
+        "status",
+        "time_taken",
+        "user_agent"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"fields.service\":\"iqube\"}}],\"should\":[{\"term\":{\"project_id\":105196}},{\"term\":{\"project_group_id\":29484}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_105196",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_05_12_10_39_13_854",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "method",
+        "request",
+        "status",
+        "time_taken",
+        "user_agent"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"fields.service\":\"iqube\"}},{\"regexp\":{\"method\":\"(PUT|POST|DELETE)\"}}],\"should\":[{\"term\":{\"project_id\":104380}},{\"term\":{\"project_group_id\":29191}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_104380",
+      "version": 1
+    }
+  },
+  {
+    "_id": "2e60a9e0-36ef-11e7-8dd5-c9c8e990bf1b",
+    "_type": "search",
+    "_source": {
+      "title": "iQube_App_Create_Dynamic_Task",
       "description": "",
       "hits": 0,
       "columns": [
-        "time_taken",
-        "query_param"
+        "action",
+        "action_phase",
+        "controller"
       ],
       "sort": [
         "@timestamp",
@@ -1889,7 +1983,29 @@
       ],
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"must\":[{\"regexp\":{\"request\":\"/api/statistics/daily-volume/entries/all\"}},{\"term\":{\"fields.service\":\"iqube\"}},{\"term\":{\"fields.document_type\":\"iis\"}},{\"term\":{\"method\":\"POST\"}}]}}}}}"
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"fields.service\":\"iqube\"}},{\"term\":{\"fields.document_type\":\"iqube\"}},{\"term\":{\"project_id\":\"104380\"}},{\"term\":{\"action\":\"Post\"}},{\"term\":{\"controller\":\"AssignmentCreationRequestController\"}}]}}}}}"
+      }
+    }
+  },
+  {
+    "_id": "a26c2610-36fa-11e7-a810-f5ce5128f2a4",
+    "_type": "search",
+    "_source": {
+      "title": "iQube_App_Logs_NonGET_Messages",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "controller",
+        "action",
+        "message"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"fields.service\":\"iqube\"}},{\"term\":{\"fields.document_type\":\"iqube\"}}],\"must_not\":[{\"regexp\":{\"action\":\"Get.*\"}}]}}}}}"
       }
     }
   },
