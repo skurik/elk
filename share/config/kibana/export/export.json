@@ -3070,28 +3070,6 @@
     }
   },
   {
-    "_id": "50a29cd0-888d-11e7-aa31-6f0a88e3556c",
-    "_type": "search",
-    "_source": {
-      "title": "iQube_App_Logs_Serilog_Cloud_Live",
-      "description": "",
-      "hits": 0,
-      "columns": [
-        "_type",
-        "message",
-        "fields.MachineName"
-      ],
-      "sort": [
-        "@timestamp",
-        "desc"
-      ],
-      "version": 1,
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.MachineName\":\"web\"}}]}}}},\"highlightAll\":true,\"version\":true}"
-      }
-    }
-  },
-  {
     "_id": "d9b570a0-87d5-11e7-b58e-9358619f3483",
     "_type": "search",
     "_source": {
@@ -3264,6 +3242,1157 @@
       "kibanaSavedObjectMeta": {
         "searchSourceJSON": "{\"index\":\"log-*\",\"highlightAll\":true,\"version\":true,\"filter\":[],\"query\":{\"bool\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"_type\":\"iqube_serilog\"}},{\"range\":{\"fields.StatusCode\":{\"gte\":500}}}]}}}}}"
       }
+    }
+  },
+  {
+    "_id": "01449c20-92e1-11e7-8d0d-896f0c8cfcb6",
+    "_type": "search",
+    "_source": {
+      "title": "iQube_IIS_Monitis_Germany",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "geoip.city_name",
+        "time_taken",
+        "request",
+        "status"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"fields.service\":\"iqube\"}},{\"term\":{\"fields.document_type\":\"iis\"}},{\"regexp\":{\"user_agent\":\".*monitis.*\"}},{\"term\":{\"geoip.city_name\":\"Munich\"}}]}}}},\"highlightAll\":true,\"version\":true}"
+      }
+    }
+  },
+  {
+    "_id": "_iqube_2017_09_01_16_04_39_496",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "method",
+        "request",
+        "status",
+        "time_taken",
+        "user_agent"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"fields.service\":\"iqube\"}},{\"regexp\":{\"method\":\"(PUT|POST|DELETE)\"}}],\"should\":[{\"term\":{\"project_id\":112837}},{\"term\":{\"project_group_id\":31323}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_112837",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_09_04_16_12_33_193",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "method",
+        "request",
+        "status",
+        "time_taken",
+        "user_agent"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"fields.service\":\"iqube\"}},{\"regexp\":{\"method\":\"(PUT|POST|DELETE)\"}}],\"should\":[{\"term\":{\"project_id\":113087}},{\"term\":{\"project_group_id\":31402}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_113087",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_09_01_16_05_53_578",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "method",
+        "request",
+        "status",
+        "time_taken",
+        "user_agent"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"fields.service\":\"iqube\"}}],\"should\":[{\"term\":{\"project_id\":112837}},{\"term\":{\"project_group_id\":31323}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_112837",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_09_01_16_10_40_773",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "method",
+        "request",
+        "status",
+        "time_taken",
+        "user_agent"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"fields.service\":\"iqube\"}}],\"should\":[{\"term\":{\"project_id\":112837}},{\"term\":{\"project_group_id\":31323}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_112837",
+      "version": 1
+    }
+  },
+  {
+    "_id": "1ee09110-8e24-11e7-9470-759cbd61d4f2",
+    "_type": "search",
+    "_source": {
+      "title": "iQube_IIS_Venuse",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_source"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"fields.service\":\"iqube\"}},{\"term\":{\"fields.document_type\":\"iis\"}},{\"term\":{\"beat.hostname\":\"venuse\"}}]}}}},\"highlightAll\":true,\"version\":true}"
+      }
+    }
+  },
+  {
+    "_id": "_iqube_2017_09_06_11_17_27_771",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "method",
+        "request",
+        "status",
+        "time_taken",
+        "user_agent"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"fields.Infrastructure\":\"cloud\"}},{\"term\":{\"fields.ProjectId\":\"113260\"}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_113260",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_09_06_11_17_37_656",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "method",
+        "request",
+        "status",
+        "time_taken",
+        "user_agent"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"fields.Infrastructure\":\"cloud\"}},{\"term\":{\"fields.ProjectId\":\"113260\"}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_113260",
+      "version": 1
+    }
+  },
+  {
+    "_id": "33f7ee00-92e2-11e7-99c1-915b1a4cb638",
+    "_type": "search",
+    "_source": {
+      "title": "iQube_App_Project_Logs",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_type",
+        "message",
+        "fields.MachineName"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.MachineName\":\"web\"}},{\"term\":{\"fields.ProjectId\":\"113254\"}}]}}}},\"highlightAll\":true,\"version\":true}"
+      }
+    }
+  },
+  {
+    "_id": "_iqube_2017_09_06_11_42_11_085",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "fields.SourceContext",
+        "message"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"fields.Infrastructure\":\"cloud\"}},{\"term\":{\"fields.ProjectId\":\"113260\"}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_113260",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_09_08_10_05_10_819",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "fields.SourceContext",
+        "message"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"fields.Infrastructure\":\"cloud\"}},{\"term\":{\"fields.ProjectId\":\"113478\"}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_113478",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_09_08_14_42_47_988",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "fields.SourceContext",
+        "message"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"fields.Infrastructure\":\"cloud\"}},{\"term\":{\"fields.ProjectId\":\"113502\"}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_113502",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_09_08_15_16_45_645",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "fields.SourceContext",
+        "message"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"fields.Infrastructure\":\"cloud\"}},{\"term\":{\"fields.ProjectId\":\"113508\"}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_113508",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_09_11_10_55_31_122",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "fields.SourceContext",
+        "message"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"fields.Infrastructure\":\"cloud\"}},{\"term\":{\"fields.ProjectId\":\"113565\"}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_113565",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_09_11_12_49_59_453",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "fields.SourceContext",
+        "message"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"fields.Infrastructure\":\"cloud\"}},{\"term\":{\"fields.ProjectId\":\"113595\"}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_113595",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_09_11_12_51_07_974",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "fields.SourceContext",
+        "message"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"fields.Infrastructure\":\"cloud\"}},{\"term\":{\"fields.ProjectId\":\"113591\"}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_113591",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_09_11_15_47_51_017",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "fields.SourceContext",
+        "message"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"fields.Infrastructure\":\"cloud\"}},{\"term\":{\"fields.ProjectId\":\"113596\"}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_113596",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_09_12_10_40_40_639",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "fields.SourceContext",
+        "message"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"fields.Infrastructure\":\"cloud\"}},{\"term\":{\"fields.ProjectId\":\"113670\"}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_113670",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_09_12_09_24_57_918",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "fields.SourceContext",
+        "message"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"fields.Infrastructure\":\"cloud\"}},{\"term\":{\"fields.ProjectId\":\"113625\"}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_113625",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_09_12_09_25_26_315",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "fields.SourceContext",
+        "message"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"fields.Infrastructure\":\"cloud\"}},{\"term\":{\"fields.ProjectId\":\"113625\"}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_113625",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_09_12_09_27_55_563",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "fields.SourceContext",
+        "message"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"fields.Infrastructure\":\"cloud\"}},{\"term\":{\"fields.ProjectId\":\"113643\"}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_113643",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_09_11_11_12_02_121",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "fields.SourceContext",
+        "message"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"fields.Infrastructure\":\"cloud\"}},{\"term\":{\"fields.ProjectId\":\"113581\"}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_113581",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_09_14_14_37_43_605",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "fields.SourceContext",
+        "message"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"fields.Infrastructure\":\"cloud\"}},{\"term\":{\"fields.ProjectId\":\"113898\"}},{\"term\":{\"fields.Controller.keyword\":\"PreTranslation\"}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_113898",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_09_12_13_26_30_965",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "fields.SourceContext",
+        "message"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"fields.Infrastructure\":\"cloud\"}},{\"term\":{\"fields.ProjectId\":\"113705\"}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_113705",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_09_13_10_46_40_352",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "fields.SourceContext",
+        "message"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"fields.Infrastructure\":\"cloud\"}},{\"term\":{\"fields.ProjectId\":\"113759\"}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_113759",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_09_13_15_41_13_472",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "fields.SourceContext",
+        "message"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"fields.Infrastructure\":\"cloud\"}},{\"term\":{\"fields.ProjectId\":\"113810\"}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_113810",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_09_13_15_53_52_581",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "fields.SourceContext",
+        "message"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"fields.Infrastructure\":\"cloud\"}},{\"term\":{\"fields.ProjectId\":\"113809\"}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_113809",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_09_12_12_49_37_326",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "fields.SourceContext",
+        "message"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"fields.Infrastructure\":\"cloud\"}},{\"term\":{\"fields.ProjectId\":\"113701\"}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_113701",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_09_13_13_51_09_960",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "fields.SourceContext",
+        "message"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"fields.Infrastructure\":\"cloud\"}},{\"term\":{\"fields.ProjectId\":\"113769\"}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_113769",
+      "version": 1
+    }
+  },
+  {
+    "_id": "75218020-99f0-11e7-bd8b-471fa802192c",
+    "_type": "search",
+    "_source": {
+      "title": "iQube_App_Reindex_Operations",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_type",
+        "message",
+        "fields.MachineName",
+        "fields.ThreadId",
+        "fields.StatusCode"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"should\":[{\"bool\":{\"must\":[{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.MachineName\":\"web\"}},{\"term\":{\"fields.SourceContext.keyword\":\"TMAppServer.Controllers.Api.Sphinx.ReindexOperationsApiController\"}},{\"term\":{\"fields.index\":\"AllTranslations\"}}]}},{\"bool\":{\"must\":[{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.MachineName\":\"web\"}},{\"term\":{\"fields.RawUrl.keyword\":\"/api/reindex-operations/AllTranslations\"}}]}}]}}}},\"highlightAll\":true,\"version\":true}"
+      }
+    }
+  },
+  {
+    "_id": "_iqube_2017_09_20_15_09_43_843",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "method",
+        "request",
+        "status",
+        "time_taken",
+        "user_agent"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"fields.service\":\"iqube\"}},{\"regexp\":{\"method\":\"(PUT|POST|DELETE)\"}}],\"should\":[{\"term\":{\"project_id\":113980}},{\"term\":{\"project_group_id\":31595}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_113980",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_09_19_10_01_09_409",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "fields.SourceContext",
+        "message"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"fields.Infrastructure\":\"cloud\"}},{\"term\":{\"fields.ProjectId\":\"114024\"}},{\"term\":{\"fields.Controller.keyword\":\"PreTranslation\"}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_114024",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_09_19_11_44_11_805",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "fields.SourceContext",
+        "message"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"fields.Infrastructure\":\"cloud\"}},{\"term\":{\"fields.ProjectId\":\"114050\"}},{\"term\":{\"fields.Controller.keyword\":\"PreTranslation\"}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_114050",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_09_19_14_30_22_910",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "fields.SourceContext",
+        "message"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"fields.Infrastructure\":\"cloud\"}},{\"term\":{\"fields.ProjectId\":\"114079\"}},{\"term\":{\"fields.Controller.keyword\":\"PreTranslation\"}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_114079",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_09_21_11_52_39_224",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "fields.SourceContext",
+        "message"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"fields.Infrastructure\":\"cloud\"}},{\"term\":{\"fields.ProjectId\":\"114230\"}},{\"term\":{\"fields.Controller.keyword\":\"PreTranslation\"}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_114230",
+      "version": 1
+    }
+  },
+  {
+    "_id": "50a29cd0-888d-11e7-aa31-6f0a88e3556c",
+    "_type": "search",
+    "_source": {
+      "title": "iQube_App_Logs_Serilog_Cloud_Live",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_type",
+        "message",
+        "fields.MachineName"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.MachineName\":\"web\"}},{\"term\":{\"fields.Env\":\"live\"}}]}}}},\"highlightAll\":true,\"version\":true}"
+      }
+    }
+  },
+  {
+    "_id": "_iqube_2017_09_26_14_23_45_177",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "method",
+        "request",
+        "status",
+        "time_taken",
+        "user_agent"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"fields.service\":\"iqube\"}}],\"should\":[{\"term\":{\"project_id\":114205}},{\"term\":{\"project_group_id\":31668}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_114205",
+      "version": 1
+    }
+  },
+  {
+    "_id": "b44216e0-a8d5-11e7-b9a0-0b27c117a169",
+    "_type": "search",
+    "_source": {
+      "title": "iQube_App_Delete_Project_With_Status_Code_And_Elapsed_Time",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_type",
+        "message",
+        "fields.MachineName"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.MachineName\":\"web\"}},{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"fields.Method.keyword\":\"DELETE\"}},{\"regexp\":{\"fields.RawUrl.keyword\":\"/api/projects/[0-9]+[^/]*\"}}]}}}},\"highlightAll\":true,\"version\":true}"
+      }
+    }
+  },
+  {
+    "_id": "262181c0-a8d5-11e7-b9a0-0b27c117a169",
+    "_type": "search",
+    "_source": {
+      "title": "iQube_App_Delete_Project",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_type",
+        "message",
+        "fields.MachineName"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.MachineName\":\"web\"}},{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"fields.SourceContext.keyword\":\"TMAppServer.Controllers.Api.Projects.ProjectsApiController\"}},{\"term\":{\"fields.Action.keyword\":\"Delete\"}}]}}}},\"highlightAll\":true,\"version\":true}"
+      }
+    }
+  },
+  {
+    "_id": "_iqube_2017_09_27_11_14_53_309",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "fields.SourceContext",
+        "message"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"fields.Infrastructure\":\"cloud\"}},{\"term\":{\"fields.ProjectId\":\"114644\"}},{\"term\":{\"fields.Controller.keyword\":\"PreTranslation\"}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_114644",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_09_27_11_15_32_737",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "method",
+        "request",
+        "status",
+        "time_taken",
+        "user_agent"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"fields.service\":\"iqube\"}}],\"should\":[{\"term\":{\"project_id\":114644}},{\"term\":{\"project_group_id\":31806}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_114644",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_09_27_11_14_48_866",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "fields.SourceContext",
+        "message"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"fields.Infrastructure\":\"cloud\"}},{\"term\":{\"fields.ProjectId\":\"114644\"}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_114644",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_09_27_11_14_51_886",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "fields.SourceContext",
+        "message"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"fields.Infrastructure\":\"cloud\"}},{\"term\":{\"fields.ProjectId\":\"114644\"}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_114644",
+      "version": 1
+    }
+  },
+  {
+    "_id": "4f9b2780-a750-11e7-95ca-f98a1b0c1b08",
+    "_type": "search",
+    "_source": {
+      "title": "TC_IIS",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_source"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"fields.service\":\"tc\"}},{\"term\":{\"fields.document_type\":\"iis\"}}]}}}},\"highlightAll\":true,\"version\":true}"
+      }
+    }
+  },
+  {
+    "_id": "b67b39e0-a818-11e7-9a08-bf02c5f30bfe",
+    "_type": "search",
+    "_source": {
+      "title": "Sphinx_Queries",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_source"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"_type\":\"sphinx_query\"}}]}}}},\"highlightAll\":true,\"version\":true}"
+      }
+    }
+  },
+  {
+    "_id": "_iqube_2017_10_05_14_08_34_755",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "method",
+        "request",
+        "status",
+        "time_taken",
+        "user_agent"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"fields.service\":\"iqube\"}},{\"regexp\":{\"method\":\"(PUT|POST|DELETE)\"}}],\"should\":[{\"term\":{\"project_id\":114932}},{\"term\":{\"project_group_id\":31893}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_114932",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_10_04_11_20_49_878",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "fields.SourceContext",
+        "message"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"fields.Infrastructure\":\"cloud\"}},{\"term\":{\"fields.ProjectId\":\"114932\"}},{\"term\":{\"fields.Controller.keyword\":\"PreTranslation\"}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_114932",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_10_04_11_54_08_857",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "fields.SourceContext",
+        "message"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"fields.Infrastructure\":\"cloud\"}},{\"term\":{\"fields.ProjectId\":\"114932\"}},{\"term\":{\"fields.Controller.keyword\":\"PreTranslation\"}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_114932",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_10_04_14_35_44_963",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "fields.SourceContext",
+        "message"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"fields.Infrastructure\":\"cloud\"}},{\"term\":{\"fields.ProjectId\":\"115042\"}},{\"term\":{\"fields.Controller.keyword\":\"PreTranslation\"}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_115042",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_10_05_15_25_48_651",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "fields.SourceContext",
+        "message"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"fields.Infrastructure\":\"cloud\"}},{\"term\":{\"fields.ProjectId\":\"115159\"}},{\"term\":{\"fields.Controller.keyword\":\"PreTranslation\"}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_115159",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_10_05_15_42_00_833",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "fields.SourceContext",
+        "message"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"fields.Infrastructure\":\"cloud\"}},{\"term\":{\"fields.ProjectId\":\"115159\"}},{\"term\":{\"fields.Controller.keyword\":\"PreTranslation\"}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_115159",
+      "version": 1
+    }
+  },
+  {
+    "_id": "65950b80-a9b9-11e7-be19-fdfdd9924318",
+    "_type": "search",
+    "_source": {
+      "title": "TC_IIS_Cloud_Live",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_source"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"fields.service\":\"tc\"}},{\"term\":{\"fields.document_type\":\"iis\"}},{\"term\":{\"fields.env\":\"live\"}},{\"term\":{\"fields.infrastructure\":\"cloud\"}}]}}}},\"highlightAll\":true,\"version\":true}"
+      }
+    }
+  },
+  {
+    "_id": "_iqube_2017_10_05_12_34_40_061",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "method",
+        "request",
+        "status",
+        "time_taken",
+        "user_agent"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"fields.service\":\"iqube\"}}],\"should\":[{\"term\":{\"project_id\":114932}},{\"term\":{\"project_group_id\":31893}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_114932",
+      "version": 1
     }
   },
   {
