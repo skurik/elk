@@ -312,7 +312,7 @@
       "title": "iQube overview",
       "hits": 0,
       "description": "",
-      "panelsJSON": "[{\"col\":1,\"id\":\"System-Navigation\",\"panelIndex\":1,\"row\":1,\"size_x\":3,\"size_y\":4,\"type\":\"visualization\"},{\"col\":1,\"id\":\"31ce92e0-1381-11e7-8956-6fc2ab9aea46\",\"panelIndex\":2,\"row\":5,\"size_x\":6,\"size_y\":4,\"type\":\"visualization\"},{\"col\":7,\"id\":\"6f93b6f0-1381-11e7-8956-6fc2ab9aea46\",\"panelIndex\":3,\"row\":5,\"size_x\":6,\"size_y\":4,\"type\":\"visualization\"},{\"col\":7,\"id\":\"dbf9f100-1909-11e7-9744-37e0818b4864\",\"panelIndex\":4,\"row\":1,\"size_x\":6,\"size_y\":4,\"type\":\"visualization\"},{\"col\":1,\"id\":\"4238ad10-6e02-11e7-9a15-31c6488da4ac\",\"panelIndex\":5,\"row\":9,\"size_x\":6,\"size_y\":3,\"type\":\"visualization\"},{\"size_x\":6,\"size_y\":3,\"panelIndex\":6,\"type\":\"visualization\",\"id\":\"2d964340-8c89-11e7-beca-473520abef60\",\"col\":7,\"row\":9}]",
+      "panelsJSON": "[{\"col\":1,\"id\":\"System-Navigation\",\"panelIndex\":1,\"row\":1,\"size_x\":3,\"size_y\":4,\"type\":\"visualization\"},{\"col\":1,\"id\":\"31ce92e0-1381-11e7-8956-6fc2ab9aea46\",\"panelIndex\":2,\"row\":8,\"size_x\":6,\"size_y\":4,\"type\":\"visualization\"},{\"col\":7,\"id\":\"6f93b6f0-1381-11e7-8956-6fc2ab9aea46\",\"panelIndex\":3,\"row\":1,\"size_x\":6,\"size_y\":4,\"type\":\"visualization\"},{\"col\":7,\"id\":\"dbf9f100-1909-11e7-9744-37e0818b4864\",\"panelIndex\":4,\"row\":11,\"size_x\":6,\"size_y\":4,\"type\":\"visualization\"},{\"col\":1,\"id\":\"4238ad10-6e02-11e7-9a15-31c6488da4ac\",\"panelIndex\":5,\"row\":12,\"size_x\":6,\"size_y\":3,\"type\":\"visualization\"},{\"col\":7,\"id\":\"2d964340-8c89-11e7-beca-473520abef60\",\"panelIndex\":6,\"row\":8,\"size_x\":6,\"size_y\":3,\"type\":\"visualization\"},{\"size_x\":6,\"size_y\":3,\"panelIndex\":7,\"type\":\"visualization\",\"id\":\"AV9I_xVxuruf8BBhdLCX\",\"col\":1,\"row\":5},{\"size_x\":6,\"size_y\":3,\"panelIndex\":8,\"type\":\"visualization\",\"id\":\"AV9Or73turuf8BBhBGHi\",\"col\":7,\"row\":5}]",
       "optionsJSON": "{\"darkTheme\":false}",
       "uiStateJSON": "{}",
       "version": 1,
@@ -3070,28 +3070,6 @@
     }
   },
   {
-    "_id": "50a29cd0-888d-11e7-aa31-6f0a88e3556c",
-    "_type": "search",
-    "_source": {
-      "title": "iQube_App_Logs_Serilog_Cloud_Live",
-      "description": "",
-      "hits": 0,
-      "columns": [
-        "_type",
-        "message",
-        "fields.MachineName"
-      ],
-      "sort": [
-        "@timestamp",
-        "desc"
-      ],
-      "version": 1,
-      "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.MachineName\":\"web\"}}]}}}},\"highlightAll\":true,\"version\":true}"
-      }
-    }
-  },
-  {
     "_id": "d9b570a0-87d5-11e7-b58e-9358619f3483",
     "_type": "search",
     "_source": {
@@ -3263,6 +3241,1732 @@
       "version": 1,
       "kibanaSavedObjectMeta": {
         "searchSourceJSON": "{\"index\":\"log-*\",\"highlightAll\":true,\"version\":true,\"filter\":[],\"query\":{\"bool\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"_type\":\"iqube_serilog\"}},{\"range\":{\"fields.StatusCode\":{\"gte\":500}}}]}}}}}"
+      }
+    }
+  },
+  {
+    "_id": "01449c20-92e1-11e7-8d0d-896f0c8cfcb6",
+    "_type": "search",
+    "_source": {
+      "title": "iQube_IIS_Monitis_Germany",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "geoip.city_name",
+        "time_taken",
+        "request",
+        "status"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"fields.service\":\"iqube\"}},{\"term\":{\"fields.document_type\":\"iis\"}},{\"regexp\":{\"user_agent\":\".*monitis.*\"}},{\"term\":{\"geoip.city_name\":\"Munich\"}}]}}}},\"highlightAll\":true,\"version\":true}"
+      }
+    }
+  },
+  {
+    "_id": "_iqube_2017_09_01_16_04_39_496",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "method",
+        "request",
+        "status",
+        "time_taken",
+        "user_agent"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"fields.service\":\"iqube\"}},{\"regexp\":{\"method\":\"(PUT|POST|DELETE)\"}}],\"should\":[{\"term\":{\"project_id\":112837}},{\"term\":{\"project_group_id\":31323}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_112837",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_09_04_16_12_33_193",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "method",
+        "request",
+        "status",
+        "time_taken",
+        "user_agent"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"fields.service\":\"iqube\"}},{\"regexp\":{\"method\":\"(PUT|POST|DELETE)\"}}],\"should\":[{\"term\":{\"project_id\":113087}},{\"term\":{\"project_group_id\":31402}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_113087",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_09_01_16_05_53_578",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "method",
+        "request",
+        "status",
+        "time_taken",
+        "user_agent"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"fields.service\":\"iqube\"}}],\"should\":[{\"term\":{\"project_id\":112837}},{\"term\":{\"project_group_id\":31323}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_112837",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_09_01_16_10_40_773",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "method",
+        "request",
+        "status",
+        "time_taken",
+        "user_agent"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"fields.service\":\"iqube\"}}],\"should\":[{\"term\":{\"project_id\":112837}},{\"term\":{\"project_group_id\":31323}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_112837",
+      "version": 1
+    }
+  },
+  {
+    "_id": "1ee09110-8e24-11e7-9470-759cbd61d4f2",
+    "_type": "search",
+    "_source": {
+      "title": "iQube_IIS_Venuse",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_source"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"fields.service\":\"iqube\"}},{\"term\":{\"fields.document_type\":\"iis\"}},{\"term\":{\"beat.hostname\":\"venuse\"}}]}}}},\"highlightAll\":true,\"version\":true}"
+      }
+    }
+  },
+  {
+    "_id": "_iqube_2017_09_06_11_17_27_771",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "method",
+        "request",
+        "status",
+        "time_taken",
+        "user_agent"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"fields.Infrastructure\":\"cloud\"}},{\"term\":{\"fields.ProjectId\":\"113260\"}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_113260",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_09_06_11_17_37_656",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "method",
+        "request",
+        "status",
+        "time_taken",
+        "user_agent"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"fields.Infrastructure\":\"cloud\"}},{\"term\":{\"fields.ProjectId\":\"113260\"}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_113260",
+      "version": 1
+    }
+  },
+  {
+    "_id": "33f7ee00-92e2-11e7-99c1-915b1a4cb638",
+    "_type": "search",
+    "_source": {
+      "title": "iQube_App_Project_Logs",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_type",
+        "message",
+        "fields.MachineName"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.MachineName\":\"web\"}},{\"term\":{\"fields.ProjectId\":\"113254\"}}]}}}},\"highlightAll\":true,\"version\":true}"
+      }
+    }
+  },
+  {
+    "_id": "_iqube_2017_09_06_11_42_11_085",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "fields.SourceContext",
+        "message"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"fields.Infrastructure\":\"cloud\"}},{\"term\":{\"fields.ProjectId\":\"113260\"}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_113260",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_09_08_10_05_10_819",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "fields.SourceContext",
+        "message"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"fields.Infrastructure\":\"cloud\"}},{\"term\":{\"fields.ProjectId\":\"113478\"}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_113478",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_09_08_14_42_47_988",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "fields.SourceContext",
+        "message"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"fields.Infrastructure\":\"cloud\"}},{\"term\":{\"fields.ProjectId\":\"113502\"}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_113502",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_09_08_15_16_45_645",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "fields.SourceContext",
+        "message"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"fields.Infrastructure\":\"cloud\"}},{\"term\":{\"fields.ProjectId\":\"113508\"}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_113508",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_09_11_10_55_31_122",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "fields.SourceContext",
+        "message"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"fields.Infrastructure\":\"cloud\"}},{\"term\":{\"fields.ProjectId\":\"113565\"}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_113565",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_09_11_12_49_59_453",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "fields.SourceContext",
+        "message"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"fields.Infrastructure\":\"cloud\"}},{\"term\":{\"fields.ProjectId\":\"113595\"}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_113595",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_09_11_12_51_07_974",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "fields.SourceContext",
+        "message"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"fields.Infrastructure\":\"cloud\"}},{\"term\":{\"fields.ProjectId\":\"113591\"}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_113591",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_09_11_15_47_51_017",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "fields.SourceContext",
+        "message"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"fields.Infrastructure\":\"cloud\"}},{\"term\":{\"fields.ProjectId\":\"113596\"}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_113596",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_09_12_10_40_40_639",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "fields.SourceContext",
+        "message"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"fields.Infrastructure\":\"cloud\"}},{\"term\":{\"fields.ProjectId\":\"113670\"}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_113670",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_09_12_09_24_57_918",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "fields.SourceContext",
+        "message"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"fields.Infrastructure\":\"cloud\"}},{\"term\":{\"fields.ProjectId\":\"113625\"}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_113625",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_09_12_09_25_26_315",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "fields.SourceContext",
+        "message"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"fields.Infrastructure\":\"cloud\"}},{\"term\":{\"fields.ProjectId\":\"113625\"}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_113625",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_09_12_09_27_55_563",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "fields.SourceContext",
+        "message"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"fields.Infrastructure\":\"cloud\"}},{\"term\":{\"fields.ProjectId\":\"113643\"}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_113643",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_09_11_11_12_02_121",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "fields.SourceContext",
+        "message"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"fields.Infrastructure\":\"cloud\"}},{\"term\":{\"fields.ProjectId\":\"113581\"}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_113581",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_09_14_14_37_43_605",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "fields.SourceContext",
+        "message"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"fields.Infrastructure\":\"cloud\"}},{\"term\":{\"fields.ProjectId\":\"113898\"}},{\"term\":{\"fields.Controller.keyword\":\"PreTranslation\"}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_113898",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_09_12_13_26_30_965",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "fields.SourceContext",
+        "message"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"fields.Infrastructure\":\"cloud\"}},{\"term\":{\"fields.ProjectId\":\"113705\"}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_113705",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_09_13_10_46_40_352",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "fields.SourceContext",
+        "message"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"fields.Infrastructure\":\"cloud\"}},{\"term\":{\"fields.ProjectId\":\"113759\"}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_113759",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_09_13_15_41_13_472",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "fields.SourceContext",
+        "message"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"fields.Infrastructure\":\"cloud\"}},{\"term\":{\"fields.ProjectId\":\"113810\"}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_113810",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_09_13_15_53_52_581",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "fields.SourceContext",
+        "message"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"fields.Infrastructure\":\"cloud\"}},{\"term\":{\"fields.ProjectId\":\"113809\"}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_113809",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_09_12_12_49_37_326",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "fields.SourceContext",
+        "message"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"fields.Infrastructure\":\"cloud\"}},{\"term\":{\"fields.ProjectId\":\"113701\"}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_113701",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_09_13_13_51_09_960",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "fields.SourceContext",
+        "message"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"fields.Infrastructure\":\"cloud\"}},{\"term\":{\"fields.ProjectId\":\"113769\"}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_113769",
+      "version": 1
+    }
+  },
+  {
+    "_id": "75218020-99f0-11e7-bd8b-471fa802192c",
+    "_type": "search",
+    "_source": {
+      "title": "iQube_App_Reindex_Operations",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_type",
+        "message",
+        "fields.MachineName",
+        "fields.ThreadId",
+        "fields.StatusCode"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"should\":[{\"bool\":{\"must\":[{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.MachineName\":\"web\"}},{\"term\":{\"fields.SourceContext.keyword\":\"TMAppServer.Controllers.Api.Sphinx.ReindexOperationsApiController\"}},{\"term\":{\"fields.index\":\"AllTranslations\"}}]}},{\"bool\":{\"must\":[{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.MachineName\":\"web\"}},{\"term\":{\"fields.RawUrl.keyword\":\"/api/reindex-operations/AllTranslations\"}}]}}]}}}},\"highlightAll\":true,\"version\":true}"
+      }
+    }
+  },
+  {
+    "_id": "_iqube_2017_09_20_15_09_43_843",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "method",
+        "request",
+        "status",
+        "time_taken",
+        "user_agent"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"fields.service\":\"iqube\"}},{\"regexp\":{\"method\":\"(PUT|POST|DELETE)\"}}],\"should\":[{\"term\":{\"project_id\":113980}},{\"term\":{\"project_group_id\":31595}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_113980",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_09_19_10_01_09_409",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "fields.SourceContext",
+        "message"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"fields.Infrastructure\":\"cloud\"}},{\"term\":{\"fields.ProjectId\":\"114024\"}},{\"term\":{\"fields.Controller.keyword\":\"PreTranslation\"}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_114024",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_09_19_11_44_11_805",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "fields.SourceContext",
+        "message"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"fields.Infrastructure\":\"cloud\"}},{\"term\":{\"fields.ProjectId\":\"114050\"}},{\"term\":{\"fields.Controller.keyword\":\"PreTranslation\"}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_114050",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_09_19_14_30_22_910",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "fields.SourceContext",
+        "message"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"fields.Infrastructure\":\"cloud\"}},{\"term\":{\"fields.ProjectId\":\"114079\"}},{\"term\":{\"fields.Controller.keyword\":\"PreTranslation\"}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_114079",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_09_21_11_52_39_224",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "fields.SourceContext",
+        "message"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"fields.Infrastructure\":\"cloud\"}},{\"term\":{\"fields.ProjectId\":\"114230\"}},{\"term\":{\"fields.Controller.keyword\":\"PreTranslation\"}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_114230",
+      "version": 1
+    }
+  },
+  {
+    "_id": "50a29cd0-888d-11e7-aa31-6f0a88e3556c",
+    "_type": "search",
+    "_source": {
+      "title": "iQube_App_Logs_Serilog_Cloud_Live",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_type",
+        "message",
+        "fields.MachineName"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.MachineName\":\"web\"}},{\"term\":{\"fields.Env\":\"live\"}}]}}}},\"highlightAll\":true,\"version\":true}"
+      }
+    }
+  },
+  {
+    "_id": "_iqube_2017_09_26_14_23_45_177",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "method",
+        "request",
+        "status",
+        "time_taken",
+        "user_agent"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"fields.service\":\"iqube\"}}],\"should\":[{\"term\":{\"project_id\":114205}},{\"term\":{\"project_group_id\":31668}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_114205",
+      "version": 1
+    }
+  },
+  {
+    "_id": "b44216e0-a8d5-11e7-b9a0-0b27c117a169",
+    "_type": "search",
+    "_source": {
+      "title": "iQube_App_Delete_Project_With_Status_Code_And_Elapsed_Time",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_type",
+        "message",
+        "fields.MachineName"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.MachineName\":\"web\"}},{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"fields.Method.keyword\":\"DELETE\"}},{\"regexp\":{\"fields.RawUrl.keyword\":\"/api/projects/[0-9]+[^/]*\"}}]}}}},\"highlightAll\":true,\"version\":true}"
+      }
+    }
+  },
+  {
+    "_id": "262181c0-a8d5-11e7-b9a0-0b27c117a169",
+    "_type": "search",
+    "_source": {
+      "title": "iQube_App_Delete_Project",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_type",
+        "message",
+        "fields.MachineName"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.MachineName\":\"web\"}},{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"fields.SourceContext.keyword\":\"TMAppServer.Controllers.Api.Projects.ProjectsApiController\"}},{\"term\":{\"fields.Action.keyword\":\"Delete\"}}]}}}},\"highlightAll\":true,\"version\":true}"
+      }
+    }
+  },
+  {
+    "_id": "_iqube_2017_09_27_11_14_53_309",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "fields.SourceContext",
+        "message"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"fields.Infrastructure\":\"cloud\"}},{\"term\":{\"fields.ProjectId\":\"114644\"}},{\"term\":{\"fields.Controller.keyword\":\"PreTranslation\"}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_114644",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_09_27_11_15_32_737",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "method",
+        "request",
+        "status",
+        "time_taken",
+        "user_agent"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"fields.service\":\"iqube\"}}],\"should\":[{\"term\":{\"project_id\":114644}},{\"term\":{\"project_group_id\":31806}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_114644",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_09_27_11_14_48_866",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "fields.SourceContext",
+        "message"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"fields.Infrastructure\":\"cloud\"}},{\"term\":{\"fields.ProjectId\":\"114644\"}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_114644",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_09_27_11_14_51_886",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "fields.SourceContext",
+        "message"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"fields.Infrastructure\":\"cloud\"}},{\"term\":{\"fields.ProjectId\":\"114644\"}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_114644",
+      "version": 1
+    }
+  },
+  {
+    "_id": "4f9b2780-a750-11e7-95ca-f98a1b0c1b08",
+    "_type": "search",
+    "_source": {
+      "title": "TC_IIS",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_source"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"fields.service\":\"tc\"}},{\"term\":{\"fields.document_type\":\"iis\"}}]}}}},\"highlightAll\":true,\"version\":true}"
+      }
+    }
+  },
+  {
+    "_id": "b67b39e0-a818-11e7-9a08-bf02c5f30bfe",
+    "_type": "search",
+    "_source": {
+      "title": "Sphinx_Queries",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_source"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"_type\":\"sphinx_query\"}}]}}}},\"highlightAll\":true,\"version\":true}"
+      }
+    }
+  },
+  {
+    "_id": "_iqube_2017_10_05_14_08_34_755",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "method",
+        "request",
+        "status",
+        "time_taken",
+        "user_agent"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"fields.service\":\"iqube\"}},{\"regexp\":{\"method\":\"(PUT|POST|DELETE)\"}}],\"should\":[{\"term\":{\"project_id\":114932}},{\"term\":{\"project_group_id\":31893}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_114932",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_10_04_11_20_49_878",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "fields.SourceContext",
+        "message"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"fields.Infrastructure\":\"cloud\"}},{\"term\":{\"fields.ProjectId\":\"114932\"}},{\"term\":{\"fields.Controller.keyword\":\"PreTranslation\"}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_114932",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_10_04_11_54_08_857",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "fields.SourceContext",
+        "message"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"fields.Infrastructure\":\"cloud\"}},{\"term\":{\"fields.ProjectId\":\"114932\"}},{\"term\":{\"fields.Controller.keyword\":\"PreTranslation\"}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_114932",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_10_04_14_35_44_963",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "fields.SourceContext",
+        "message"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"fields.Infrastructure\":\"cloud\"}},{\"term\":{\"fields.ProjectId\":\"115042\"}},{\"term\":{\"fields.Controller.keyword\":\"PreTranslation\"}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_115042",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_10_05_15_25_48_651",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "fields.SourceContext",
+        "message"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"fields.Infrastructure\":\"cloud\"}},{\"term\":{\"fields.ProjectId\":\"115159\"}},{\"term\":{\"fields.Controller.keyword\":\"PreTranslation\"}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_115159",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_10_05_15_42_00_833",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "fields.SourceContext",
+        "message"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"fields.Infrastructure\":\"cloud\"}},{\"term\":{\"fields.ProjectId\":\"115159\"}},{\"term\":{\"fields.Controller.keyword\":\"PreTranslation\"}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_115159",
+      "version": 1
+    }
+  },
+  {
+    "_id": "65950b80-a9b9-11e7-be19-fdfdd9924318",
+    "_type": "search",
+    "_source": {
+      "title": "TC_IIS_Cloud_Live",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_source"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"fields.service\":\"tc\"}},{\"term\":{\"fields.document_type\":\"iis\"}},{\"term\":{\"fields.env\":\"live\"}},{\"term\":{\"fields.infrastructure\":\"cloud\"}}]}}}},\"highlightAll\":true,\"version\":true}"
+      }
+    }
+  },
+  {
+    "_id": "_iqube_2017_10_05_12_34_40_061",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "method",
+        "request",
+        "status",
+        "time_taken",
+        "user_agent"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"fields.service\":\"iqube\"}}],\"should\":[{\"term\":{\"project_id\":114932}},{\"term\":{\"project_group_id\":31893}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_114932",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_10_06_09_49_09_529",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "method",
+        "request",
+        "status",
+        "time_taken",
+        "user_agent"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"segment_id\":[89956233,89956234,89956241,89956242,89957450,89957530,89957625,89957629,89957659,89957775,89957823,89957913,89957935,89958039,89958266,89958286,89958287,89958289,89958290,89958311,89958374,89958845,89958943,89958945,89958964,89959006,89959281,89959634,89959845,89960040,89960212,89960284,89960371,89960523,89960526,89960573,89960725,89960728,89960775,89961015,89961190,89961196,89961207,89961242,89961243,89961250,89961746,89962056,89962207,89962213,89962219,89962243,89962503,89962507,89962513,89962530,89962596,89962728,89962736,89962895,89963201,89963204,89963207,89963210,89963256,89963409,89963472,89963478,89963552,89963684,89963762,89964154,89964596,89964969,89965329,89965636,89965919,89965920,89965929,89965935,89966021,89966265,89966554,89966601,89966631,89966632,89966641,89966647,89966678,89966887,89966912,89967107,89967112,89967360,89967366,89967376,89967498,89967513,89967516,89967517,89970302,89970305,89973372,89973376,89973377,89973378,89973380,89973384,89973387,89973390,89973393,89973396,89973399,89976377,89976457,89976558,89976562,89976592,89976708,89976756,89976860,89977087,89977107,89977108,89977285,89977348,89977651,89977652,89977819,89977917,89977919,89977938,89977980,89978013,89978105,89978106,89978116,89978153,89978661,89978662,89978675,89978676,89979115,89979142,89979267,89979288,89979385,89979396,89979400,89979403,89979408,89979409,89979573,89979840,89980051,89980285,89980550,89980553,89980556,89980559,89980617,89980902,89981449,89981462,89981568,89981763,89981935,89982007,89982251,89982499,89982683,89982736,89983055,89983303,89983455,89983458,89983505,89983657,89983660,89983707,89983840,89984015,89984278,89984429,89984566,89984693,89984835,89985331,89985477,89985739,89986049,89986200,89986206,89986212,89986236,89986496,89986500,89986506,89986523,89986589,89986748,89987054,89987057,89987060,89987063,89987109,89987262,89987325,89987331,89987405,89987537,89987615,89988271,89988274,89988292,89988294,89988295,89988333,89988982,89989374,89989384,89989988,89990295,89990578,89990579,89990588,89990594,89990680,89990924,89991213,89991450,89991460,89991599,89991602,89991682,89991685,89991758,89991848,89991895,89991925,89991926,89991935,89991941,89993855,89998342,89998343,89998354,89998355,89998361,89998362,89998369,89998370,89998378,89998379,89998389,89998390,89998586,89998588,89998590,90000926,90001319,90002237,90002289,90002291,90002293,90002295,90002296,90002366,90002371,90002373,90002378,90002379,90002380,90002385,90002386,90002387,90002392,90002393,90002394,90002399,90002400,90003026,90003055,90004427,90005644,90005645,90005646,90005647,90005654,90005659,90005663,90005668,90005669,90005673,90005678,90005683,90005688,90005693,90005828,90005833,90005837,90005844,90005851,90005891,90006636,90007025,90007029,90007349,90007353,90007977,90008114,90008118,90008214,90008218,90010363,90011030,90011034,90011436,90011857,90011859,90011861,90011866,90011868,90011871,90011877,90011880,90011885,90011907,90012351,90012400,90012401,90012405,90012435,90012444,90012450,90012455,90012457,90012854,90013152,90013189,90013634,90013639,90013641,90013643,90013645,90013647,90013741,90013743,90013744,90014250,90014254,90014255,90014259,90014322,90014327,90014329,90014331,90014333,90014522,90014984,90014989,90017743,90017751,90017753,90017755,90017809,90017814,90017816,90017821,90017823,90017828,90017830,90017835,90017837,90017842,90019168,90019170,90019175,90019177,90019182,90019184,90019189,90019191,90019252,90019254,90019256,90019264,90019453,90019947,90019955,90019963,90019990,90019994,90020001,90020019,90020042,90020056,90020063,90020567,90024734,90024787,90024795,90025238,90025294,90025302,90026484,90026485,90026663,90026664,90029445,90029446,90029644,90030008,90030009,90030016,90030017,90030024,90030025,90030051,90030052,90030055,90030056,90030062,90030063,90030068,90030080,90030081,90030103,90030104,90030117,90030118,90030124,90030125,90030606,90030642,90030757,90030758,90030922,90030958,90030960,90030971,90030978,90031014,90031095,90031322,90031326,90036087,90036140,90036148,90036319,90036375,90036383,90036553,90036565,90036573,90036574,90036576,90036577,90036584,90036585,90036586,90036595,90036599,90036607,90036617,90036628,90036654,90036674,90037216,90037217,90037881,90037882,90037890,90037891,90037899,90037900,90037927,90037928,90037932,90037933,90037940,90037941,90037959,90037960,90037983,90037984,90037998,90037999,90038006,90038007,90038537,90038538,90042754,90042810,90042818,90042984,90043037,90043045,90047567,90047623,90047631,90047797,90047850,90047858,90051266,90051267,90051458,90051459,90051653,90051654,90057147,90057153,90057160,90057164,90057168,90057172,90057400,90057412,90057417,90057595,90057613,90057716,90057778,90057782,90057786,90057790,90057794,90057798,90057802,90057806,90057810,90057814,90057819,90057824,90057829,90057834,90057841,90057976,90057980,90057984,90058121,90058132,90058136,90058920,90058924,90058928,90058933,90058938,90058942,90058946,90058955,90058958,90059180,90059184,90059321,90059329,90059343,90059450,90059496,90059499,90059503,90059511,90059603,90059606,90059609,90059709,90059720,90059724,90060724,90060737,90060740,90060855,90061026,90061034,90061039,90061044,90061049,90061054,90061252,90061260,90061274,90061282,90061400,90061476,90061480,90061485,90061489,90061493,90061497,90061501,90061517,90061645,90061649,90061656,90061808,90061819,90061823,90062598,90062601,90062605,90062609,90062628,90062631,90062635,90062872,90062879,90062883,90063028,90063036,90063050,90063058,90063165,90063182,90063185,90063224,90063227,90063230,90063233,90063241,90063330,90063333,90063336,90063449,90063460,90063464,90064194,90064198,90064203,90064208,90064229,90064232,90064236,90064400,90064404,90064407,90064435,90064439,90064572,90064580,90064592,90064688,90064691,90064706,90064709,90064745,90064749,90064753,90064757,90064761,90064765,90064769,90064773,90064781,90064882,90064885,90064888,90064998,90065009,90065013,90069434,90070422,90076051,90076058,90076074,90076088,90077887,90080631,90080723,90081656,90081805,90081904,90081960,90081982,90081993,90082022,90082041,90082097,90083590,90083594,90083616,90083620,90083644,90083648,90085077,90085081,90086036,90086049,90086108,90086121,90086467,90086470,90086472,90086477,90086479,90086585,90086587,90086588,90086590,90086595,90086597,90086777,90086778,90086781,90086783,90086784,90086787,90086789,90086790,90086793,90086894,90086895,90086900,90086901,90086904,90086906,90086907,90086910,90086912,90086913,90086916,90086918,90086919,90087796,90087797,90087804,90087805,90087814,90087845,90087846,90087849,90087855,90087858,90087865,90087867,90087868,90087871,90087882,90087889,90087890,90087891,90087901,90087904,90087912,90087932,90088364,90088372,90088397,90088398,90088405,90088490,90088491,90088498,90088499,90088539,90088540,90088549,90088552,90088559,90088561,90088562,90088565,90088576,90088583,90088584,90088585,90088595,90088598,90088606,90088626,90088633,90089220,90090769,90090777,90090802,90090803,90090810,90091864,90091865,90091872,90091959,90091967,90092149,90092151,90092154,90092155,90092184,90092202,90092204,90092207,90092208,90092365,90092367,90092451,90092594,90092596,90092691,90092693,90092734,90092738,90092740,90093649,90093651,90093686,90093688,90094000,90094002,90094130,90094132,90094478,90094480,90100600,90102183,90102187,90107103,90108296,90108300,90112196,90112556,90112604,90112758,90112770,90113101,90113103,90113104,90113105,90113106,90113108,90113109,90113111,90113112,90113113,90113114,90113116,90113335,90113337,90113338,90113339,90113340,90113342,90113343,90113345,90113346,90113347,90113348,90113350,90113581,90113583,90113584,90113585,90113586,90113588,90113589,90113591,90113592,90113593,90113594,90113596,90113827,90113829,90113830,90113831,90113832,90113834,90113835,90113837,90113838,90113839,90113840,90113842,90114073,90114075,90114076,90114077,90114078,90114080,90114081,90114083,90114084,90114085,90114086,90114088,90114688,90114689,90114694,90114695,90114720,90114721,90114726,90114727,90114732,90114733,90114758,90114759,90115078,90115079,90115084,90115085,90115110,90115111,90115116,90115117,90115122,90115123,90115148,90115149,90115472,90115473,90115478,90115479,90115504,90115505,90115510,90115511,90115516,90115517,90115542,90115543,90115868,90115869,90115874,90115875,90115900,90115901,90115906,90115907,90115912,90115913,90115938,90115939,90116209,90116222,90116264,90116265,90116270,90116271,90116296,90116297,90116302,90116303,90116308,90116309,90116334,90116335,90117341,90117342,90117461,90117578,90117584,90117585,90117589,90117647,90117741,90117795,90117834,90117863,90117949,90119894,90119946,90119998,90120006,90120020,90123571,90123987,90123988,90123989,90124014,90124020,90124028,90124029,90124030,90124034,90124035,90124036,90124037,90124038,90124044,90124050,90124062,90124063,90124069,90124799,90124801,90124955,90124957,90125982,90125984,90126013,90126015,90126064,90126066,90126103,90126105,90127143,90127145,90127309,90127311,90127956,90127958,90127980,90127983,90127990,90127992,90128055,90128057,90128092,90128098,90128106,90128108,90128827,90128829,90128962,90128964,90129646,90129648,90129675,90129677,90129722,90129724,90129757,90129759,90132358,90132364,90132426,90132434,90132501,90132505,90132534,90132538,90132546,90132550,90132558,90132563,90132566,90132598,90132602,90132616,90132620,90132631,90137730,90137762,90139479,90139480,90142594,90142618,90142625,90142636,90142644,90142645,90142656,90142657,90142663,90142687,90142689,90142695,90142717,90142718,90142719,90142737,90142738,90142745,90143889,90143934,90144072,90144075,90144083,90145397,90145401,90145445,90145447,90145448,90145476,90145488,90145493,90145494,90145496,90145499,90145520,90145521,90145523,90145731,90145732,90145897,90145898,90146058,90146059,90146085,90146095,90146100,90146204,90146205,90146206,90146207,90146262,90146264,90148638,90148674,90153784,90154267,90154276,90154283,90154293,90154299,90154305,90154313,90154319,90154325,90154331,90154337,90154343,90154349,90154355,90154721,90155169,90155178,90155185,90155195,90155201,90155207,90155215,90155221,90155227,90155233,90155239,90155245,90155251,90155257,90156214,90156342,90156347,90156431,90156436,90156481,90156486,90156545,90156550,90156565,90156570,90156604,90156609,90156642,90156645,90156724,90156729,90156772,90156839,90156844,90156862,90156867,90156881,90156886,90156900,90156905,90156919,90156924,90156938,90156943,90156957,90156962,90157058,90157063,90157073,90157078,90157088,90157093,90157101,90157106,90157116,90157121,90157142,90157145,90157153,90157156,90157164,90157167,90157175,90157178,90157186,90157189,90157197,90157200,90157263,90157270,90157277,90157284,90157291,90157298,90157305,90157312,90157319,90157326,90157333,90157340,90157347,90157354,90157361,90157473,90157478,90157525,90157730,90157735,90157749,90157754,90157768,90157773,90157787,90157792,90157806,90157811,90157825,90157830,90157900,90157905,90157915,90157920,90157930,90157935,90157945,90157950,90157960,90157965,90157988,90157991,90157999,90158002,90158010,90158013,90158021,90158024,90158032,90158035,90158043,90158046,90158131,90158138,90158145,90158152,90158159,90158166,90158173,90158180,90158187,90158194,90158201,90158208,90158215,90158222,90158229,90160717,90163959,90163964,90163980,90163985,90167204,90167209,90167235,90167240,90167599,90167604,90167630,90167635,90167732,90167737,90167763,90167768,90168724,90168729,90168745,90168750,90171469,90174731,90174804,90178980,90178981,90178990,90181806,90181879,90184154,90184158,90190719,90190723,90193310,90195247,90197939,90200749,90203313,90203317,90203515,90203516,90203525,90203558,90203559,90203568,90206729,90206733,90209232,90210311,90211973,90213742,90215711,90217479,90217480,90217482,90217588,90217614,90218937,90219005,90219023,90219055,90219131,90219217,90220882,90220934,90220954,90221122,90221123,90221133,90221134,90221135,90221171,90221225,90221262,90221264,90221277,90221283,90221290,90221291,90221292,90221456,90221468,90221470,90221472,90221473,90221478,90221479,90221556,90221563,90221566,90221583,90221584,90221590,90221591,90221601,90221603,90221608,90221609,90221619,90221636,90221641,90221842,90221846,90221848,90221854,90221856,90221860,90221870,90221871,90221896,90221899,90221937,90221938,90221940,90221941,90221942,90221943,90221946,90221947,90221949,90221950,90221951,90221952,90222066,90222067,90222111,90222112,90222119,90222120,90222132,90222134,90222135,90222177,90222178,90222180,90222181,90222182,90222183,90222186,90222187,90222189,90222190,90222191,90222192,90222390,90222411,90222622,90222623,90222630,90222769,90222844,90222851,90222868,90222950,90222955,90223051,90223236,90223243,90223247,90223268,90223367,90223368,90223455,90223741,90223837,90223962,90223967,90224162,90224204,90224230,90224233,90224235,90224256,90224258,90224260,90224267,90224269,90224270,90224287,90224300,90224316,90224411,90224412,90224419,90224427,90224429,90224438,90224445,90224446,90224603,90224623,90225103,90225110,90225114,90225406,90225407,90225414,90226540,90228238,90230564,90231012,90231421,90233058,90233235,90233326,90233649,90234189,90234707,90235255,90235728,90236095,90236199,90236203,90236207,90236219,90236235,90236260,90236264,90236268,90236289,90236746,90236750,90236754,90236770,90237064,90237068,90237072,90237088,90237415,90237540,90237544,90237788,90237792,90237893,90237898,90239437,90239443,90239450,90239454,90239458,90239462,90239690,90239702,90239707,90239885,90239903,90240006,90240068,90240072,90240076,90240080,90240084,90240088,90240092,90240096,90240100,90240104,90240109,90240114,90240119,90240124,90240131,90240266,90240270,90240274,90240411,90240422,90240426,90241200,90241204,90241208,90241213,90241218,90241222,90241226,90241235,90241238,90241460,90241464,90241601,90241609,90241623,90241730,90241776,90241779,90241783,90241791,90241883,90241886,90241889,90241989,90242000,90242004,90243003,90243016,90243019,90243134,90243305,90243313,90243318,90243323,90243328,90243333,90243531,90243539,90243553,90243561,90243679,90243755,90243759,90243764,90243768,90243772,90243776,90243780,90243796,90243924,90243928,90243935,90244087,90244098,90244102,90244876,90244879,90244883,90244887,90244906,90244909,90244913,90245150,90245157,90245161,90245306,90245314,90245328,90245336,90245443,90245460,90245463,90245502,90245505,90245508,90245511,90245519,90245608,90245611,90245614,90245727,90245738,90245742,90246418,90246422,90246427,90246432,90246453,90246456,90246460,90246624,90246628,90246631,90246659,90246663,90246796,90246804,90246816,90246912,90246915,90246930,90246933,90246969,90246973,90246977,90246981,90246985,90246989,90246993,90246997,90247005,90247106,90247109,90247112,90247222,90247233,90247237,90247580,90247862,90248116,90248134,90248138,90248420,90248424,90248748,90248752,90249104,90249108,90249227,90249340,90253253,90253254,90253261,90253275,90253307,90253333,90254053,90254054,90254077,90254225,90254242,90254243,90254338,90254359,90254366,90254369,90254371,90254864,90254874,90254877,90254944,90258504,90258509,90258510,90258537,90258538,90258539,90258540,90258541,90258545,90258913,90258918,90258921,90258923,90258928,90258931,90258932,90258933,90258934,90258935,90258937,90258942,90258946,90258949,90258950,90258955,90258958,90258961,90258966,90258969,90258975,90258980,90258983,90258985,90258990,90258993,90258994,90258995,90258996,90258997,90258999,90259004,90259008,90259011,90259012,90259017,90259020,90259023,90259028,90259031,90259037,90259042,90259045,90259047,90259052,90259055,90259056,90259057,90259058,90259059,90259061,90259066,90259070,90259073,90259074,90259079,90259082,90259085,90259090,90259093,90259122,90259127,90259130,90259131,90259132,90259134,90259139,90259142,90259143,90259144,90259145,90259146,90259148,90259153,90259157,90259160,90259165,90259168,90259174,90259179,90259182,90259183,90259184,90259186,90259191,90259194,90259195,90259196,90259197,90259198,90259200,90259205,90259209,90259212,90259217,90259220,90259226,90259231,90259234,90259235,90259236,90259238,90259243,90259246,90259247,90259248,90259249,90259250,90259252,90259257,90259261,90259264,90259269,90259272,90259557,90259579,90259580,90259581,90259582,90259596,90259598,90259599,90259600,90259607,90259608,90259625,90259630,90259647,90259648,90259649,90259650,90259655,90259656,90259658,90259661,90259662,90259664,90259681,90265700,90265706,90265917,90265923,90266041,90266047,90268382,90268394,90270721,90270733,90270876,90270886,90270995,90271007,90276765,90276777,90279350,90279362,90282621,90282636,90285629,90286255,90288928,90288933,90288997,90289005,90291943,90292120,90294318,90294745,90294797,90295415,90295422,90296149,90297025,90297146,90298594,90299338,90299996,90300184,90300188,90301792,90301852,90301853,90301854,90301860,90301861,90301862,90301863,90301864,90301865,90302209,90302269,90302270,90302271,90302277,90302278,90302279,90302280,90302281,90302282,90306543,90306544,90306550,90306562,90306632,90306633,90306639,90306651,90306851,90306857,90306932,90306938,90307881,90307885,90307979,90308023,90308027,90308545,90308549,90308585,90308791,90308795,90310284,90310300,90310311,90310318,90310439,90310440,90310441,90310445,90310450,90310456,90310463,90310501,90310503,90310504,90310506,90310535,90310540,90310542,90310560,90310562,90310597,90310609,90310620,90310622,90310625,90310627,90310658,90310659,90310667,90310668,90310669,90310672,90310678,90310681,90310691,90310692,90310700,90310703,90310706,90310709,90310712,90310715,90310966,90310976,90310987,90310991,90310994,90311001,90311002,90311013,90311017,90311022]}},{\"regexp\":{\"request\":\"/api/segments/[0-9]+/translation\"}},{\"term\":{\"method\":\"PUT\"}},{\"term\":{\"fields.service\":\"iqube\"}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Query-based_search_for_1,947_matching_segments",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_10_06_20_33_22_523",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "method",
+        "request",
+        "status",
+        "time_taken",
+        "user_agent"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"segment_id\":[89956233,89956234,89956241,89956242,89957450,89957530,89957625,89957629,89957659,89957775,89957823,89957913,89957935,89958039,89958266,89958286,89958287,89958289,89958290,89958311,89958374,89958845,89958943,89958945,89958964,89959006,89959281,89959634,89959845,89960040,89960212,89960284,89960371,89960523,89960526,89960573,89960725,89960728,89960775,89961015,89961190,89961196,89961207,89961242,89961243,89961250,89961746,89962056,89962207,89962213,89962219,89962243,89962503,89962507,89962513,89962530,89962596,89962728,89962736,89962895,89963201,89963204,89963207,89963210,89963256,89963409,89963472,89963478,89963552,89963684,89963762,89964154,89964596,89964969,89965329,89965636,89965919,89965920,89965929,89965935,89966021,89966265,89966554,89966601,89966631,89966632,89966641,89966647,89966678,89966887,89966912,89967107,89967112,89967360,89967366,89967376,89967498,89967513,89967516,89967517,89970302,89970305,89973372,89973376,89973377,89973378,89973380,89973384,89973387,89973390,89973393,89973396,89973399,89976377,89976457,89976558,89976562,89976592,89976708,89976756,89976860,89977087,89977107,89977108,89977285,89977348,89977651,89977652,89977819,89977917,89977919,89977938,89977980,89978013,89978105,89978106,89978116,89978153,89978661,89978662,89978675,89978676,89979115,89979142,89979267,89979288,89979385,89979396,89979400,89979403,89979408,89979409,89979573,89979840,89980051,89980285,89980550,89980553,89980556,89980559,89980617,89980902,89981449,89981462,89981568,89981763,89981935,89982007,89982251,89982499,89982683,89982736,89983055,89983303,89983455,89983458,89983505,89983657,89983660,89983707,89983840,89984015,89984278,89984429,89984566,89984693,89984835,89985331,89985477,89985739,89986049,89986200,89986206,89986212,89986236,89986496,89986500,89986506,89986523,89986589,89986748,89987054,89987057,89987060,89987063,89987109,89987262,89987325,89987331,89987405,89987537,89987615,89988271,89988274,89988292,89988294,89988295,89988333,89988982,89989374,89989384,89989988,89990295,89990578,89990579,89990588,89990594,89990680,89990924,89991213,89991450,89991460,89991599,89991602,89991682,89991685,89991758,89991848,89991895,89991925,89991926,89991935,89991941,89993855,89998342,89998343,89998354,89998355,89998361,89998362,89998369,89998370,89998378,89998379,89998389,89998390,89998586,89998588,89998590,90000926,90001319,90002237,90002289,90002291,90002293,90002295,90002296,90002366,90002371,90002373,90002378,90002379,90002380,90002385,90002386,90002387,90002392,90002393,90002394,90002399,90002400,90003026,90003055,90004427,90005644,90005645,90005646,90005647,90005654,90005659,90005663,90005668,90005669,90005673,90005678,90005683,90005688,90005693,90005828,90005833,90005837,90005844,90005851,90005891,90006636,90007025,90007029,90007349,90007353,90007977,90008114,90008118,90008214,90008218,90010363,90011030,90011034,90011436,90011857,90011859,90011861,90011866,90011868,90011871,90011877,90011880,90011885,90011907,90012351,90012400,90012401,90012405,90012435,90012444,90012450,90012455,90012457,90012854,90013152,90013189,90013634,90013639,90013641,90013643,90013645,90013647,90013741,90013743,90013744,90014250,90014254,90014255,90014259,90014322,90014327,90014329,90014331,90014333,90014522,90014984,90014989,90017743,90017751,90017753,90017755,90017809,90017814,90017816,90017821,90017823,90017828,90017830,90017835,90017837,90017842,90019168,90019170,90019175,90019177,90019182,90019184,90019189,90019191,90019252,90019254,90019256,90019264,90019453,90019947,90019955,90019963,90019990,90019994,90020001,90020019,90020042,90020056,90020063,90020567,90024734,90024787,90024795,90025238,90025294,90025302,90026484,90026485,90026663,90026664,90029445,90029446,90029644,90030008,90030009,90030016,90030017,90030024,90030025,90030051,90030052,90030055,90030056,90030062,90030063,90030068,90030080,90030081,90030103,90030104,90030117,90030118,90030124,90030125,90030606,90030642,90030757,90030758,90030922,90030958,90030960,90030971,90030978,90031014,90031095,90031322,90031326,90036087,90036140,90036148,90036319,90036375,90036383,90036553,90036565,90036573,90036574,90036576,90036577,90036584,90036585,90036586,90036595,90036599,90036607,90036617,90036628,90036654,90036674,90037216,90037217,90037881,90037882,90037890,90037891,90037899,90037900,90037927,90037928,90037932,90037933,90037940,90037941,90037959,90037960,90037983,90037984,90037998,90037999,90038006,90038007,90038537,90038538,90042754,90042810,90042818,90042984,90043037,90043045,90047567,90047623,90047631,90047797,90047850,90047858,90051266,90051267,90051458,90051459,90051653,90051654,90057147,90057153,90057160,90057164,90057168,90057172,90057400,90057412,90057417,90057595,90057613,90057716,90057778,90057782,90057786,90057790,90057794,90057798,90057802,90057806,90057810,90057814,90057819,90057824,90057829,90057834,90057841,90057976,90057980,90057984,90058121,90058132,90058136,90058920,90058924,90058928,90058933,90058938,90058942,90058946,90058955,90058958,90059180,90059184,90059321,90059329,90059343,90059450,90059496,90059499,90059503,90059511,90059603,90059606,90059609,90059709,90059720,90059724,90060724,90060737,90060740,90060855,90061026,90061034,90061039,90061044,90061049,90061054,90061252,90061260,90061274,90061282,90061400,90061476,90061480,90061485,90061489,90061493,90061497,90061501,90061517,90061645,90061649,90061656,90061808,90061819,90061823,90062598,90062601,90062605,90062609,90062628,90062631,90062635,90062872,90062879,90062883,90063028,90063036,90063050,90063058,90063165,90063182,90063185,90063224,90063227,90063230,90063233,90063241,90063330,90063333,90063336,90063449,90063460,90063464,90064194,90064198,90064203,90064208,90064229,90064232,90064236,90064400,90064404,90064407,90064435,90064439,90064572,90064580,90064592,90064688,90064691,90064706,90064709,90064745,90064749,90064753,90064757,90064761,90064765,90064769,90064773,90064781,90064882,90064885,90064888,90064998,90065009,90065013,90069434,90070422,90076051,90076058,90076074,90076088,90077887,90080631,90080723,90081656,90081805,90081904,90081960,90081982,90081993,90082022,90082041,90082097,90083590,90083594,90083616,90083620,90083644,90083648,90085077,90085081,90086036,90086049,90086108,90086121,90086467,90086470,90086472,90086477,90086479,90086585,90086587,90086588,90086590,90086595,90086597,90086777,90086778,90086781,90086783,90086784,90086787,90086789,90086790,90086793,90086894,90086895,90086900,90086901,90086904,90086906,90086907,90086910,90086912,90086913,90086916,90086918,90086919,90087796,90087797,90087804,90087805,90087814,90087845,90087846,90087849,90087855,90087858,90087865,90087867,90087868,90087871,90087882,90087889,90087890,90087891,90087901,90087904,90087912,90087932,90088364,90088372,90088397,90088398,90088405,90088490,90088491,90088498,90088499,90088539,90088540,90088549,90088552,90088559,90088561,90088562,90088565,90088576,90088583,90088584,90088585,90088595,90088598,90088606,90088626,90088633,90089220,90090769,90090777,90090802,90090803,90090810,90091864,90091865,90091872,90091959,90091967,90092149,90092151,90092154,90092155,90092184,90092202,90092204,90092207,90092208,90092365,90092367,90092451,90092594,90092596,90092691,90092693,90092734,90092738,90092740,90093649,90093651,90093686,90093688,90094000,90094002,90094130,90094132,90094478,90094480,90100600,90102183,90102187,90107103,90108296,90108300,90112196,90112556,90112604,90112758,90112770,90113101,90113103,90113104,90113105,90113106,90113108,90113109,90113111,90113112,90113113,90113114,90113116,90113335,90113337,90113338,90113339,90113340,90113342,90113343,90113345,90113346,90113347,90113348,90113350,90113581,90113583,90113584,90113585,90113586,90113588,90113589,90113591,90113592,90113593,90113594,90113596,90113827,90113829,90113830,90113831,90113832,90113834,90113835,90113837,90113838,90113839,90113840,90113842,90114073,90114075,90114076,90114077,90114078,90114080,90114081,90114083,90114084,90114085,90114086,90114088,90114688,90114689,90114694,90114695,90114720,90114721,90114726,90114727,90114732,90114733,90114758,90114759,90115078,90115079,90115084,90115085,90115110,90115111,90115116,90115117,90115122,90115123,90115148,90115149,90115472,90115473,90115478,90115479,90115504,90115505,90115510,90115511,90115516,90115517,90115542,90115543,90115868,90115869,90115874,90115875,90115900,90115901,90115906,90115907,90115912,90115913,90115938,90115939,90116209,90116222,90116264,90116265,90116270,90116271,90116296,90116297,90116302,90116303,90116308,90116309,90116334,90116335,90117341,90117342,90117461,90117578,90117584,90117585,90117589,90117647,90117741,90117795,90117834,90117863,90117949,90119894,90119946,90119998,90120006,90120020,90123571,90123987,90123988,90123989,90124014,90124020,90124028,90124029,90124030,90124034,90124035,90124036,90124037,90124038,90124044,90124050,90124062,90124063,90124069,90124799,90124801,90124955,90124957,90125982,90125984,90126013,90126015,90126064,90126066,90126103,90126105,90127143,90127145,90127309,90127311,90127956,90127958,90127980,90127983,90127990,90127992,90128055,90128057,90128092,90128098,90128106,90128108,90128827,90128829,90128962,90128964,90129646,90129648,90129675,90129677,90129722,90129724,90129757,90129759,90132358,90132364,90132426,90132434,90132501,90132505,90132534,90132538,90132546,90132550,90132558,90132563,90132566,90132598,90132602,90132616,90132620,90132631,90137730,90137762,90139479,90139480,90142594,90142618,90142625,90142636,90142644,90142645,90142656,90142657,90142663,90142687,90142689,90142695,90142717,90142718,90142719,90142737,90142738,90142745,90143889,90143934,90144072,90144075,90144083,90145397,90145401,90145445,90145447,90145448,90145476,90145488,90145493,90145494,90145496,90145499,90145520,90145521,90145523,90145731,90145732,90145897,90145898,90146058,90146059,90146085,90146095,90146100,90146204,90146205,90146206,90146207,90146262,90146264,90148638,90148674,90153784,90154267,90154276,90154283,90154293,90154299,90154305,90154313,90154319,90154325,90154331,90154337,90154343,90154349,90154355,90154721,90155169,90155178,90155185,90155195,90155201,90155207,90155215,90155221,90155227,90155233,90155239,90155245,90155251,90155257,90156214,90156342,90156347,90156431,90156436,90156481,90156486,90156545,90156550,90156565,90156570,90156604,90156609,90156642,90156645,90156724,90156729,90156772,90156839,90156844,90156862,90156867,90156881,90156886,90156900,90156905,90156919,90156924,90156938,90156943,90156957,90156962,90157058,90157063,90157073,90157078,90157088,90157093,90157101,90157106,90157116,90157121,90157142,90157145,90157153,90157156,90157164,90157167,90157175,90157178,90157186,90157189,90157197,90157200,90157263,90157270,90157277,90157284,90157291,90157298,90157305,90157312,90157319,90157326,90157333,90157340,90157347,90157354,90157361,90157473,90157478,90157525,90157730,90157735,90157749,90157754,90157768,90157773,90157787,90157792,90157806,90157811,90157825,90157830,90157900,90157905,90157915,90157920,90157930,90157935,90157945,90157950,90157960,90157965,90157988,90157991,90157999,90158002,90158010,90158013,90158021,90158024,90158032,90158035,90158043,90158046,90158131,90158138,90158145,90158152,90158159,90158166,90158173,90158180,90158187,90158194,90158201,90158208,90158215,90158222,90158229,90160717,90163959,90163964,90163980,90163985,90167204,90167209,90167235,90167240,90167599,90167604,90167630,90167635,90167732,90167737,90167763,90167768,90168724,90168729,90168745,90168750,90171469,90174731,90174804,90178980,90178981,90178990,90181806,90181879,90184154,90184158,90190719,90190723,90193310,90195247,90197939,90200749,90203313,90203317,90203515,90203516,90203525,90203558,90203559,90203568,90206729,90206733,90209232,90210311,90211973,90213742,90215711,90217479,90217480,90217482,90217588,90217614,90218937,90219005,90219023,90219055,90219131,90219217,90220882,90220934,90220954,90221122,90221123,90221133,90221134,90221135,90221171,90221225,90221262,90221264,90221277,90221283,90221290,90221291,90221292,90221456,90221468,90221470,90221472,90221473,90221478,90221479,90221556,90221563,90221566,90221583,90221584,90221590,90221591,90221601,90221603,90221608,90221609,90221619,90221636,90221641,90221842,90221846,90221848,90221854,90221856,90221860,90221870,90221871,90221896,90221899,90221937,90221938,90221940,90221941,90221942,90221943,90221946,90221947,90221949,90221950,90221951,90221952,90222066,90222067,90222111,90222112,90222119,90222120,90222132,90222134,90222135,90222177,90222178,90222180,90222181,90222182,90222183,90222186,90222187,90222189,90222190,90222191,90222192,90222390,90222411,90222622,90222623,90222630,90222769,90222844,90222851,90222868,90222950,90222955,90223051,90223236,90223243,90223247,90223268,90223367,90223368,90223455,90223741,90223837,90223962,90223967,90224162,90224204,90224230,90224233,90224235,90224256,90224258,90224260,90224267,90224269,90224270,90224287,90224300,90224316,90224411,90224412,90224419,90224427,90224429,90224438,90224445,90224446,90224603,90224623,90225103,90225110,90225114,90225406,90225407,90225414,90226540,90228238,90230564,90231012,90231421,90233058,90233235,90233326,90233649,90234189,90234707,90235255,90235728,90236095,90236199,90236203,90236207,90236219,90236235,90236260,90236264,90236268,90236289,90236746,90236750,90236754,90236770,90237064,90237068,90237072,90237088,90237415,90237540,90237544,90237788,90237792,90237893,90237898,90239437,90239443,90239450,90239454,90239458,90239462,90239690,90239702,90239707,90239885,90239903,90240006,90240068,90240072,90240076,90240080,90240084,90240088,90240092,90240096,90240100,90240104,90240109,90240114,90240119,90240124,90240131,90240266,90240270,90240274,90240411,90240422,90240426,90241200,90241204,90241208,90241213,90241218,90241222,90241226,90241235,90241238,90241460,90241464,90241601,90241609,90241623,90241730,90241776,90241779,90241783,90241791,90241883,90241886,90241889,90241989,90242000,90242004,90243003,90243016,90243019,90243134,90243305,90243313,90243318,90243323,90243328,90243333,90243531,90243539,90243553,90243561,90243679,90243755,90243759,90243764,90243768,90243772,90243776,90243780,90243796,90243924,90243928,90243935,90244087,90244098,90244102,90244876,90244879,90244883,90244887,90244906,90244909,90244913,90245150,90245157,90245161,90245306,90245314,90245328,90245336,90245443,90245460,90245463,90245502,90245505,90245508,90245511,90245519,90245608,90245611,90245614,90245727,90245738,90245742,90246418,90246422,90246427,90246432,90246453,90246456,90246460,90246624,90246628,90246631,90246659,90246663,90246796,90246804,90246816,90246912,90246915,90246930,90246933,90246969,90246973,90246977,90246981,90246985,90246989,90246993,90246997,90247005,90247106,90247109,90247112,90247222,90247233,90247237,90247580,90247862,90248116,90248134,90248138,90248420,90248424,90248748,90248752,90249104,90249108,90249227,90249340,90253253,90253254,90253261,90253275,90253307,90253333,90254053,90254054,90254077,90254225,90254242,90254243,90254338,90254359,90254366,90254369,90254371,90254864,90254874,90254877,90254944,90258504,90258509,90258510,90258537,90258538,90258539,90258540,90258541,90258545,90258913,90258918,90258921,90258923,90258928,90258931,90258932,90258933,90258934,90258935,90258937,90258942,90258946,90258949,90258950,90258955,90258958,90258961,90258966,90258969,90258975,90258980,90258983,90258985,90258990,90258993,90258994,90258995,90258996,90258997,90258999,90259004,90259008,90259011,90259012,90259017,90259020,90259023,90259028,90259031,90259037,90259042,90259045,90259047,90259052,90259055,90259056,90259057,90259058,90259059,90259061,90259066,90259070,90259073,90259074,90259079,90259082,90259085,90259090,90259093,90259122,90259127,90259130,90259131,90259132,90259134,90259139,90259142,90259143,90259144,90259145,90259146,90259148,90259153,90259157,90259160,90259165,90259168,90259174,90259179,90259182,90259183,90259184,90259186,90259191,90259194,90259195,90259196,90259197,90259198,90259200,90259205,90259209,90259212,90259217,90259220,90259226,90259231,90259234,90259235,90259236,90259238,90259243,90259246,90259247,90259248,90259249,90259250,90259252,90259257,90259261,90259264,90259269,90259272,90259557,90259579,90259580,90259581,90259582,90259596,90259598,90259599,90259600,90259607,90259608,90259625,90259630,90259647,90259648,90259649,90259650,90259655,90259656,90259658,90259661,90259662,90259664,90259681,90265700,90265706,90265917,90265923,90266041,90266047,90268382,90268394,90270721,90270733,90270876,90270886,90270995,90271007,90276765,90276777,90279350,90279362,90282621,90282636,90285629,90286255,90288928,90288933,90288997,90289005,90291943,90292120,90294318,90294745,90294797,90295415,90295422,90296149,90297025,90297146,90298594,90299338,90299996,90300184,90300188,90301792,90301852,90301853,90301854,90301860,90301861,90301862,90301863,90301864,90301865,90302209,90302269,90302270,90302271,90302277,90302278,90302279,90302280,90302281,90302282,90306543,90306544,90306550,90306562,90306632,90306633,90306639,90306651,90306851,90306857,90306932,90306938,90307881,90307885,90307979,90308023,90308027,90308545,90308549,90308585,90308791,90308795,90310284,90310300,90310311,90310318,90310439,90310440,90310441,90310445,90310450,90310456,90310463,90310501,90310503,90310504,90310506,90310535,90310540,90310542,90310560,90310562,90310597,90310609,90310620,90310622,90310625,90310627,90310658,90310659,90310667,90310668,90310669,90310672,90310678,90310681,90310691,90310692,90310700,90310703,90310706,90310709,90310712,90310715,90310966,90310976,90310987,90310991,90310994,90311001,90311002,90311013,90311017,90311022]}},{\"regexp\":{\"request\":\"/api/segments/[0-9]+/translation\"}},{\"term\":{\"method\":\"PUT\"}},{\"term\":{\"fields.service\":\"iqube\"}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Query-based_search_for_1,947_matching_segments",
+      "version": 1
+    }
+  },
+  {
+    "_id": "537c9770-aa71-11e7-a597-f74bcb770aa0",
+    "_type": "search",
+    "_source": {
+      "title": "iQube_App_Segment_Search",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_type",
+        "message",
+        "fields.MachineName",
+        "fields.Controller",
+        "fields.Action"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.MachineName\":\"web\"}},{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"fields.Controller.keyword\":\"SegmentSearch\"}},{\"term\":{\"fields.Action.keyword\":\"PostSearchRequest\"}}]}}}},\"highlightAll\":true,\"version\":true}"
+      }
+    }
+  },
+  {
+    "_id": "_iqube_2017_10_05_16_04_09_386",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "method",
+        "request",
+        "status",
+        "time_taken",
+        "user_agent"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"fields.service\":\"iqube\"}},{\"regexp\":{\"method\":\"(PUT|POST|DELETE)\"}}],\"should\":[{\"term\":{\"project_id\":115192}},{\"term\":{\"project_group_id\":31948}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_115192",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_10_05_16_02_52_627",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "fields.SourceContext",
+        "message"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"fields.Infrastructure\":\"cloud\"}},{\"term\":{\"fields.ProjectId\":\"115192\"}},{\"term\":{\"fields.Controller.keyword\":\"PreTranslation\"}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_115192",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_10_05_16_18_14_376",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "fields.SourceContext",
+        "message"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"fields.Infrastructure\":\"cloud\"}},{\"term\":{\"fields.ProjectId\":\"115192\"}},{\"term\":{\"fields.Controller.keyword\":\"PreTranslation\"}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_115192",
+      "version": 1
+    }
+  },
+  {
+    "_id": "03828560-ad94-11e7-8c85-3f41f5880731",
+    "_type": "search",
+    "_source": {
+      "title": "iQube_App_Serilog_Errors",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_type",
+        "message",
+        "fields.MachineName"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.MachineName\":\"web\"}},{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"level\":\"error\"}}]}}}},\"highlightAll\":true,\"version\":true}"
+      }
+    }
+  },
+  {
+    "_id": "_iqube_2017_10_06_09_50_13_938",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "method",
+        "request",
+        "status",
+        "time_taken",
+        "user_agent"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"fields.service\":\"iqube\"}}],\"should\":[{\"term\":{\"project_id\":114932}},{\"term\":{\"project_group_id\":31893}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_114932",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_10_16_16_34_15_988",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "method",
+        "request",
+        "status",
+        "time_taken",
+        "user_agent"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"segment_id\":[91692276,91692277,91692279,91692283,91692287,91692289,91692291,91692292,91692295,91692298,91692300,91692302,91692304,91692310,91692312,91692318,91692320,91692324,91692325,91692331,91692333,91692335,91692341,91692343,91692345,91692351,91692353,91692355,91692358,91692363,91692366,91692372,91692374,91692375,91692376,91692443,91692444,91692446,91692448,91692451,91692452,91692453,91692454,91692455,91692456,91692457,91692458,91692459,91692460,91692461,91692462,91692463,91692634,91692636,91692637,91692639,91692640,91692642,91692644,91692646,91692648,91692649,91692652,91692657]}},{\"regexp\":{\"request\":\"/api/segments/[0-9]+/crosscheck\"}},{\"term\":{\"method\":\"PUT\"}},{\"term\":{\"fields.service\":\"iqube\"}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Query-based_search_for_64_matching_segments",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_10_16_15_26_24_523",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "method",
+        "request",
+        "status",
+        "time_taken",
+        "user_agent"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"fields.service\":\"iqube\"}},{\"regexp\":{\"method\":\"(PUT|POST|DELETE)\"}}],\"should\":[{\"term\":{\"project_id\":115674}},{\"term\":{\"project_group_id\":32085}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_115674",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_10_16_15_26_34_920",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "method",
+        "request",
+        "status",
+        "time_taken",
+        "user_agent"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"fields.service\":\"iqube\"}},{\"regexp\":{\"method\":\"(PUT|POST|DELETE)\"}}],\"should\":[{\"term\":{\"project_id\":115674}},{\"term\":{\"project_group_id\":32085}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_115674",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_10_16_15_26_36_290",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "method",
+        "request",
+        "status",
+        "time_taken",
+        "user_agent"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"fields.service\":\"iqube\"}},{\"regexp\":{\"method\":\"(PUT|POST|DELETE)\"}}],\"should\":[{\"term\":{\"project_id\":115674}},{\"term\":{\"project_group_id\":32085}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_115674",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_10_16_15_26_43_135",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "method",
+        "request",
+        "status",
+        "time_taken",
+        "user_agent"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"fields.service\":\"iqube\"}},{\"regexp\":{\"method\":\"(PUT|POST|DELETE)\"}}],\"should\":[{\"term\":{\"project_id\":115674}},{\"term\":{\"project_group_id\":32085}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_115674",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_10_10_16_04_57_393",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "method",
+        "request",
+        "status",
+        "time_taken",
+        "user_agent"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"fields.service\":\"iqube\"}}],\"should\":[{\"term\":{\"project_id\":115293}},{\"term\":{\"project_group_id\":31998}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_115293",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_10_10_16_05_02_609",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "method",
+        "request",
+        "status",
+        "time_taken",
+        "user_agent"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"fields.service\":\"iqube\"}}],\"should\":[{\"term\":{\"project_id\":115293}},{\"term\":{\"project_group_id\":31998}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_115293",
+      "version": 1
+    }
+  },
+  {
+    "_id": "d7213930-b36f-11e7-b258-2b7b9e375d51",
+    "_type": "search",
+    "_source": {
+      "title": "Investigate_iQube_Slow_Repetition_Processing_During_Verification",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_type",
+        "message",
+        "fields.MachineName",
+        "fields.HttpRequestId"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"_type\":\"iqube_serilog\"}},{\"term\":{\"fields.MachineName\":\"web\"}},{\"term\":{\"fields.Env\":\"live\"}},{\"term\":{\"fields.Action\":\"putverification\"}},{\"terms\":{\"fields.SegmentId\":[91540017,91540018,91540019,91540020,91540021,91540022,91540023,91540024,91540025,91540026,91540027,91540028,91540029,91540030,91540031,91540032,91540033,91540034,91540035,91540036,91540037,91540038,91540039,91540040,91540041,91540042,91540043,91540044,91540045,91540046,91540047,91540048,91540049,91540050,91540051,91540052,91540053,91540054,91540055,91540056,91540057,91540058,91540059,91540060,91540061,91540062,91540063,91540064,91540065,91540066,91540067,91540068,91540069,91540070,91540071,91540072,91540073,91540074,91540075,91540076,91540077,91540078,91540079,91540080,91540081,91540082,91540083,91540084,91540085,91540086,91540087,91540088,91540089,91540090,91540091,91540092,91540093,91540094,91540095,91540096,91540097,91540098,91540099,91540100,91540101,91540102,91540103,91540104,91540105,91540106,91540107,91540108,91540109,91540110,91540111,91540112,91540113,91540114,91540115,91540116,91540117,91540118,91540119,91540120,91540121,91540122,91540123,91540124,91540125,91540126,91540127,91540128,91540129,91540130,91540131,91540132,91540133,91540134,91540135,91540136,91540137,91540138,91540139,91540140,91540141,91540142,91540143,91540144,91540145,91540146,91540147,91540148,91540149,91540150,91540151,91540152,91540153,91540154,91540155,91540156,91540157,91540158,91540159,91540160,91540161,91540162,91540163,91540164,91540165,91540166,91540167,91540168,91540169,91540170,91540171,91540172,91540173,91540174,91540175,91540176,91540177,91540178,91540179,91540180,91540181,91540182,91540183,91540184,91540185,91540186,91540187,91540188,91540189,91540190,91540191,91540192,91540193,91540194,91540195,91540196,91540197,91540198,91540199,91540200,91540201,91540202,91540203,91540204,91540205,91540206,91540207,91540208,91540209,91540210,91540211,91540212,91540213,91540214,91540215,91540216,91540217,91540218,91540219,91540220,91540221,91540222,91540223,91540224,91540225,91540226,91540227,91540228,91540229,91540230,91540231,91540232,91540233,91540234,91540235,91540236,91540237,91540238,91540239,91540240,91540241,91540242,91540243,91540244,91540245,91540246,91540247,91540248,91540249,91540250,91540251,91540252,91540253,91540254,91540255,91540256,91540257,91540258,91540259,91540260,91540261,91540262,91540263,91540264,91540265,91540266,91540267,91540268,91540269,91540270,91540271,91540272,91540273,91540274,91540275,91540276,91540277,91540278,91540279,91540280,91540281,91540282,91540283,91540284,91540285,91540286,91540287,91540288,91540289,91540290,91540291,91540292,91540293,91540294,91540295,91540296,91540297,91540298,91540299,91540300,91540301,91540302,91540303,91540304,91540305,91540306,91540307,91540308,91540309,91540310,91540311,91540312,91540313,91540314,91540315,91540316,91540317,91540318,91540319,91540320,91540321,91540322,91540323,91540324,91540325,91540326,91540327,91540328,91540329,91540330,91540331,91540332,91540333,91540334,91540335,91540336,91540337,91540338,91540339,91540340,91540341,91540342,91540343,91540344,91540345,91540346,91540347,91540348,91540349,91540350,91540351,91540352,91540353,91540354,91540355,91540356,91540357,91540358,91540359,91540360,91540361,91540362,91540363,91540364,91540365,91540366,91540367,91540368,91540369,91540370,91540371,91540372,91540373,91540374,91540375,91540376,91540377,91540378,91540379,91540380,91540381,91540382,91540383,91540384,91540385,91540386,91540387,91540388,91540389,91540390,91540391,91540392,91540393,91540394,91540395,91540396,91540397,91540398,91540399,91540400,91540401,91540402,91540403,91540404,91540405,91540406,91540407,91540408,91540409,91540410,91540411,91540412,91540413,91540414,91540415,91540416,91540417,91540418,91540419,91540420,91540421,91540422,91540423,91540424,91540425,91540426,91540427,91540428,91540429,91540430,91540431,91540432,91540433,91540434,91540435,91540436,91540437,91540438,91540439,91540440,91540441,91540442,91540443,91540444,91540445,91540446,91540447,91540448,91540449,91540450,91540451,91540452,91540453,91540454,91540455,91540456,91540457,91540458,91540459,91540460,91540461,91540462,91540463,91540464,91540465,91540466,91540467,91540468,91540469,91540470,91540471,91540472,91540473,91540474,91540475,91540476,91540477,91540478,91540479,91540480,91540481,91540482,91540483,91540484,91540485,91540486,91540487,91540488,91540489,91540490,91540491,91540492,91540493,91540494,91540495,91540496,91540497,91540498,91540499,91540500,91540501,91540502,91540503,91540504,91540505,91540506,91540507,91540508,91540509,91540510,91540511,91540512,91540513,91540514,91540515,91540516,91540517,91540518,91540519,91540520,91540521,91540522,91540523,91540524,91540525,91540526,91540527,91540528,91540529,91540530,91540531,91540532,91540533,91540534,91540535,91540536,91540537,91540538,91540539,91540540,91540541,91540542,91540543,91540544,91540545,91540546,91540547,91540548,91540549,91540550,91540551,91540552,91540553,91540554,91540555,91540556,91540557,91540558,91540559,91540560,91540561,91540562,91540563,91540564,91540565,91540566,91540567,91540568,91540569,91540570,91540571,91540572,91540573,91540574,91540575,91540576,91540577,91540578,91540579,91540580,91540581,91540582,91540583,91540584,91540585,91540586,91540587,91540588,91540589,91540590,91540591,91540592,91540593,91540594,91540595,91540596,91540597,91540598,91540599,91540600,91540601,91540602,91540603,91540604,91540605,91540606,91540607,91540608,91540609,91540610,91540611,91540612,91540613,91540614,91540615,91540616,91540617,91540618,91540619,91540620,91540621,91540622,91540623,91540624,91540625,91540626,91540627,91540628,91540629,91540630,91540631,91540632,91540633,91540634,91540635,91540636,91540637,91540638,91540639,91540640,91540641,91540642,91540643,91540644,91540645,91540646,91540647,91540648,91540649,91540650,91540651,91540652,91540653,91540654,91540655,91540656,91540657,91540658,91540659,91540660,91540661,91540662,91540663,91540664,91540665,91540666,91540667,91540668,91540669,91540670,91540671,91540672,91540673,91540674,91540675,91540676,91540677,91540678,91540679,91540680,91540681,91540682,91540683,91540684,91540685,91540686,91540687,91540688,91540689,91540690,91540691,91540692,91540693,91540694,91540695,91540696,91540697,91540698,91540699,91540700,91540701,91540702,91540703,91540704,91540705,91540706,91540707,91540708,91540709,91540710,91540711,91540712,91540713,91540714,91540715,91540716,91540717,91540718,91540719,91540720,91540721,91540722,91540723,91540724,91540725,91540726,91540727,91540728,91540729,91540730,91540731,91540732,91540733,91540734,91540735,91540736,91540737,91540738,91540739,91540740,91540741,91540742,91540743,91540744,91540745,91540746,91540747,91540748,91540749,91540750,91540751,91540752,91540753,91540754,91540755,91540756,91540757,91540758,91540759,91540760,91540761,91540762,91540763,91540764,91540765,91540766,91540767,91540768,91540769,91540770,91540771,91540772,91540773,91540774,91540775,91540776,91540777,91540778,91540779,91540780,91540781,91540782,91540783,91540784,91540785,91540786,91540787,91540788,91540789,91540790,91540791,91540792,91540793,91540794,91540795,91540796,91540797,91540798,91540799,91540800,91540801,91540802,91540803,91540804,91540805,91540806,91540807,91540808,91540809,91540810,91540811,91540812,91540813,91540814,91540815,91540816,91540817,91540818,91540819,91540820,91540821,91540822,91540823,91540824,91540825,91540826,91540827,91540828,91540829,91540830,91540831,91540832,91540833,91540834,91540835,91540836,91540837,91540838,91540839,91540840,91540841,91540842,91540843,91540844,91540845,91540846,91540847,91540848,91540849,91540850,91540851,91540852,91540853,91540854,91540855,91540856,91540857,91540858,91540859,91540860,91540861,91540862,91540863,91540864,91540865,91540866,91540867,91540868,91540869,91540870,91540871,91540872,91540873,91540874,91540875,91540876,91540877,91540878,91540879,91540880,91540881,91540882,91540883,91540884,91540885,91540886,91540887,91540888,91540889,91540890,91540891,91540892,91540893,91540894,91540895,91540896,91540897,91540898,91540899,91540900,91540901,91540902,91540903,91540904,91540905,91540906,91540907,91540908,91540909,91540910,91540911,91540912,91540913,91540914,91540915,91540916,91540917,91540918,91540919,91540920,91540921,91540922,91540923,91540924,91540925,91540926,91540927,91540928,91540929,91540930,91540931,91540932,91540933,91540934,91540935,91540936,91540937,91540938,91540939,91540940,91540941,91540942,91540943,91540944,91540945,91540946,91540947,91540948,91540949,91540950,91540951,91540952,91540953,91540954,91540955,91540956,91540957,91540958,91540959,91540960,91540961,91540962,91540963,91540964,91540965,91540966,91540967,91540968,91540969,91540970,91540971,91540972,91540973,91540974,91540975,91540976,91540977,91540978,91540979,91540980,91540981,91540982,91540983,91540984,91540985,91540986,91540987,91540988,91540989,91540990,91540991,91540992,91540993,91540994,91540995,91540996,91540997,91540998,91540999,91541000,91541001,91541002,91541003,91541004,91541005,91541006,91541007,91541008,91541009,91541010,91541011,91541012,91541013,91541014,91541015,91541016,91541017,91541018,91541019,91541020,91541021,91541022,91541023,91541024,91541025,91541026,91541027,91541028,91541029,91541030,91541031,91541032,91541033,91541034,91541035,91541036,91541037,91541038,91541039,91541040,91541041,91541042,91541043,91541044,91541045,91541046,91541047,91541048,91541049,91541050,91541051,91541052,91541053,91541054,91541055,91541056,91541057,91541058,91541059,91541060,91541061,91541062,91541063,91541064,91541065,91541066,91541067,91541068,91541069,91541070,91541071,91541072,91541073,91541074,91541075,91541076,91541077,91541078,91541079,91541080,91541081,91541082,91541083,91541084,91541085,91541086,91541087,91541088,91541089,91541090,91541091,91541092,91541093,91541094,91541095,91541096,91541097,91541098,91541099,91541100,91541101,91541102,91541103,91541104,91541105,91541106,91541107,91541108,91541109,91541110,91541111,91541112,91541113,91541114,91541115,91541116,91541117,91541118,91541119,91541120,91541121,91541122,91541123,91541124,91541125,91541126,91541127,91541128,91541129,91541130,91541131,91541132,91541133,91541134,91541135,91541136,91541137,91541138,91541139,91541140,91541141,91541142,91541143,91541144,91541145,91541146,91541147,91541148,91541149,91541150,91541151,91541152,91541153,91541154,91541155,91541156,91541157,91541158,91541159,91541160,91541161,91541162,91541163,91541164,91541165,91541166,91541167,91541168,91541169,91541170,91541171,91541172,91541173,91541174,91541175,91541176,91541177,91541178,91541179,91541180,91541181,91541182,91541183,91541184,91541185,91541186,91541187,91541188,91541189,91541190,91541191,91541192,91541193,91541194,91541195,91541196,91541197,91541198,91541199,91541200,91541201,91541202,91541203,91541204,91541205,91541206,91541207,91541208,91541209,91541210,91541211,91541212,91541213,91541214,91541215,91541216,91541217,91541218,91541219,91541220,91541221,91541222,91541223,91541224,91541225,91541226,91541227,91541228,91541229,91541230,91541231,91541232,91541233,91541234,91541235,91541236,91541237,91541238,91541239,91541240,91541241,91541242,91541243,91541244,91541245,91541246,91541247,91541248,91541249,91541250,91541251,91541252,91541253,91541254,91541255,91541256,91541257,91541258,91541259,91541260,91541261,91541262,91541263,91541264,91541265,91541266,91541267,91541268,91541269,91541270,91541271,91541272,91541273,91541274,91541275,91541276,91541277,91541278,91541279,91541280,91541281,91541282,91541283,91541284,91541285,91541286,91541287,91541288,91541289,91541290,91541291,91541292,91541293,91541294,91541295,91541296,91541297,91541298,91541299,91541300,91541301,91541302,91541303,91541304,91541305,91541306,91541307,91541308,91541309,91541310,91541311,91541312,91541313,91541314,91541315,91541316,91541317,91541318,91541319,91541320,91541321,91541322,91541323,91541324,91541325,91541326,91541327,91541328,91541329,91541330,91541331,91541332,91541333,91541334,91541335,91541336,91541337,91541338,91541339,91541340,91541341,91541342,91541343,91541344,91541345,91541346,91541347,91541348,91541349,91541350,91541351,91541352,91541353,91541354,91541355,91541356,91541357,91541358,91541359,91541360,91541361,91541362,91541363,91541364,91541365,91541366,91541367,91541368,91541369,91541370,91541371,91541372,91541373,91541374,91541375,91541376,91541377,91541378,91541379,91541380,91541381,91541382,91541383,91541384,91541385,91541386,91541387,91541388,91541389,91541390,91541391,91541392,91541393,91541394,91541395,91541396,91541397,91541398,91541399,91541400,91541401,91541402,91541403,91541404,91541405,91541406,91541407,91541408,91541409,91541410,91541411,91541412,91541413,91541414,91541415,91541416,91541417,91541418,91541419,91541420,91541421,91541422,91541423,91541424,91541425,91541426,91541427,91541428,91541429,91541430,91541431,91541432,91541433,91541434,91541435,91541436,91541437,91541438,91541439,91541440,91541441,91541442,91541443,91541444,91541445,91541446,91541447,91541448,91541449,91541450,91541451,91541452,91541453,91541454,91541455,91541456,91541457,91541458,91541459,91541460,91541461,91541462,91541463,91541464,91541465,91541466,91541467,91541468,91541469,91541470,91541471]}}]}}}},\"highlightAll\":true,\"version\":true}"
+      }
+    }
+  },
+  {
+    "_id": "_iqube_2017_10_17_21_10_50_451",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "method",
+        "request",
+        "status",
+        "time_taken",
+        "user_agent"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"segment_id\":[91540017,91540018,91540019,91540020,91540021,91540022,91540023,91540024,91540025,91540026,91540027,91540028,91540029,91540030,91540031,91540032,91540033,91540034,91540035,91540036,91540037,91540038,91540039,91540040,91540041,91540042,91540043,91540044,91540045,91540046,91540047,91540048,91540049,91540050,91540051,91540052,91540053,91540054,91540055,91540056,91540057,91540058,91540059,91540060,91540061,91540062,91540063,91540064,91540065,91540066,91540067,91540068,91540069,91540070,91540071,91540072,91540073,91540074,91540075,91540076,91540077,91540078,91540079,91540080,91540081,91540082,91540083,91540084,91540085,91540086,91540087,91540088,91540089,91540090,91540091,91540092,91540093,91540094,91540095,91540096,91540097,91540098,91540099,91540100,91540101,91540102,91540103,91540104,91540105,91540106,91540107,91540108,91540109,91540110,91540111,91540112,91540113,91540114,91540115,91540116,91540117,91540118,91540119,91540120,91540121,91540122,91540123,91540124,91540125,91540126,91540127,91540128,91540129,91540130,91540131,91540132,91540133,91540134,91540135,91540136,91540137,91540138,91540139,91540140,91540141,91540142,91540143,91540144,91540145,91540146,91540147,91540148,91540149,91540150,91540151,91540152,91540153,91540154,91540155,91540156,91540157,91540158,91540159,91540160,91540161,91540162,91540163,91540164,91540165,91540166,91540167,91540168,91540169,91540170,91540171,91540172,91540173,91540174,91540175,91540176,91540177,91540178,91540179,91540180,91540181,91540182,91540183,91540184,91540185,91540186,91540187,91540188,91540189,91540190,91540191,91540192,91540193,91540194,91540195,91540196,91540197,91540198,91540199,91540200,91540201,91540202,91540203,91540204,91540205,91540206,91540207,91540208,91540209,91540210,91540211,91540212,91540213,91540214,91540215,91540216,91540217,91540218,91540219,91540220,91540221,91540222,91540223,91540224,91540225,91540226,91540227,91540228,91540229,91540230,91540231,91540232,91540233,91540234,91540235,91540236,91540237,91540238,91540239,91540240,91540241,91540242,91540243,91540244,91540245,91540246,91540247,91540248,91540249,91540250,91540251,91540252,91540253,91540254,91540255,91540256,91540257,91540258,91540259,91540260,91540261,91540262,91540263,91540264,91540265,91540266,91540267,91540268,91540269,91540270,91540271,91540272,91540273,91540274,91540275,91540276,91540277,91540278,91540279,91540280,91540281,91540282,91540283,91540284,91540285,91540286,91540287,91540288,91540289,91540290,91540291,91540292,91540293,91540294,91540295,91540296,91540297,91540298,91540299,91540300,91540301,91540302,91540303,91540304,91540305,91540306,91540307,91540308,91540309,91540310,91540311,91540312,91540313,91540314,91540315,91540316,91540317,91540318,91540319,91540320,91540321,91540322,91540323,91540324,91540325,91540326,91540327,91540328,91540329,91540330,91540331,91540332,91540333,91540334,91540335,91540336,91540337,91540338,91540339,91540340,91540341,91540342,91540343,91540344,91540345,91540346,91540347,91540348,91540349,91540350,91540351,91540352,91540353,91540354,91540355,91540356,91540357,91540358,91540359,91540360,91540361,91540362,91540363,91540364,91540365,91540366,91540367,91540368,91540369,91540370,91540371,91540372,91540373,91540374,91540375,91540376,91540377,91540378,91540379,91540380,91540381,91540382,91540383,91540384,91540385,91540386,91540387,91540388,91540389,91540390,91540391,91540392,91540393,91540394,91540395,91540396,91540397,91540398,91540399,91540400,91540401,91540402,91540403,91540404,91540405,91540406,91540407,91540408,91540409,91540410,91540411,91540412,91540413,91540414,91540415,91540416,91540417,91540418,91540419,91540420,91540421,91540422,91540423,91540424,91540425,91540426,91540427,91540428,91540429,91540430,91540431,91540432,91540433,91540434,91540435,91540436,91540437,91540438,91540439,91540440,91540441,91540442,91540443,91540444,91540445,91540446,91540447,91540448,91540449,91540450,91540451,91540452,91540453,91540454,91540455,91540456,91540457,91540458,91540459,91540460,91540461,91540462,91540463,91540464,91540465,91540466,91540467,91540468,91540469,91540470,91540471,91540472,91540473,91540474,91540475,91540476,91540477,91540478,91540479,91540480,91540481,91540482,91540483,91540484,91540485,91540486,91540487,91540488,91540489,91540490,91540491,91540492,91540493,91540494,91540495,91540496,91540497,91540498,91540499,91540500,91540501,91540502,91540503,91540504,91540505,91540506,91540507,91540508,91540509,91540510,91540511,91540512,91540513,91540514,91540515,91540516,91540517,91540518,91540519,91540520,91540521,91540522,91540523,91540524,91540525,91540526,91540527,91540528,91540529,91540530,91540531,91540532,91540533,91540534,91540535,91540536,91540537,91540538,91540539,91540540,91540541,91540542,91540543,91540544,91540545,91540546,91540547,91540548,91540549,91540550,91540551,91540552,91540553,91540554,91540555,91540556,91540557,91540558,91540559,91540560,91540561,91540562,91540563,91540564,91540565,91540566,91540567,91540568,91540569,91540570,91540571,91540572,91540573,91540574,91540575,91540576,91540577,91540578,91540579,91540580,91540581,91540582,91540583,91540584,91540585,91540586,91540587,91540588,91540589,91540590,91540591,91540592,91540593,91540594,91540595,91540596,91540597,91540598,91540599,91540600,91540601,91540602,91540603,91540604,91540605,91540606,91540607,91540608,91540609,91540610,91540611,91540612,91540613,91540614,91540615,91540616,91540617,91540618,91540619,91540620,91540621,91540622,91540623,91540624,91540625,91540626,91540627,91540628,91540629,91540630,91540631,91540632,91540633,91540634,91540635,91540636,91540637,91540638,91540639,91540640,91540641,91540642,91540643,91540644,91540645,91540646,91540647,91540648,91540649,91540650,91540651,91540652,91540653,91540654,91540655,91540656,91540657,91540658,91540659,91540660,91540661,91540662,91540663,91540664,91540665,91540666,91540667,91540668,91540669,91540670,91540671,91540672,91540673,91540674,91540675,91540676,91540677,91540678,91540679,91540680,91540681,91540682,91540683,91540684,91540685,91540686,91540687,91540688,91540689,91540690,91540691,91540692,91540693,91540694,91540695,91540696,91540697,91540698,91540699,91540700,91540701,91540702,91540703,91540704,91540705,91540706,91540707,91540708,91540709,91540710,91540711,91540712,91540713,91540714,91540715,91540716,91540717,91540718,91540719,91540720,91540721,91540722,91540723,91540724,91540725,91540726,91540727,91540728,91540729,91540730,91540731,91540732,91540733,91540734,91540735,91540736,91540737,91540738,91540739,91540740,91540741,91540742,91540743,91540744,91540745,91540746,91540747,91540748,91540749,91540750,91540751,91540752,91540753,91540754,91540755,91540756,91540757,91540758,91540759,91540760,91540761,91540762,91540763,91540764,91540765,91540766,91540767,91540768,91540769,91540770,91540771,91540772,91540773,91540774,91540775,91540776,91540777,91540778,91540779,91540780,91540781,91540782,91540783,91540784,91540785,91540786,91540787,91540788,91540789,91540790,91540791,91540792,91540793,91540794,91540795,91540796,91540797,91540798,91540799,91540800,91540801,91540802,91540803,91540804,91540805,91540806,91540807,91540808,91540809,91540810,91540811,91540812,91540813,91540814,91540815,91540816,91540817,91540818,91540819,91540820,91540821,91540822,91540823,91540824,91540825,91540826,91540827,91540828,91540829,91540830,91540831,91540832,91540833,91540834,91540835,91540836,91540837,91540838,91540839,91540840,91540841,91540842,91540843,91540844,91540845,91540846,91540847,91540848,91540849,91540850,91540851,91540852,91540853,91540854,91540855,91540856,91540857,91540858,91540859,91540860,91540861,91540862,91540863,91540864,91540865,91540866,91540867,91540868,91540869,91540870,91540871,91540872,91540873,91540874,91540875,91540876,91540877,91540878,91540879,91540880,91540881,91540882,91540883,91540884,91540885,91540886,91540887,91540888,91540889,91540890,91540891,91540892,91540893,91540894,91540895,91540896,91540897,91540898,91540899,91540900,91540901,91540902,91540903,91540904,91540905,91540906,91540907,91540908,91540909,91540910,91540911,91540912,91540913,91540914,91540915,91540916,91540917,91540918,91540919,91540920,91540921,91540922,91540923,91540924,91540925,91540926,91540927,91540928,91540929,91540930,91540931,91540932,91540933,91540934,91540935,91540936,91540937,91540938,91540939,91540940,91540941,91540942,91540943,91540944,91540945,91540946,91540947,91540948,91540949,91540950,91540951,91540952,91540953,91540954,91540955,91540956,91540957,91540958,91540959,91540960,91540961,91540962,91540963,91540964,91540965,91540966,91540967,91540968,91540969,91540970,91540971,91540972,91540973,91540974,91540975,91540976,91540977,91540978,91540979,91540980,91540981,91540982,91540983,91540984,91540985,91540986,91540987,91540988,91540989,91540990,91540991,91540992,91540993,91540994,91540995,91540996,91540997,91540998,91540999,91541000,91541001,91541002,91541003,91541004,91541005,91541006,91541007,91541008,91541009,91541010,91541011,91541012,91541013,91541014,91541015,91541016,91541017,91541018,91541019,91541020,91541021,91541022,91541023,91541024,91541025,91541026,91541027,91541028,91541029,91541030,91541031,91541032,91541033,91541034,91541035,91541036,91541037,91541038,91541039,91541040,91541041,91541042,91541043,91541044,91541045,91541046,91541047,91541048,91541049,91541050,91541051,91541052,91541053,91541054,91541055,91541056,91541057,91541058,91541059,91541060,91541061,91541062,91541063,91541064,91541065,91541066,91541067,91541068,91541069,91541070,91541071,91541072,91541073,91541074,91541075,91541076,91541077,91541078,91541079,91541080,91541081,91541082,91541083,91541084,91541085,91541086,91541087,91541088,91541089,91541090,91541091,91541092,91541093,91541094,91541095,91541096,91541097,91541098,91541099,91541100,91541101,91541102,91541103,91541104,91541105,91541106,91541107,91541108,91541109,91541110,91541111,91541112,91541113,91541114,91541115,91541116,91541117,91541118,91541119,91541120,91541121,91541122,91541123,91541124,91541125,91541126,91541127,91541128,91541129,91541130,91541131,91541132,91541133,91541134,91541135,91541136,91541137,91541138,91541139,91541140,91541141,91541142,91541143,91541144,91541145,91541146,91541147,91541148,91541149,91541150,91541151,91541152,91541153,91541154,91541155,91541156,91541157,91541158,91541159,91541160,91541161,91541162,91541163,91541164,91541165,91541166,91541167,91541168,91541169,91541170,91541171,91541172,91541173,91541174,91541175,91541176,91541177,91541178,91541179,91541180,91541181,91541182,91541183,91541184,91541185,91541186,91541187,91541188,91541189,91541190,91541191,91541192,91541193,91541194,91541195,91541196,91541197,91541198,91541199,91541200,91541201,91541202,91541203,91541204,91541205,91541206,91541207,91541208,91541209,91541210,91541211,91541212,91541213,91541214,91541215,91541216,91541217,91541218,91541219,91541220,91541221,91541222,91541223,91541224,91541225,91541226,91541227,91541228,91541229,91541230,91541231,91541232,91541233,91541234,91541235,91541236,91541237,91541238,91541239,91541240,91541241,91541242,91541243,91541244,91541245,91541246,91541247,91541248,91541249,91541250,91541251,91541252,91541253,91541254,91541255,91541256,91541257,91541258,91541259,91541260,91541261,91541262,91541263,91541264,91541265,91541266,91541267,91541268,91541269,91541270,91541271,91541272,91541273,91541274,91541275,91541276,91541277,91541278,91541279,91541280,91541281,91541282,91541283,91541284,91541285,91541286,91541287,91541288,91541289,91541290,91541291,91541292,91541293,91541294,91541295,91541296,91541297,91541298,91541299,91541300,91541301,91541302,91541303,91541304,91541305,91541306,91541307,91541308,91541309,91541310,91541311,91541312,91541313,91541314,91541315,91541316,91541317,91541318,91541319,91541320,91541321,91541322,91541323,91541324,91541325,91541326,91541327,91541328,91541329,91541330,91541331,91541332,91541333,91541334,91541335,91541336,91541337,91541338,91541339,91541340,91541341,91541342,91541343,91541344,91541345,91541346,91541347,91541348,91541349,91541350,91541351,91541352,91541353,91541354,91541355,91541356,91541357,91541358,91541359,91541360,91541361,91541362,91541363,91541364,91541365,91541366,91541367,91541368,91541369,91541370,91541371,91541372,91541373,91541374,91541375,91541376,91541377,91541378,91541379,91541380,91541381,91541382,91541383,91541384,91541385,91541386,91541387,91541388,91541389,91541390,91541391,91541392,91541393,91541394,91541395,91541396,91541397,91541398,91541399,91541400,91541401,91541402,91541403,91541404,91541405,91541406,91541407,91541408,91541409,91541410,91541411,91541412,91541413,91541414,91541415,91541416,91541417,91541418,91541419,91541420,91541421,91541422,91541423,91541424,91541425,91541426,91541427,91541428,91541429,91541430,91541431,91541432,91541433,91541434,91541435,91541436,91541437,91541438,91541439,91541440,91541441,91541442,91541443,91541444,91541445,91541446,91541447,91541448,91541449,91541450,91541451,91541452,91541453,91541454,91541455,91541456,91541457,91541458,91541459,91541460,91541461,91541462,91541463,91541464,91541465,91541466,91541467,91541468,91541469,91541470,91541471]}},{\"regexp\":{\"request\":\"/api/segments/[0-9]+/verification\"}},{\"term\":{\"method\":\"PUT\"}},{\"term\":{\"fields.service\":\"iqube\"}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Query-based_search_for_1,455_matching_segments",
+      "version": 1
+    }
+  },
+  {
+    "_id": "c79afce0-b323-11e7-a969-bdd22ec6f756",
+    "_type": "search",
+    "_source": {
+      "title": "Metrics_Memory_Web_Live",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "metricset.module",
+        "metricset.name"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"metricbeat-*\",\"highlightAll\":true,\"version\":true,\"query\":{\"bool\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"beat.name\":\"web-1\"}},{\"term\":{\"metricset.name\":\"memory\"}}]}}}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "AV9c4ePmuruf8BBhJL8W",
+    "_type": "search",
+    "_source": {
+      "title": "iQube_IIS_Get_Assignment_Verification_Report",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_source"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"must\":[{\"regexp\":{\"request\":\"/api/projects/[0-9]+/assignments/[A-Z]{3}[0-9]+/verification-report\"}},{\"term\":{\"fields.service\":\"iqube\"}},{\"term\":{\"fields.document_type\":\"iis\"}},{\"term\":{\"method\":\"GET\"}}]}}}},\"highlightAll\":true,\"version\":true}"
+      }
+    }
+  },
+  {
+    "_id": "AV9c4IJhuruf8BBhJHLk",
+    "_type": "search",
+    "_source": {
+      "title": "iQube_IIS_Get_Assignment_Statistics",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_source"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"must\":[{\"regexp\":{\"request\":\"/api/projects/[0-9]+/assignments/[A-Z]{3}[0-9]+/statistics\"}},{\"term\":{\"fields.service\":\"iqube\"}},{\"term\":{\"fields.document_type\":\"iis\"}},{\"term\":{\"method\":\"GET\"}}]}}}},\"highlightAll\":true,\"version\":true}"
+      }
+    }
+  },
+  {
+    "_id": "AV9OrcCvuruf8BBhBDBC",
+    "_type": "search",
+    "_source": {
+      "title": "Metrics_CPU_Cloud_Live_Web_And_DB",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "metricset.module",
+        "metricset.name",
+        "beat.hostname",
+        "system.cpu.user.pct"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"metricbeat-*\",\"highlightAll\":true,\"version\":true,\"query\":{\"bool\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"fields.env\":\"live\"}},{\"term\":{\"fields.infrastructure\":\"cloud\"}},{\"term\":{\"metricset.name\":\"cpu\"}}]}}}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "AV9I_Y2quruf8BBhdIxu",
+    "_type": "search",
+    "_source": {
+      "title": "Metrics_Memory_Cloud_Live_Web_And_DB",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "metricset.module",
+        "metricset.name",
+        "beat.hostname"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"metricbeat-*\",\"highlightAll\":true,\"version\":true,\"query\":{\"bool\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"fields.env\":\"live\"}},{\"term\":{\"fields.infrastructure\":\"cloud\"}},{\"term\":{\"metricset.name\":\"memory\"}}]}}}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "_iqube_2017_10_27_10_14_39_506",
+    "_type": "search",
+    "_source": {
+      "columns": [
+        "method",
+        "request",
+        "status",
+        "time_taken",
+        "user_agent"
+      ],
+      "description": "",
+      "hits": 0,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"fields.service\":\"iqube\"}}],\"should\":[{\"term\":{\"project_id\":116966}},{\"term\":{\"project_group_id\":32393}}]}}}}}"
+      },
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "title": "Requests_for_project_116966",
+      "version": 1
+    }
+  },
+  {
+    "_id": "_iqube_2017_10_27_10_12_50_284",
+    "_type": "search",
+    "_source": {
+      "title": "Requests_for_project_116964",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "method",
+        "request",
+        "status",
+        "time_taken",
+        "user_agent"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"filter\":[{\"term\":{\"fields.service\":\"iqube\"}}],\"should\":[{\"term\":{\"project_id\":116964}},{\"term\":{\"project_group_id\":32376}}],\"must\":[{\"regexp\":{\"request\":\".*/estimate\"}}]}}}},\"highlightAll\":true,\"version\":true}"
+      }
+    }
+  },
+  {
+    "_id": "AV9dA-DRuruf8BBhKDzZ",
+    "_type": "search",
+    "_source": {
+      "title": "iQube_IIS_Get_Project_Estimate",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "time_taken",
+        "request",
+        "status"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"log-*\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"bool\":{\"filter\":{\"bool\":{\"must\":[{\"regexp\":{\"request\":\"/api/projects/[0-9]+/estimate\"}},{\"term\":{\"fields.service\":\"iqube\"}},{\"term\":{\"fields.document_type\":\"iis\"}},{\"term\":{\"method\":\"GET\"}}]}}}},\"highlightAll\":true,\"version\":true}"
       }
     }
   },
@@ -4954,6 +6658,51 @@
       "uiStateJSON": "{}",
       "description": "",
       "savedSearchId": "a2cf6070-8c88-11e7-beca-473520abef60",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "0626afd0-b325-11e7-a969-bdd22ec6f756",
+    "_type": "visualization",
+    "_source": {
+      "title": "Memory_Web_Live",
+      "visState": "{\"title\":\"Memory_Web_Live\",\"type\":\"area\",\"params\":{\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"truncate\":100},\"title\":{\"text\":\"@timestamp per 5 minutes\"}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100},\"title\":{\"text\":\"Free memory\"}}],\"seriesParams\":[{\"show\":true,\"mode\":\"normal\",\"type\":\"area\",\"drawLinesBetweenPoints\":true,\"showCircles\":true,\"interpolate\":\"cardinal\",\"lineWidth\":2,\"data\":{\"id\":\"1\",\"label\":\"Free memory\"},\"valueAxis\":\"ValueAxis-1\"}],\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"showCircles\":true,\"interpolate\":\"linear\",\"scale\":\"linear\",\"drawLinesBetweenPoints\":true,\"radiusRatio\":9,\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"min\",\"schema\":\"metric\",\"params\":{\"field\":\"system.memory.actual.free\",\"customLabel\":\"Free memory\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "c79afce0-b323-11e7-a969-bdd22ec6f756",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "AV9I_xVxuruf8BBhdLCX",
+    "_type": "visualization",
+    "_source": {
+      "title": "Memory_Cloud_Live_Web_And_DB",
+      "visState": "{\"title\":\"Memory_Cloud_Live_Web_And_DB\",\"type\":\"area\",\"params\":{\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"truncate\":100},\"title\":{\"text\":\"Time\"}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100},\"title\":{\"text\":\"Free memory\"}}],\"seriesParams\":[{\"show\":\"true\",\"type\":\"area\",\"mode\":\"stacked\",\"data\":{\"label\":\"Free memory\",\"id\":\"1\"},\"drawLinesBetweenPoints\":true,\"showCircles\":true,\"interpolate\":\"linear\",\"valueAxis\":\"ValueAxis-1\"}],\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"times\":[],\"addTimeMarker\":false,\"type\":\"area\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"min\",\"schema\":\"metric\",\"params\":{\"field\":\"system.memory.actual.free\",\"customLabel\":\"Free memory\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{},\"customLabel\":\"Time\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"split\",\"params\":{\"field\":\"beat.hostname\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"_term\",\"customLabel\":\"Free memory\",\"row\":true}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "AV9I_Y2quruf8BBhdIxu",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "AV9Or73turuf8BBhBGHi",
+    "_type": "visualization",
+    "_source": {
+      "title": "CPU_Cloud_Live_Web_And_DB",
+      "visState": "{\"title\":\"CPU_Cloud_Live_Web_And_DB\",\"type\":\"area\",\"params\":{\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"truncate\":100},\"title\":{\"text\":\"Time\"}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100},\"title\":{\"text\":\"CPU utilization\"}}],\"seriesParams\":[{\"show\":\"true\",\"type\":\"area\",\"mode\":\"normal\",\"data\":{\"label\":\"CPU utilization\",\"id\":\"1\"},\"drawLinesBetweenPoints\":true,\"showCircles\":true,\"interpolate\":\"cardinal\",\"valueAxis\":\"ValueAxis-1\"}],\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"times\":[],\"addTimeMarker\":false,\"type\":\"area\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"system.cpu.user.pct\",\"customLabel\":\"CPU utilization\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{},\"customLabel\":\"Time\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"split\",\"params\":{\"field\":\"beat.hostname\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"_term\",\"customLabel\":\"CPU\",\"row\":true}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "AV9OrcCvuruf8BBhBDBC",
       "version": 1,
       "kibanaSavedObjectMeta": {
         "searchSourceJSON": "{\"filter\":[]}"
