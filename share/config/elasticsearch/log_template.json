@@ -1,5 +1,4 @@
 {
-  "template_log": {
     "order": 0,
     "template": "log-*",
     "settings": {
@@ -1115,6 +1114,14 @@
           "pgmessage": {
             "ignore_above": 8192,
             "type": "keyword"
+          },
+          "fields": {
+            "properties": {
+              "pgcluster": {
+                "ignore_above": 256,
+                "type": "keyword"
+              }
+            }
           }
         }
       },
@@ -1156,4 +1163,3 @@
     },
     "aliases": {}
   }
-}
